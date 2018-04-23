@@ -1,7 +1,9 @@
 package com.company.problems;
 
 public class problems {
-    int digit = 0, number =50;
 
+    public static void main(String[] args) {
+        //YOUR code
+    }
 
 }
