@@ -14,28 +14,26 @@ public class Problems2_1 {
     public static void main(String[] args) {
 
         for (int i = 0; i < ARR.length; i++) {
-            ARR[i] = (int) (Math.random() * (A-1) + 1);
+            ARR[i] = (int) (Math.random() * (A - 1) + 1);
         }
         // Просто глянем наш массив
         System.out.println(Arrays.toString(ARR));
-        System.out.println("\nпо порядку");
 
+        System.out.println("\nпо порядку");
         for (int i = 0; i < ARR.length; i++) {
-            //по порядку
             System.out.println(i + "      =>   " + ARR[i]);
         }
+
         System.out.println("\nв обратном порядке");
         for (int i = ARR.length - 1; i > -1; i--) {
-            //в обратном порядке
             System.out.println(i + "      =>   " + ARR[i]);
         }
 
         System.out.println("\nвторой варик с обратным подсчетом");
         //второй варик с обратным подсчетом
         for (int i = 0; i < ARR.length; i++) {
-
-            //в обратке второй вариант
             int b = ARR.length - 1 - i;
+
             System.out.println(b + "      =>   " + ARR[b]);
         }
 
