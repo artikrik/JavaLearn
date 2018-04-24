@@ -1,4 +1,4 @@
-package com.company.problems2;
+package com.company.w2;
 
 import java.util.Arrays;
 
