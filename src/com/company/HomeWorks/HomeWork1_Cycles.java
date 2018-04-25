@@ -6,7 +6,7 @@ public class HomeWork1_Cycles {
 
         //первый вариант
         /*
-        int a = -1234567890;
+        int a = 1234567890;
         int b = 0;
         for( ; a!=0; a/=10)
             ++b;
