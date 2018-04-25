@@ -1,4 +1,4 @@
 package com.company.HomeWorks;
 
-public class Wok1 {
+public class HomeWork1_Cycles {
 }
