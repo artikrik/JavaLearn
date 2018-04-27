@@ -13,22 +13,31 @@ import java.util.Scanner;
 тех пор, пока не будет указано корректное значение.
 */
 public class Problems2_9 {
-    private static boolean isEven(int a) {
-        return a % 2 == 0;
+
+    private static boolean isPositive(int a) {
+        return a >= 0;
     }
 
-    public static void main(String[] args) {
-        //Keyboard
-        System.out.println("Пользователь должен указать с клавиатуры чётное положительное число \n");
+    private static int scanKeyboard() {
 
-        Scanner kbd = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         int number;
-        if (kbd.hasNextInt() && kbd.nextBoolean()) {
-            number = kbd.nextInt();
-            System.out.println(number);
-        } else {
-            System.out.println("Вы ввели не правильно!!!");
-        }
+        do {
+            System.out.println("Пользователь должен указать с клавиатуры чётное положительное число \n");
+            while (!sc.hasNextInt()) {
+                System.out.println("Это не число!");
+                sc.next();
+            }
+            number = sc.nextInt();
+        } while (!isPositive(number));
+        return number;
+    }
+
+
+    public static void main(String[] args) {
+
+        int inputNumber = scanKeyboard();
+        System.out.println(inputNumber);
 
         /*int[] ARRAY = new int[number];
         for (int i = 0; i < ARRAY.length; i++) {
