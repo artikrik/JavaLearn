@@ -1,7 +1,6 @@
 package com.company.w2;
 
 import java.util.Arrays;
-import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -14,10 +13,6 @@ import java.util.Scanner;
 */
 public class Problems2_9 {
 
-    private static boolean isPositive(int a) {
-        return a >= 0;
-    }
-
     private static int scanKeyboard() {
 
         Scanner sc = new Scanner(System.in);
@@ -29,23 +24,52 @@ public class Problems2_9 {
                 sc.next();
             }
             number = sc.nextInt();
-        } while (!isPositive(number));
+        } while (number <= 0);
+
+        do {
+            if (number % 2 == 0) {
+                break;
+            } else {
+                System.out.println("Это не четное число!");
+                number = sc.nextInt();
+            }
+        } while (number % 2 != 0);
+
         return number;
     }
 
+    private static void arrayBig(int[] a) {
+        int tmp1 = 0, tmp2 = 0;
+        for (int i = 0; i < a.length / 2; i++) {
+            tmp1 = a[i] + tmp1;
+        }
+        for (int i = a.length / 2; i < a.length; i++) {
+            tmp2 = a[i] + tmp2;
+        }
+        System.out.println("сумма модулей левой половины массива: " + tmp1);
+        System.out.println("сумма модулей правой половины массива: " + tmp2);
+        if (tmp1 > tmp2) {
+            System.out.println("сумма модулей какой половины массива больше: левой");
+        } else if (tmp2 > tmp1) {
+            System.out.println("сумма модулей какой половины массива больше: правой");
+        } else {
+            System.out.println("сумма модулей какой половины массива больше: равны");
+        }
+    }
 
     public static void main(String[] args) {
 
         int inputNumber = scanKeyboard();
-        System.out.println(inputNumber);
 
-        /*int[] ARRAY = new int[number];
+        int[] ARRAY = new int[inputNumber];
         for (int i = 0; i < ARRAY.length; i++) {
             Random random = new Random();
             int num = 5 - random.nextInt(10);
             ARRAY[i] = num;
         }
 
-        System.out.println("FIRST_ARRAY lenght = " + ARRAY.length + "\n\nArray:  " + Arrays.toString(ARRAY) + "\n");*/
+        System.out.println("FIRST_ARRAY length = " + ARRAY.length + "\n\nArray:  " + Arrays.toString(ARRAY) + "\n");
+        arrayBig(ARRAY);
+
     }
 }
