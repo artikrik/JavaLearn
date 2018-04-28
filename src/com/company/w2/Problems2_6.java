@@ -11,8 +11,8 @@ public class Problems2_6 {
     private static final int[] ARRAY = new int[12];
 
     public static void main(String[] args) {
-        int max = 0;
-        int min = 0;
+        int max;
+        int min;
         int maxPos = 0;
         int minPos = 0;
 
@@ -22,11 +22,14 @@ public class Problems2_6 {
 
         System.out.println("ARR lenght = " + ARRAY.length + "\nArray:  " + Arrays.toString(ARRAY));
 
+        max=ARRAY[0];
+        min=ARRAY[0];
         for (int i = 0; i < ARRAY.length; i++) {
             if (max <= ARRAY[i]) {
                 max = ARRAY[i];
                 maxPos = i;
-            } else if (min >= ARRAY[i]) {
+            }
+            if (min >= ARRAY[i]) {
                 min = ARRAY[i];
                 minPos = i;
             }
