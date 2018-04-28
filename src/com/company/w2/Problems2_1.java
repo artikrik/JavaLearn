@@ -29,8 +29,7 @@ public class Problems2_1 {
             System.out.println(i + "      =>   " + ARR[i]);
         }
 
-        System.out.println("\nвторой варик с обратным подсчетом");
-        //второй варик с обратным подсчетом
+        System.out.println("\nвторой вариант с обратным подсчетом");
         for (int i = 0; i < ARR.length; i++) {
             int b = ARR.length - 1 - i;
 
