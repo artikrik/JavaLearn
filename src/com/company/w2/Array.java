@@ -2,6 +2,7 @@ package w2;
 
 import java.util.Random;
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * 1. Создайте массив из всех нечётных чисел от 1 до 99, выведите его на экран в строку,
@@ -184,35 +185,72 @@ public class Array {
          Если два каких-то элемента встречаются одинаковое количество раз, то не выводите ничего.
          */
 
+//        Random random = new Random();
+//        int count_a = 0;
+//        int count_b = 0;
+//        int count_c = 0;
+//        int arraySize = 11;
+//        int[] randomMass = new int[arraySize];
+//        for (int i = 0; i < randomMass.length; i++) {
+//            randomMass[i] = random.nextInt(3) + (-1);
+//            System.out.print(randomMass[i] + " ");
+//            if (randomMass[i] == -1)
+//                count_a++;
+//            else if (randomMass[i]==0)
+//                count_b++;
+//            else
+//                count_c++;
+//        }
+//        System.out.println();
+//        if (count_a==count_b)
+//            System.out.println();
+//        if (count_a==count_c)
+//            System.out.println();
+//        if (count_c==count_b)
+//            System.out.println();
+//        else if (count_a > count_b && count_a > count_c)
+//            System.out.println("Чаще всего встречаются отрицательные числа -  " + count_a);
+//        else if (count_b > count_a && count_b > count_c)
+//            System.out.println("Чаще всего встречаются нули -  " + count_b);
+//        else
+//            System.out.println("Чаще всего встречаются положительные числа -  " + count_c);
+
+        /**
+         9. Пользователь должен указать с клавиатуры чётное положительное число, а программа должна создать массив
+         указанного размера из случайных целых чисел из [-5;5] и вывести его на экран в строку.
+         После этого программа должна определить и сообщить пользователю о том,
+         сумма модулей какой половины массива больше: левой или правой, либо сообщить, что эти суммы модулей равны.
+         Если пользователь введёт неподходящее число, то программа должна требовать повторного ввода до тех пор,
+         пока не будет указано корректное значение.
+         */
+
         Random random = new Random();
-        int count_a = 0;
-        int count_b = 0;
-        int count_c = 0;
-        int arraySize = 11;
+        int x;
+        boolean flag = true, overZero = true;
+
+        do {
+            do {
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Введите число:");
+                x = sc.nextInt();
+
+                if (x > 0) overZero = false;
+                else System.out.println("Число должно быть больше нуля!");
+
+                if (x % 2 == 0) flag = false;
+                else System.out.println("Число должно быть четным.");
+
+
+            }
+            while (overZero);
+        }
+        while (flag);
+        int arraySize = x;
         int[] randomMass = new int[arraySize];
         for (int i = 0; i < randomMass.length; i++) {
-            randomMass[i] = random.nextInt(3) + (-1);
+            randomMass[i] = random.nextInt(11) + (-5);
             System.out.print(randomMass[i] + " ");
-            if (randomMass[i] == -1)
-                count_a++;
-            else if (randomMass[i]==0)
-                count_b++;
-            else
-                count_c++;
         }
-        System.out.println();
-        if (count_a==count_b)
-            System.out.println();
-        if (count_a==count_c)
-            System.out.println();
-        if (count_c==count_b)
-            System.out.println();
-        else if (count_a > count_b && count_a > count_c)
-            System.out.println("Чаще всего встречаются отрицательные числа -  " + count_a);
-        else if (count_b > count_a && count_b > count_c)
-            System.out.println("Чаще всего встречаются нули -  " + count_b);
-        else
-            System.out.println("Чаще всего встречаются положительные числа -  " + count_c);
     }
 }
 
