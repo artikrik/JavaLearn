@@ -135,7 +135,7 @@ public class HomeWorkArrays {
 
         for (int i = 0; i < m.length; i++) {
             m[i] = (int) (1 + 9 * Math.random());
-            //System.out.print(m[i]+ " ");
+            //System.out.print(m[i]+ " ");  asA
         }
         System.out.println(" ");
 
