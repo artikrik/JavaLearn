@@ -1,4 +1,4 @@
-package Auto2week;
+package com.company.w2;
 
 import java.util.Random;
 

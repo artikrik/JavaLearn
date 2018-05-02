@@ -1,4 +1,4 @@
-package Auto2week;
+package com.company.w2;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -8,17 +8,17 @@ public class Task7 {
 
     int[] mass1 = new int[10];
     int[] mass2 = new int[10];
-    float[] massFloat = new float[10];
+    double[] massFloat = new double[10];
     Random random = new Random(7);
 
         for (int i = 0; i < mass1.length; i++) {
-        mass1[i] = random.nextInt(9) + 1;
+        mass1[i] = random.nextInt(10) + 1;
     }
         for (int j = 0; j < mass1.length; j++) {
         mass2[j] = random.nextInt(9) + 1;
     }
         for (int k = 0; k < massFloat.length; k++) {
-        massFloat[k] = mass1[k] / mass2[k];
+        massFloat[k] =(double)mass1[k] / (double) mass2[k];
     }
         System.out.println(Arrays.toString(mass1));
         System.out.println(Arrays.toString(mass2));
@@ -26,7 +26,7 @@ public class Task7 {
 
     int number = 0;
         for (int k = 0; k < massFloat.length; k++) {
-        if (massFloat[k] > 0) {
+        if (massFloat[k]%(int)(massFloat[k]) == 0) {
             number++;
         }
     }

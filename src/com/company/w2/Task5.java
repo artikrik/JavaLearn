@@ -1,4 +1,4 @@
-package Auto2week;
+package com.company.w2;
 
 public class Task5 {
     public static void main(String[] args) {
