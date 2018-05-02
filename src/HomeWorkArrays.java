@@ -6,15 +6,13 @@ public class HomeWorkArrays {
         // ЗАДАНИЕ 1
        /*int a[] = new int[100];
 
-        for (int i = 0; i < a.length-1; i++) {
+        for (int i = 0; i < a.length - 1; i++) {
             if (i % 2 == 1)
                 System.out.print(" " + i);
         }
         System.out.println();
 
-        int b[] = new int[100];
-
-        for (int i = a.length - 1; i > -1 ; i--) {
+        for (int i = a.length - 1; i > -1; i--) {
             if (i % 2 == 1)
                 System.out.print(" " + i);
         }
@@ -135,7 +133,7 @@ public class HomeWorkArrays {
 
         for (int i = 0; i < m.length; i++) {
             m[i] = (int) (1 + 9 * Math.random());
-            //System.out.print(m[i]+ " ");  asA
+            //System.out.print(m[i]+ " ");
         }
         System.out.println(" ");
 
