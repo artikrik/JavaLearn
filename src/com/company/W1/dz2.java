@@ -1,4 +1,4 @@
-package W1;
+package com.company.W1;
 
 public class dz2 {
     public static void main(String[] args) {

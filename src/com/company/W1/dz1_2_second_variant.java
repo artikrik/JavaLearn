@@ -1,8 +1,8 @@
-package W1;
+package com.company.W1;
 
 public class dz1_2_second_variant {
     public static void main(String[] args) {
-        int x=11245;
+        int x=112345;
         int a=0;
         if (x<10)
             a=1;
