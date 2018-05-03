@@ -10,14 +10,14 @@ public class Find_string_4 {
         System.out.println("введіть слово");
         String a = find.nextLine();
         int i;
-        int index=0;
+        int index=-1;
         for (i = 0; i < mas.length; ++i) {
             if (mas[i].equals(a)) {
                 index=i;
                 System.out.println("його індекс="+i);
             }
         }
-        if (index==0)System.out.println("такого слова нема");
+        if (index==-1)System.out.println("такого слова нема");
     }
 }
 
