@@ -226,25 +226,28 @@ public class Array {
 
         Random random = new Random();
         int x;
-        boolean flag = true, overZero = true;
+        boolean flag, overZero;
 
         do {
-            do {
-                Scanner sc = new Scanner(System.in);
-                System.out.println("Введите число:");
-                x = sc.nextInt();
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Введите число четное положительное число:");
+            x = sc.nextInt();
 
-                if (x > 0) overZero = false;
-                else System.out.println("Число должно быть больше нуля!");
-
-                if (x % 2 == 0) flag = false;
-                else System.out.println("Число должно быть четным.");
-
-
+            if (x > 0) {
+                overZero = true;
+            } else {
+                overZero = false;
+                System.out.println("Число должно быть больше нуля!");
             }
-            while (overZero);
+
+            if (x % 2 == 0) {
+                flag = true;
+            } else {
+                flag = false;
+                System.out.println("Число должно быть четным.");
+            }
         }
-        while (flag);
+        while (!(flag && overZero));
         int arraySize = x;
         int[] randomMass = new int[arraySize];
         for (int i = 0; i < randomMass.length; i++) {
