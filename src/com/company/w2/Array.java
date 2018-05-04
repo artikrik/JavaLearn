@@ -268,12 +268,12 @@ public class Array {
         for (int j = randomMass.length - 1; j >= randomMass.length / 2; j--) {
             sumRight += Math.abs(randomMass[j]);
         }
-        if (sumLeft>sumRight)
+        if (sumLeft > sumRight)
             System.out.print("Сумма элементов слева больше и = " + sumLeft);
-        if (sumLeft<sumRight)
+        if (sumLeft < sumRight)
             System.out.print("\n" + "Сумма элементов справа больше и = " + sumRight);
         else
-            System.out.println("\n" +"Суммы равны");
+            System.out.println("\n" + "Суммы равны");
     }
 }
 
