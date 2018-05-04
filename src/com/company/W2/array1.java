@@ -9,9 +9,7 @@ public class array1 {
         }
         System.out.println(" ");
         for (int i = a.length-1; i >=0; i--) {
-            a[i] = i * 2 + 1; // зачем?
             System.out.print(a[i] + " ");
         }
     }
-
 }
