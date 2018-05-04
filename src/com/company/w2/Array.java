@@ -11,19 +11,27 @@ import java.util.Scanner;
 public class Array {
 
     public static void main(String[] args) {
-
-//        int[] massiv = new int[100];
-//        for (int i = 1; i < massiv.length; i++) {
+//        int massLength = 0;
+//        for (int i = 1; i < 100; i++) {
 //            if (i % 2 != 0)
-//                System.out.print(i + ", ");
+//                massLength++;
+//        }
+//        int[] massiv = new int[massLength];
+//        for (int i = 1, b = 0; i <= 99; i++) {
+//            if (i % 2 != 0) {
+//                massiv[b] = i;
+//                System.out.print(massiv[b] + ", ");
+//                b++;
+//            }
 //        }
 //        {
 //            System.out.println();
 //        }
-//        for (int i = massiv.length - 1; i >= 1 ; i--) { // Почему нулевой элемент исключен?
-//            if (i % 2 != 0)
-//                System.out.print(i + ", ");
+//        for (int i = massiv.length-1; i >= 0; i --) { // Почему нулевой элемент исключен?
+//            System.out.print(massiv[i] + ", ");
 //        }
+//    }
+//}
 
         /**
          * 2. Создайте массив из 15 случайных целых чисел из отрезка [0;9].
@@ -57,7 +65,7 @@ public class Array {
 //        Random random = new Random();
 //        int[] randomMass = new int[8];
 //        for (int i = 0; i < randomMass.length; i++) {
-//            randomMass[i] = random.nextInt(10)+1;
+//            randomMass[i] = random.nextInt(10) + 1;
 //            System.out.print(randomMass[i] + " ");
 //        }
 //        {
@@ -65,11 +73,13 @@ public class Array {
 //        }
 //
 //        for (int j = 0; j < randomMass.length; j++) {
-//            if (randomMass[j] % 2 != 0) // нечётным индексом!!! не значением!!!
+//            if (j % 2 != 0) // нечётным индексом!!! не значением!!!
 //                randomMass[j] = 0;
 //
 //            System.out.print(randomMass[j] + " ");
 //        }
+//    }
+//}
 
         /**
          * 4. Создайте 2 массива из 5 случайных целых чисел из отрезка [0;5] каждый,
@@ -276,6 +286,7 @@ public class Array {
             System.out.println("\n" + "Суммы равны");
     }
 }
+
 
 
 
