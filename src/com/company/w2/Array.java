@@ -227,10 +227,12 @@ public class Array {
         Random random = new Random();
         int x;
         boolean flag, overZero;
+        int sumLeft = 0;
+        int sumRight = 0;
 
         do {
             Scanner sc = new Scanner(System.in);
-            System.out.println("Введите число четное положительное число:");
+            System.out.println("Введите четное положительное число:");
             x = sc.nextInt();
 
             if (x > 0) {
@@ -253,7 +255,25 @@ public class Array {
         for (int i = 0; i < randomMass.length; i++) {
             randomMass[i] = random.nextInt(11) + (-5);
             System.out.print(randomMass[i] + " ");
+
         }
+        {
+            System.out.println();
+        }
+
+        for (int i = 0; i < randomMass.length / 2; i++) {
+            sumLeft += Math.abs(randomMass[i]);
+
+        }
+        for (int j = randomMass.length - 1; j >= randomMass.length / 2; j--) {
+            sumRight += Math.abs(randomMass[j]);
+        }
+        if (sumLeft>sumRight)
+            System.out.print("Сумма элементов слева больше и = " + sumLeft);
+        if (sumLeft<sumRight)
+            System.out.print("\n" + "Сумма элементов справа больше и = " + sumRight);
+        else
+            System.out.println("\n" +"Суммы равны");
     }
 }
 
