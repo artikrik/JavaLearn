@@ -6,7 +6,7 @@ import java.util.Random;
 public class Task10 {
     public static void main(String[] args) {
         Random random = new Random(4);
-        int[][] mass = new int[10][random.nextInt(3) + 3];
+        int[][] mass = new int[10][random.nextInt(3) + 3]; // Не универсально, но Вы пощупали массив!)
         createArray(mass);
         int[] bigValueOfMass = biggestValueOfArrayLine(mass);  // создаем одномерный масив из  найбольших значений строки 2-мерного масива
         System.out.println("Самые большие значения в каждой строке масива "+Arrays.toString(bigValueOfMass));
