@@ -23,7 +23,7 @@ public class Task8 {
     }
 
     static void biggestValueInArray(int[] mass) {
-        int tmp = mass[0], tmp2 = -5, tmp3 = -5;
+        int tmp = mass[0], tmp2 =mass[0], tmp3 = mass[0];
         int increment1 = 0, increment2 = 0, increment3 = 0;
 
         int i = 0;

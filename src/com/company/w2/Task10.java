@@ -1,12 +1,17 @@
 package com.company.w2;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Task10 {
     public static void main(String[] args) {
-        int[][] mass = new int[10][5];
+        Random random = new Random(4);
+        int[][] mass = new int[10][random.nextInt(3) + 3];
         createArray(mass);
-        biggestSmallerValueOfArray(mass);
+        int[] bigValueOfMass = biggestValueOfArrayLine(mass);  // создаем одномерный масив из  найбольших значений строки 2-мерного масива
+        System.out.println("Самые большие значения в каждой строке масива "+Arrays.toString(bigValueOfMass));
+        int smallValueOfArray = smallestValueOfArrayLine(bigValueOfMass); // находим найменьшее значення 1-мерного масива
+        System.out.println("Наименьшее значение среди самых больших значений масива = "+smallValueOfArray);
 
     }
 
@@ -21,15 +26,28 @@ public class Task10 {
         }
     }
 
-    static void biggestSmallerValueOfArray(int[][] mass) {
+    static int[] biggestValueOfArrayLine(int[][] mass) {
+        int[] massTmp = new int[mass.length];
         for (int i = 0; i < mass.length; i++) {
-            int tmp = 0, tmpSmaller = 100;
+            massTmp[i] = mass[i][0];
             for (int j = 0; j < mass[i].length; j++) {
-                if (tmp < mass[i][j]) tmp = mass[i][j];
-                if (tmpSmaller > mass[i][j]) tmpSmaller = mass[i][j];
+                if (mass[i][j] >= massTmp[i]) {
+                    massTmp[i] = mass[i][j];
+                }
             }
-            System.out.println(" biggest N=" + tmp + "; smallest N=" + tmpSmaller + " in the " + i + " row.");
         }
+        return massTmp;
+    }
+
+    static int smallestValueOfArrayLine(int[] mass) {
+        int massTmp = mass[0];
+        for (int i = 0; i < mass.length; i++) {
+            if (mass[i] < massTmp) {
+                massTmp = mass[i];
+            }
+        }
+        return massTmp;
     }
 }
+
 
