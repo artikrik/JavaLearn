@@ -20,7 +20,7 @@ public class Array {
 //        {
 //            System.out.println();
 //        }
-//        for (int i = massiv.length - 1; i >= 1 ; i--) {
+//        for (int i = massiv.length - 1; i >= 1 ; i--) { // Почему нулевой элемент исключен?
 //            if (i % 2 != 0)
 //                System.out.print(i + ", ");
 //        }
@@ -42,7 +42,7 @@ public class Array {
 //        }
 //        int sum = 0;
 //        for (int j = 0; j < randomMass.length; j++) {
-//            if (randomMass[j] % 2 != 1)
+//            if (randomMass[j] % 2 != 1) // Понятнее было бы, указав что Вы хотите ==0. Но ОК
 //                sum++;
 //
 //        }
@@ -65,7 +65,7 @@ public class Array {
 //        }
 //
 //        for (int j = 0; j < randomMass.length; j++) {
-//            if (randomMass[j] % 2 != 0)
+//            if (randomMass[j] % 2 != 0) // нечётным индексом!!! не значением!!!
 //                randomMass[j] = 0;
 //
 //            System.out.print(randomMass[j] + " ");
@@ -124,7 +124,7 @@ public class Array {
 //            n0 = n1;
 //            n1 = n2;
 //        }
-//        System.out.println();
+//        System.out.println(); 
 
         /**
          * 6. Создайте массив из 12 случайных целых чисел из отрезка [-15;15].
