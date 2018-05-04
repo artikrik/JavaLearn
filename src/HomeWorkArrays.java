@@ -185,35 +185,43 @@ public class HomeWorkArrays {
         */
         //ЗАДАНИЕ 9
 
-        int a = 0;
+
+        int a;
         int leftSide = 0;
         int rightSide = 0;
 
-        Scanner Scanner = new Scanner(System.in);
-        System.out.println("Введите  число");
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Ввести число");
 
-        if (Scanner.hasNextInt()) {
+        if (scn.hasNextInt()) {
+
             do {
-                a = Scanner.nextInt();
-                if (a % 2 != 0 || a < 1)
-                    System.out.println("Число не верно");
+                a = scn.nextInt();
+                if (a % 2 != 0 || a < 1) System.out.println("Число не верно");
             }
             while (a % 2 != 0 || a < 1);
+
             int[] array = new int[a];
             for (int i = 0; i < array.length; i++) {
                 array[i] = (int) (Math.random() * 11) - 5;
                 System.out.print(array[i] + " ");
-                if(i<=array.length/2-1){
-                    leftSide+=Math.abs(array[i]);
+
+                if (i <= array.length / 2 - 1) {
+                    leftSide += Math.abs(array[i]);
+                } else {
+                    rightSide += Math.abs(array[i]);
                 }
-                else {
-                    rightSide+=Math.abs(array[i]);
+
+                if (i == array.length - 1) {
+                    System.out.println(" ");
+                    if (leftSide > rightSide)
+                        System.out.println("Сумма первой половины больше и равна " + leftSide);
+                    if (rightSide > leftSide)
+                        System.out.println("Сумма  второй половины  больше и равна " + rightSide);
+                    if (rightSide == leftSide)
+                        System.out.println("Суммы первой и второй половины равны");
                 }
             }
-
-
-        }
-
-
+        } else System.out.println("Введено не число");
     }
 }
