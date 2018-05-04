@@ -1,20 +1,29 @@
 import java.util.Random;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class HomeWorkArrays {
     public static void main(String[] args) {
         // ЗАДАНИЕ 1
-       /*int a[] = new int[100];
-
-        for (int i = 0; i < a.length - 1; i++) {
-            if (i % 2 == 1)
-                System.out.print(" " + i);
+        /*int a=0;
+        for(int i=1;i<=99;i++){
+            if(i%2!=0) {
+                a++;
+            }
         }
-        System.out.println();
 
-        for (int i = a.length - 1; i > -1; i--) {
-            if (i % 2 == 1)
-                System.out.print(" " + i);
+        int[] Array = new int[a];
+        for(int i=1,b=0;i<=99;i++){
+            if(i%2!=0){
+                Array[b]=i;
+                System.out.print(Array[b]+" ");
+                b++;
+            }
+        }
+
+        System.out.println(" ");
+        for(int i=Array.length-1;i>=0;i--){
+            System.out.print(" " +Array[i]);
         }
 
         //ЗАДАНИЕ 2
@@ -116,7 +125,7 @@ public class HomeWorkArrays {
         }
         System.out.println(" ");
         System.out.print("Максимальный индекс " + maxIndex);
-        */
+
         //ЗАДАНИЕ 7
         int[] n = new int[10];
         int[] m = new int[10];
@@ -149,6 +158,61 @@ public class HomeWorkArrays {
         System.out.println(Arrays.toString(m));
         System.out.println(Arrays.toString(v));
         System.out.println("Целые числа третьего массива " + k);
+
+        //ЗАДАНИЕ 8
+        int NegativeNumbers = 0;
+        int numberOfZeros = 0;
+        int numberOfOnes = 0;
+        int mas[] = new int[11];
+        for (int i = 0; i < 11; i++) {
+            mas[i] = (int) (Math.random() * 3) - 1;
+            System.out.print(mas[i] + " ");
+            if (mas[i] == -1)
+                NegativeNumbers++;
+            else if (mas[i] == 0)
+                numberOfZeros++;
+            else
+                numberOfOnes++;
+        }
+        System.out.println();
+        if ((NegativeNumbers > numberOfZeros && NegativeNumbers > numberOfOnes))
+            System.out.println("отрицательные значения");
+        else if ((numberOfZeros > NegativeNumbers && numberOfZeros > numberOfOnes))
+            System.out.println("встречается чаще ноль");
+        else
+            System.out.println("встречается чаще еденица");
+
+        */
+        //ЗАДАНИЕ 9
+
+        int a = 0;
+        int leftSide = 0;
+        int rightSide = 0;
+
+        Scanner Scanner = new Scanner(System.in);
+        System.out.println("Введите  число");
+
+        if (Scanner.hasNextInt()) {
+            do {
+                a = Scanner.nextInt();
+                if (a % 2 != 0 || a < 1)
+                    System.out.println("Число не верно");
+            }
+            while (a % 2 != 0 || a < 1);
+            int[] array = new int[a];
+            for (int i = 0; i < array.length; i++) {
+                array[i] = (int) (Math.random() * 11) - 5;
+                System.out.print(array[i] + " ");
+                if(i<=array.length/2-1){
+                    leftSide+=Math.abs(array[i]);
+                }
+                else {
+                    rightSide+=Math.abs(array[i]);
+                }
+            }
+
+
+        }
 
 
     }
