@@ -1,4 +1,4 @@
-package com.company.w5;
+package com.company.w4;
 
 import java.util.Random;
 import java.util.Scanner;
