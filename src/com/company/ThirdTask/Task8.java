@@ -12,7 +12,7 @@ public class Task8 {
         int mas[] = new int[11];
         for (
                 int i = 0;
-                i < 11; i++)
+                i < 11; i++)  // Запутываете следы?))) Почему не в одной строке?
 
         {
             mas[i] = (int) (Math.random() * 3) - 1;
