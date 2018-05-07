@@ -15,11 +15,11 @@ public class Task3 {
             System.out.print(a[i] + " ");
         }
         System.out.println();
-        System.out.println("Замена всех нечётных значений на 0");
+        System.out.println("Замена всех элементов с нечётным индексом на 0");
         for (int i = 0; i < a.length; i++) {
-            if (a[i] % 2 != 0)
+            if (i % 2 != 0)
                 a[i] = 0;
-                System.out.print(a[i] + " ");
+            System.out.print(a[i] + " ");
         }
     }
 }
