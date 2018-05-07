@@ -10,12 +10,14 @@ public class Task1 {
         int a[] = new int[100];
         for (int i = 0; i < 100; i++) {
             a[i] = i + 1;
-            System.out.print(a[i] + " ");
+            if (a[i] % 2 != 0)
+                System.out.print(a[i] + " ");
         }
         System.out.println(" ");
         System.out.println("Выведение чисел в обратном порядке");
         for (int i = 100 - 1; i >= 0; i--) {
-            System.out.print(a[i] + " ");
+            if (a[i] % 2 != 0)
+                System.out.print(a[i] + " ");
         }
     }
 }
