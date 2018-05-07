@@ -25,7 +25,7 @@ public class Problems2_4 {
             FIRST_ARRAY[i] = num;
             System.out.print("  " + FIRST_ARRAY[i] + "  ");
         }
-        System.out.print("\n");
+        System.out.println("\n");
 
         for (int i = 0; i < SECOND_ARRAY.length; i++) {
             Random random = new Random();
@@ -36,7 +36,7 @@ public class Problems2_4 {
         System.out.println("\n");
         System.out.println("FIRST_ARRAY " + calcAverageNum(FIRST_ARRAY));
         System.out.println("SECOND_ARRAY " + calcAverageNum(SECOND_ARRAY));
-        System.out.print("\n");
+        System.out.println("\n");
 
         if (calcAverageNum(FIRST_ARRAY) > calcAverageNum(SECOND_ARRAY)) {
             System.out.println("FIRST_ARRAY " + calcAverageNum(FIRST_ARRAY));
