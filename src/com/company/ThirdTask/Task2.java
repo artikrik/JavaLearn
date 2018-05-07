@@ -16,7 +16,7 @@ public class Task2 {
         for (int i = 0; i < a.length; i++) {
             a[i] = random.nextInt(9);
             System.out.print(a[i] + " ");
-                if (a[i] > 0 & a[i] % 2 == 0)
+            if (a[i] % 2 == 0)
                 b++;
         }
         System.out.println();
