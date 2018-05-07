@@ -15,7 +15,7 @@ public class BinarySearchNum {
         System.out.println("Searching element has index " + binarySearch(mass, num) + " in the array");
     }
 
-    static int binarySearch(int[] mass, int num)
+    static int binarySearch(int[] mass, int num) // не предусмотрен выход на случай отсутствующего данного. Зависнет!
 
     {
         Arrays.sort(mass);

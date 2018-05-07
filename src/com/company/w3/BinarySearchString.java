@@ -8,7 +8,7 @@ public class BinarySearchString {
         String[] mass= {"Skoda", "Opel", "Lada", "Daewoo", "Suzuki", "Honda", "Mazda", "BMW", "Citroen", "Porshe", "Mustang", "Hyundai"};
         System.out.println("Searching element has index " + binarySearchString(mass, keyWord) + " in the array");
     }
-    static int binarySearchString(String mass[], String key){
+    static int binarySearchString(String mass[], String key){// не предусмотрен выход на случай отсутствующего данного. Зависнет!
         Arrays.sort(mass);
         System.out.println(Arrays.toString(mass));
         int begin = 0;
