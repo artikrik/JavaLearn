@@ -11,9 +11,9 @@ public class HomeWorkArrays {
                 a++;
             }
         }
-
+// Не проще будет а посчитать одним выражением?
         int[] Array = new int[a];
-        for(int i=1,b=0;i<=99;i++){
+        for(int i=1,b=0;i<=99;i++){  // Цикл по значениям - не лучший выход. Хорошо когда их 99. А если 999999999? Лучше было бы цикл по элементам массива. 
             if(i%2!=0){
                 Array[b]=i;
                 System.out.print(Array[b]+" ");
@@ -31,7 +31,7 @@ public class HomeWorkArrays {
         int s = 0;
         Random random = new Random();
         for (int i = 0; i < n.length; i++) {
-            n[i] = (int) (-1 + 10 * Math.random());
+            n[i] = (int) (-1 + 10 * Math.random()); // Math.random()) не включает 1. Вы генерируете случайтые числа от -1 до 8. Повезло!)))
             System.out.print(" " + n[i]);
             if ((n[i] % 2 == 0)){
                 s++;
@@ -63,7 +63,7 @@ public class HomeWorkArrays {
         double a = 0, b = 0;
         Random random = new Random();
         for (int i = 0; i < n.length; i++) {
-            n[i] = (int) (1 + 5 * Math.random());
+            n[i] = (int) (1 + 5 * Math.random()); // Получится от 1 до 5
             System.out.print(n[i]+ " ");
             a+=(double)n[i]/n.length;
 
@@ -91,7 +91,7 @@ public class HomeWorkArrays {
         /*int n = 20;
         int a = 1, b = 1;
         System.out.print(a + " " + b);
-        int fib = 2, i = 2;
+        int fib = 2, i = 2; // Замечательное решение! fib не нужно иннициализировать. Достаточно просто объявить. Лишние действия запутывают: зачем это сделано?
         while (i < n) {
             fib = a + b;
             a = b;
@@ -112,9 +112,9 @@ public class HomeWorkArrays {
         }*/
         //ЗАДАНИЕ 6
         /*int[] n = new int[12];
-        int maxIndex = 0;
+        int maxIndex = 0; // Замечатено!!! Предлагаю рассказать эту идею всем ребятам!!! 
         for (int i = 0; i < n.length; i++) {
-            n[i] = (int) Math.round((Math.random() * 30) - 15);
+            n[i] = (int) Math.round((Math.random() * 30) - 15); // Опять потеряли максимальное значение 15
             if( n[i] > n[maxIndex] ){
                 maxIndex = i;
 
@@ -141,7 +141,7 @@ public class HomeWorkArrays {
         System.out.println(" ");
 
         for (int i = 0; i < m.length; i++) {
-            m[i] = (int) (1 + 9 * Math.random());
+            m[i] = (int) (1 + 9 * Math.random()); // Тут все отлично! 1-9! Почему ранее были проблемы?
             //System.out.print(m[i]+ " ");
         }
         System.out.println(" ");
