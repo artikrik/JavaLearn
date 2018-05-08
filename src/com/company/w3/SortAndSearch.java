@@ -26,6 +26,7 @@ public class SortAndSearch {
         System.out.println();
         System.out.println("\n" + Arrays.toString(bubbleArray));
 
+
         /**
          * Линейный поиск.
          */
