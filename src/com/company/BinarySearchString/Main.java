@@ -1,5 +1,3 @@
-package com.company.BinarySearchString;//1. Бинарный поиск СТРИНГ
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -59,7 +57,7 @@ public class Main {
             }
         }
         if (index.equals("")) {
-           position = 0;
+            position = 0;
         }
         return position;
     }
