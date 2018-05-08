@@ -11,7 +11,7 @@ public class BubbleSortInt {
         }
         System.out.print(Arrays.toString(mass) + "\t");
 
-        bubbleAction(mass);
+        mass = bubbleAction(mass);
         System.out.println(" ");
 
         System.out.print(Arrays.toString(bubbleAction(mass)) + " - sorted Array");
