@@ -21,9 +21,9 @@ public class BinarySearchStringUsingMethods {
 
         position = binarySearch(position, word, sortedArray);
         if ((sortedArray[position].compareTo(word)) == 0) {
-            System.out.println("word - " + word + " - is present at position " + position);
+            System.out.println("word [" + word + "] is present at position " + position);
         } else
-            System.out.println(word + " can't found in this array");
+            System.out.println("[" + word + "] " + " can't found in this array");
     }
 
     public static String[] sortArray(String[] array) {
