@@ -1,9 +1,11 @@
+package w3;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class BinarySearchStringUsingMethods {
     public static void main(String[] args) {
-        String[] array = new String[]{"some", "random", "words", "needs", "to", "be", "here","and","they","are","must","be","found"};
+        String[] array = new String[]{"some", "random", "words", "needs", "to", "be", "here", "and", "they", "are", "must", "be", "found"};
         String[] sortedArray;
         int position = 0;
         System.out.println(Arrays.toString(array));
@@ -17,10 +19,9 @@ public class Main {
         word = inputWord(word);
 
         position = binarySearch(position, word, sortedArray);
-        if((sortedArray[position].compareTo(word)) == 0){
+        if ((sortedArray[position].compareTo(word)) == 0) {
             System.out.println("word - " + word + " - is present at position " + position);
-        }
-        else
+        } else
             System.out.println(word + " can't found in this array");
     }
 
@@ -42,7 +43,7 @@ public class Main {
     public static int binarySearch(int position, String word, String[] sortedArray) {
         String index = " ";
         int left = 0;
-        int right = sortedArray.length-1;
+        int right = sortedArray.length - 1;
 
 
         while (left <= right) {
