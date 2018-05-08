@@ -31,14 +31,14 @@ public class SortAndSearch {
         /**
          * Линейный поиск.
          */
-        
+
         Scanner s = new Scanner(System.in);
         System.out.println("Введите число для поиска:");
         int x = s.nextInt();
         Random random = new Random();
         int arrValue = 10;
         int[] linerSearchArray = new int[arrValue];
-        int element = 0;
+        int element = linerSearchArray[0];
         for (int i = 0; i < linerSearchArray.length; i++) {
             linerSearchArray[i] = random.nextInt(20);
             System.out.print(linerSearchArray[i] + "\t");// создание и заполнение массива
