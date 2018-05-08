@@ -16,6 +16,7 @@ public class BinarySearchStringUsingMethods {
 
         System.out.println(" ");
 
+        System.out.println("input word you want to find");
         word = inputWord(word);
 
         position = binarySearch(position, word, sortedArray);
