@@ -234,59 +234,83 @@ public class Array {
          пока не будет указано корректное значение.
          */
 
+//        Random random = new Random();
+//        int x;
+//        boolean flag, overZero;
+//        int sumLeft = 0;
+//        int sumRight = 0;
+//
+//        do {
+//            Scanner sc = new Scanner(System.in);
+//            System.out.println("Введите четное положительное число:");
+//            x = sc.nextInt();
+//
+//            if (x > 0) {
+//                overZero = true;
+//            } else {
+//                overZero = false;
+//                System.out.println("Число должно быть больше нуля!");
+//            }
+//
+//            if (x % 2 == 0) {
+//                flag = true;
+//            } else {
+//                flag = false;
+//                System.out.println("Число должно быть четным.");
+//            }
+//        }
+//        while (!(flag && overZero));
+//        int arraySize = x;
+//        int[] randomMass = new int[arraySize];
+//        for (int i = 0; i < randomMass.length; i++) {
+//            randomMass[i] = random.nextInt(11) + (-5);
+//            System.out.print(randomMass[i] + " ");
+//
+//        }
+//        {
+//            System.out.println();
+//        }
+//
+//        for (int i = 0; i < randomMass.length / 2; i++) {
+//            sumLeft += Math.abs(randomMass[i]);
+//
+//        }
+//        for (int j = randomMass.length - 1; j >= randomMass.length / 2; j--) {
+//            sumRight += Math.abs(randomMass[j]);
+//        }
+//        if (sumLeft > sumRight)
+//            System.out.print("Сумма элементов слева больше и = " + sumLeft);
+//        if (sumLeft < sumRight)
+//            System.out.print("\n" + "Сумма элементов справа больше и = " + sumRight);
+//        else
+//            System.out.println("\n" + "Суммы равны");
+
+        /**
+         * 10. В массиве А размером 10х5 определить самые большие значения в каждой строке и среди них – наименьшее значение.
+         */
+
         Random random = new Random();
-        int x;
-        boolean flag, overZero;
-        int sumLeft = 0;
-        int sumRight = 0;
-
-        do {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Введите четное положительное число:");
-            x = sc.nextInt();
-
-            if (x > 0) {
-                overZero = true;
-            } else {
-                overZero = false;
-                System.out.println("Число должно быть больше нуля!");
-            }
-
-            if (x % 2 == 0) {
-                flag = true;
-            } else {
-                flag = false;
-                System.out.println("Число должно быть четным.");
-            }
-        }
-        while (!(flag && overZero));
-        int arraySize = x;
-        int[] randomMass = new int[arraySize];
+        int arrayStirng = 10;
+        int arrayColumn = 5;
+        int[] maxArray = new int[arrayStirng];
+        int[][] randomMass = new int[arrayStirng][arrayColumn];
+        //цикл для создания строки массива
         for (int i = 0; i < randomMass.length; i++) {
-            randomMass[i] = random.nextInt(11) + (-5);
-            System.out.print(randomMass[i] + " ");
-
-        }
-        {
+            //обработка каждого элемента этой строки
+            int max = randomMass[i][0];
+            for (int j = 0; j < randomMass[i].length; j++) {
+                randomMass[i][j] = random.nextInt((1) + 10);
+                System.out.print(randomMass[i][j] + "\t");
+                if (max < randomMass[i][j]) {
+                    max = randomMass[i][j];
+                    maxArray[i] = max;
+                }
+            }
+            System.out.print("\t max:" + max);
             System.out.println();
         }
-
-        for (int i = 0; i < randomMass.length / 2; i++) {
-            sumLeft += Math.abs(randomMass[i]);
-
-        }
-        for (int j = randomMass.length - 1; j >= randomMass.length / 2; j--) {
-            sumRight += Math.abs(randomMass[j]);
-        }
-        if (sumLeft > sumRight)
-            System.out.print("Сумма элементов слева больше и = " + sumLeft);
-        if (sumLeft < sumRight)
-            System.out.print("\n" + "Сумма элементов справа больше и = " + sumRight);
-        else
-            System.out.println("\n" + "Суммы равны");
+        Arrays.sort(maxArray);
+        System.out.print("Минимальное число среди максимальных - " + maxArray[0]);
     }
 }
-
-
-
 
