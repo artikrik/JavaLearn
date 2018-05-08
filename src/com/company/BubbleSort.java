@@ -7,7 +7,7 @@ public class BubbleSort {
             array[i] = (int) (100 * Math.random());
             System.out.print(" " + array[i]);
         }
-        System.out.println(" ");
+        System.out.println("");
 
         for(int i=0; i<array.length; i++){
             for(int j=0; j<array.length-1-i; j++){
