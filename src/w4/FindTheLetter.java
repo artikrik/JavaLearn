@@ -25,6 +25,7 @@ public class FindTheLetter {
         char letterNeedToBeFind = (char) ('a' + new Random().nextInt(26));
         int numberOfAttempts = 0;
         char[] arrayChar = new char[26];
+        boolean states;
         for (int i = 0; i < arrayChar.length; i++) {
             arrayChar[i] = (char) ('a' + i);
         }
@@ -34,7 +35,14 @@ public class FindTheLetter {
 
         for (char i = 0; i < arrayChar.length; i++) {
             char inputLetter = scan.next().charAt(0);
-            numberOfAttempts++;
+
+            states = validationChacking(inputLetter);
+
+            if (states) {
+                numberOfAttempts++;
+            }else {
+                System.out.println("You enter not Latin letter, please try again");
+            }
             if (letterNeedToBeFind == inputLetter) {
                 System.out.println("GREAT you have been found the hidden letter - " + inputLetter);
                 break;
@@ -49,5 +57,13 @@ public class FindTheLetter {
             }
         }
         System.out.println("Number of attempts = " + numberOfAttempts);
+    }
+
+    public static boolean validationChacking(int inputLetter) {
+        boolean states;
+        if (inputLetter >= 97 && inputLetter <= 122 || inputLetter >= 65 && inputLetter <= 90) {
+            states = true;
+        } else states = false;
+        return states;
     }
 }
