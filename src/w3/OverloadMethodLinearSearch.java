@@ -13,7 +13,7 @@ public class OverloadMethodLinearSearch {
         System.out.print(Arrays.toString(randomMass) + "\t");
 
 
-        String word = "heree";
+        String word = "herere";
         String[] str = new String[]{"some", "random", "words", "needs", "to", "be", "here"};
         System.out.println("\n" + Arrays.toString(str));
 
