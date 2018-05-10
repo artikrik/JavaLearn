@@ -19,7 +19,7 @@ public class array10 {
         }
         mas = new int[A.length];
         for (i = 0; i < A.length; i++) {
-            int max = 0;
+            int max = 0;  // Можно обойтись без нее
             for (j = 0; j < A[i].length; j++) {
                 if (A[i][j] > max) {
                     max = A[i][j];
