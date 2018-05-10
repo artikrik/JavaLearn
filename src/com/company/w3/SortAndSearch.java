@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * Сортировка "пузырьком".
+ * 3.3 Сортировка "пузырьком".
  */
 public class SortAndSearch {
     public static void main(String[] args) {
@@ -29,7 +29,7 @@ public class SortAndSearch {
 
 
         /**
-         * Линейный поиск.
+         * 3.1 Линейный поиск.
          */
 
 //        Scanner s = new Scanner(System.in);
@@ -53,7 +53,7 @@ public class SortAndSearch {
 
 
         /**
-         * Линейный поиск String.
+         * 3.4 Линейный поиск String.
          */
 
 //
@@ -70,7 +70,7 @@ public class SortAndSearch {
 //            System.out.println("Буква не найдена");
 
         /**
-         * Сортировка "пузырьком" String.
+         * 3.6 Сортировка "пузырьком" String.
          */
 
 //        char[] arr = {'o', 'd', 'f', 'l', 'a', 'z'};
@@ -88,27 +88,68 @@ public class SortAndSearch {
 
 
         /**
-         * Сортировка "пузырьком" String (метод).
+         * 3.8 Сортировка "пузырьком" String (метод).
          */
 
-        char[] arr = {'o', 'd', 'f', 'l', 'a', 'z', 'h', 't', 'r'};
-        bubbleSort(arr);
+//        char[] arr = {'o', 'd', 'f', 'l', 'a', 'z', 'h', 't', 'r'};
+//        bubbleSort(arr);
+//    }
+//
+//    public static void bubbleSort (char[] arr) {
+//        for (int i = 0; i < arr.length - 1; i++)
+//
+//        { // число итераций прогона для каждого числа
+//            for (int j = arr.length - 1; j > 0 + i; j--) { // прогон одного числа по массиву
+//                if (arr[j] < arr[j - 1]) {
+//                    char tmp = arr[j];
+//                    arr[j] = arr[j - 1];
+//                    arr[j - 1] = tmp;
+//                }
+//            }
+//        }
+//        System.out.println(Arrays.toString(arr));
+
+
+        /**
+         * 3.9 Перегрузка метода линейный поиск int и String.
+         */
+
+        char[] arrChar = {'a', 'd', 'f', 'l', 'o', 'z'};
+        int[] arrInt = {1, 4, 6, 23, 0, 54, 210, 25, 2, 14};
+        int numberToFind = 5;
+        char charToFind = 'a';
+
+        linerSort(arrInt, numberToFind);
+        linerSort(arrChar, charToFind);
+
     }
 
-    public static void bubbleSort (char[] arr) {
-        for (int i = 0; i < arr.length - 1; i++)
 
-        { // число итераций прогона для каждого числа
-            for (int j = arr.length - 1; j > 0 + i; j--) { // прогон одного числа по массиву
-                if (arr[j] < arr[j - 1]) {
-                    char tmp = arr[j];
-                    arr[j] = arr[j - 1];
-                    arr[j - 1] = tmp;
-                }
-            }
+    public static void linerSort(int[] mass, int a) {
+        int element = mass[0];
+        for (int i = 0; i < mass.length; i++) {
+            if (mass[i] == a)
+                element = mass[i];
         }
-        System.out.println(Arrays.toString(arr));
 
+        if (element == a)
+            System.out.println("\nЧисло есть");
+        else
+            System.out.println("\nЧисла нет");
+
+    }
+
+
+    public static void linerSort(char[] mass, char b) {
+        char element = mass[0];
+        for (int i = 0; i < mass.length; i++) {
+            if (mass[i] == b)
+                element = mass[i];
+        }
+        if (element == b)
+            System.out.println("Буква есть");
+        else
+            System.out.println("Буква не найдена");
     }
 }
 
