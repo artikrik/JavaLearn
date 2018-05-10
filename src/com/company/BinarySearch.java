@@ -31,12 +31,12 @@ public class BinarySearch {
         binarySearch(array, first, last, item);
     }
 
-    // бинарный поиск
+
     public static void binarySearch(int[] array, int first, int last, int item) {
         int position;
-        int comparisonCount = 1;    // для подсчета количества сравнений
+        int comparisonCount = 1;
 
-        // для начала найдем индекс среднего элемента массива
+
         position = (first + last) / 2;
 
         while ((array[position] != item) && (first <= last)) {
