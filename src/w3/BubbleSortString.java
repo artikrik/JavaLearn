@@ -7,7 +7,7 @@ public class BubbleSortString {
         Scanner letters = new Scanner(System.in);
         String tempStr;
 
-        System.out.print("ввести строку > ");
+        System.out.print("ввести строку  ");
         String s1 = new String(letters.nextLine());
 
         String[] t1 = s1.split("");
