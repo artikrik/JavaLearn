@@ -37,7 +37,7 @@ public class Find_string_in_methods_binarny_7 {
         if (index > -1) {
             System.out.println(" ");
             System.out.println("індекс шуканого слова= " + index);
-        } else if (index == -1) { // Опять.. разве может index попасть сюда с другими отрицательными значениями?
+        } else {
             System.out.println(" ");
             System.out.println("такого слова нема");
         }
