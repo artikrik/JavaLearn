@@ -73,9 +73,32 @@ public class SortAndSearch {
          * Сортировка "пузырьком" String.
          */
 
-        char[] arr = {'o', 'd', 'f', 'l', 'a', 'z'};
+//        char[] arr = {'o', 'd', 'f', 'l', 'a', 'z'};
+//
+//        for (int i = 0; i < arr.length - 1; i++) { // число итераций прогона для каждого числа
+//            for (int j = arr.length - 1; j > 0 + i; j--) { // прогон одного числа по массиву
+//                if (arr[j] < arr[j - 1]) {
+//                    char tmp = arr[j];
+//                    arr[j] = arr[j - 1];
+//                    arr[j - 1] = tmp;
+//                }
+//            }
+//        }
+//        System.out.println(Arrays.toString(arr));
 
-        for (int i = 0; i < arr.length - 1; i++) { // число итераций прогона для каждого числа
+
+        /**
+         * Сортировка "пузырьком" String (метод).
+         */
+
+        char[] arr = {'o', 'd', 'f', 'l', 'a', 'z', 'h', 't', 'r'};
+        bubbleSort(arr);
+    }
+
+    public static void bubbleSort (char[] arr) {
+        for (int i = 0; i < arr.length - 1; i++)
+
+        { // число итераций прогона для каждого числа
             for (int j = arr.length - 1; j > 0 + i; j--) { // прогон одного числа по массиву
                 if (arr[j] < arr[j - 1]) {
                     char tmp = arr[j];
@@ -85,6 +108,7 @@ public class SortAndSearch {
             }
         }
         System.out.println(Arrays.toString(arr));
+
     }
 }
 
