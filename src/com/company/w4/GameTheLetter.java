@@ -20,7 +20,7 @@ public class GameTheLetter {
 
         if ((!scanner.hasNext("[a-zA-Z]"))) {
             System.out.println("Если желаете продолжить игру, введите любую латинскую букву латинская букву");
-            inputNumber=0;
+            inputNumber = 0;
         } else if (scanner.hasNext("[A-Z]"))
             inputNumber = (char) (scanner.next().charAt(0) + 32); // Букву вводите в строку? Смело. Читайте ниже
         else
