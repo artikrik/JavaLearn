@@ -16,7 +16,7 @@ public class SortAndSearch {
 //            System.out.print(bubbleArray[i] + "\t"); // создание и заполнение массива
 //        }
 //        for (int i = 0; i < bubbleArray.length - 1; i++) { // число итераций прогона для каждого числа
-//            for (int j = bubbleArray.length - 1; j > 0+i; j--) { // прогон одного числа по массиву !!! 0+i что значит?
+//            for (int j = bubbleArray.length - 1; j > 0+i; j--) { // прогон одного числа по массиву
 //                if (bubbleArray[j] < bubbleArray[j - 1]) {
 //                    int tmp = bubbleArray[j];
 //                    bubbleArray[j] = bubbleArray[j - 1];
@@ -56,52 +56,49 @@ public class SortAndSearch {
          * 3.4 Линейный поиск String.
          */
 
-//
-//        char[] arr = {'a', 'd', 'f', 'l', 'o', 'z'}; // работать нужно с массивом данных типа String!
-//        char charToFind = 'a';
-//        char element = arr[0];
-//        for (int i = 0; i < arr.length; i++) {
-//            if (arr[i]==charToFind)
-//                element = arr[i];
-//        }
-//        if (element == charToFind)
-//            System.out.println("Буква есть");
-//        else
-//            System.out.println("Буква не найдена");
+        String[] arrString = {"Сом", "Горбуша", "Лещ", "Плотва", "Окунь", "Форель"};
+        String stringToFind = "Окунь";
+        String element = arrString[0];
+        for (int i = 0; i < arrString.length; i++) {
+            if (arrString[i].equals(stringToFind))
+                element = arrString[i];
+        }
+        if (element == stringToFind)
+            System.out.println("Рыба есть");
+        else
+            System.out.println("Рыбы нет");
 
         /**
          * 3.6 Сортировка "пузырьком" String.
          */
 
-//        char[] arr = {'o', 'd', 'f', 'l', 'a', 'z'};  Аналогично. Работать нужно с String
+//        String[] arrString = {"Сом", "Горбуша", "Лещ", "Плотва", "Окунь", "Форель"};
 //
-//        for (int i = 0; i < arr.length - 1; i++) { // число итераций прогона для каждого числа
-//            for (int j = arr.length - 1; j > 0 + i; j--) { // прогон одного числа по массиву
-//                if (arr[j] < arr[j - 1]) {
-//                    char tmp = arr[j];
-//                    arr[j] = arr[j - 1];
-//                    arr[j - 1] = tmp;
+//        for (int i = 0; i < arrString.length - 1; i++) { // число итераций прогона для каждого числа
+//            for (int j = arrString.length - 1; j > 0 + i; j--) { // прогон одного числа по массиву
+//                if (arrString[j].compareTo(arrString[j - 1]) < 0) {
+//                    String tmp = arrString[j];
+//                    arrString[j] = arrString[j - 1];
+//                    arrString[j - 1] = tmp;
 //                }
 //            }
 //        }
-//        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arrString));
 
 
         /**
          * 3.8 Сортировка "пузырьком" String (метод).
          */
 
-//        char[] arr = {'o', 'd', 'f', 'l', 'a', 'z', 'h', 't', 'r'};
-//        bubbleSort(arr);
+//        String[] arrString = {"Сом", "Горбуша", "Лещ", "Плотва", "Окунь", "Форель"};
+//        bubbleSort(arrString);
 //    }
 //
-//    public static void bubbleSort (char[] arr) {
-//        for (int i = 0; i < arr.length - 1; i++)
-//
-//        { // число итераций прогона для каждого числа
+//    public static void bubbleSort(String[] arr) {
+//        for (int i = 0; i < arr.length - 1; i++) { // число итераций прогона для каждого числа
 //            for (int j = arr.length - 1; j > 0 + i; j--) { // прогон одного числа по массиву
-//                if (arr[j] < arr[j - 1]) {
-//                    char tmp = arr[j];
+//                if (arr[j].compareTo(arr[j - 1]) < 0) {
+//                    String tmp = arr[j];
 //                    arr[j] = arr[j - 1];
 //                    arr[j - 1] = tmp;
 //                }
@@ -114,44 +111,41 @@ public class SortAndSearch {
          * 3.9 Перегрузка метода линейный поиск int и String.
          */
 
-        char[] arrChar = {'a', 'd', 'f', 'l', 'o', 'z'};
-        int[] arrInt = {1, 4, 6, 23, 0, 54, 210, 25, 2, 14};
-        int numberToFind = 5;
-        char charToFind = 'a';
-
-        linerSort(arrInt, numberToFind);
-        linerSort(arrChar, charToFind);
-
-    }
-
-
-    public static void linerSort(int[] mass, int a) {
-        int element = mass[0];
-        for (int i = 0; i < mass.length; i++) {
-            if (mass[i] == a)
-                element = mass[i];
-        }
-
-        if (element == a)
-            System.out.println("\nЧисло есть");
-        else
-            System.out.println("\nЧисла нет");
-
-    }
-
-
-    public static void linerSort(char[] mass, char b) {  // должно быть String[]
-        char element = mass[0];
-        for (int i = 0; i < mass.length; i++) {
-            if (mass[i] == b)
-                element = mass[i];
-        }
-        if (element == b)
-            System.out.println("Буква есть");
-        else
-            System.out.println("Буква не найдена");
+//        String[] arrString = {"Сом", "Горбуша", "Лещ", "Плотва", "Окунь", "Форель"};
+//        int[] arrInt = {1, 4, 6, 23, 0, 54, 210, 25, 2, 14};
+//        int numberToFind = 5;
+//        String stringToFind = "Сом";
+//
+//        linerSort(arrInt, numberToFind);
+//        linerSort(arrString, stringToFind);
+//
+//    }
+//
+//
+//    public static void linerSort(int[] mass, int a) {
+//        int element = mass[0];
+//        for (int i = 0; i < mass.length; i++) {
+//            if (mass[i] == a)
+//                element = mass[i];
+//        }
+//
+//        if (element == a)
+//            System.out.println("\nЧисло есть");
+//        else
+//            System.out.println("\nЧисла нет");
+//
+//    }
+//
+//
+//    public static void linerSort(String[] mass, String b) {
+//        String element = mass[0];
+//        for (int i = 0; i < mass.length; i++) {
+//            if (mass[i].equals(b))
+//                element = mass[i];
+//        }
+//        if (element.equals(b))
+//            System.out.println("Рыба есть");
+//        else
+//            System.out.println("Рыбы нет");
     }
 }
-
-
-
