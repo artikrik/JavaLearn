@@ -6,7 +6,6 @@ import java.util.Random;
 public class BinarySearchNum {
     public static void main(String[] args) {
         int num = 400; // переменная для поиска числа
-
         int[] mass = new int[12];
         Random random = new Random(50);
         for (int i = 0; i < mass.length; i++) {
@@ -16,7 +15,6 @@ public class BinarySearchNum {
     }
 
     static int binarySearch(int[] mass, int num)
-
     {
         Arrays.sort(mass);
         System.out.println(Arrays.toString(mass));
