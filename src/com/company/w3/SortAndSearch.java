@@ -16,7 +16,7 @@ public class SortAndSearch {
 //            System.out.print(bubbleArray[i] + "\t"); // создание и заполнение массива
 //        }
 //        for (int i = 0; i < bubbleArray.length - 1; i++) { // число итераций прогона для каждого числа
-//            for (int j = bubbleArray.length - 1; j > 0+i; j--) { // прогон одного числа по массиву
+//            for (int j = bubbleArray.length - 1; j > 0+i; j--) { // прогон одного числа по массиву !!! 0+i что значит?
 //                if (bubbleArray[j] < bubbleArray[j - 1]) {
 //                    int tmp = bubbleArray[j];
 //                    bubbleArray[j] = bubbleArray[j - 1];
@@ -57,7 +57,7 @@ public class SortAndSearch {
          */
 
 //
-//        char[] arr = {'a', 'd', 'f', 'l', 'o', 'z'};
+//        char[] arr = {'a', 'd', 'f', 'l', 'o', 'z'}; // работать нужно с массивом данных типа String!
 //        char charToFind = 'a';
 //        char element = arr[0];
 //        for (int i = 0; i < arr.length; i++) {
@@ -73,7 +73,7 @@ public class SortAndSearch {
          * 3.6 Сортировка "пузырьком" String.
          */
 
-//        char[] arr = {'o', 'd', 'f', 'l', 'a', 'z'};
+//        char[] arr = {'o', 'd', 'f', 'l', 'a', 'z'};  Аналогично. Работать нужно с String
 //
 //        for (int i = 0; i < arr.length - 1; i++) { // число итераций прогона для каждого числа
 //            for (int j = arr.length - 1; j > 0 + i; j--) { // прогон одного числа по массиву
@@ -140,7 +140,7 @@ public class SortAndSearch {
     }
 
 
-    public static void linerSort(char[] mass, char b) {
+    public static void linerSort(char[] mass, char b) {  // должно быть String[]
         char element = mass[0];
         for (int i = 0; i < mass.length; i++) {
             if (mass[i] == b)
