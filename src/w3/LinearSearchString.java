@@ -17,7 +17,7 @@ public class LinearSearchString {
             System.out.println(" word can not be found. Try again ");
     }
 
-    static boolean komporator(String[] str, String word) {
+    public static boolean komporator(String[] str, String word) {
 
         boolean states = false;
         for (int i = 0; i < str.length; i++) {
