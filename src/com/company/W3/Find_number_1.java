@@ -25,7 +25,7 @@ public class Find_number_1 {
             System.out.println(" ");
             System.out.println("індекс шуканого числа=" + index);
         }
-        else if (index==-1) {  // Нужна ли эта проверка? 
+        else {
             System.out.println(" ");
             System.out.println("такого числа нема");
         }
