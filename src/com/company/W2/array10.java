@@ -5,7 +5,7 @@ import java.util.Random;
 public class array10 {
     public static void main(String[] args) {
         Random r = new Random();
-        int[][] A = new int[3][3];
+        int[][] A = new int[10][5];
         int i;
         int j;
         int[] mas = new int[A.length];
