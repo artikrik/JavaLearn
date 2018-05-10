@@ -28,7 +28,7 @@ public class BinarySearchStringUsingMethods {
 
     public static String[] sortArray(String[] array) {
         String[] sortedArray = new String[array.length];
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {  //Не понял.. Какой смысл array.length раз пересортировывать массив?
             Arrays.sort(array);
             sortedArray = array;
         }
@@ -41,7 +41,7 @@ public class BinarySearchStringUsingMethods {
         return word;
     }
 
-    public static int binarySearch(int position, String word, String[] sortedArray) {
+    public static int binarySearch(int position, String word, String[] sortedArray) {  // зачем принимать int position?
         String index = " ";
         int left = 0;
         int right = sortedArray.length - 1;
