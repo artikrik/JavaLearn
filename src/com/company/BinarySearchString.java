@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 public class BinarySearchString {
     public static void main(String[] args) {
-        //first();
+
         int counter, first, last;
         String item;
         String array[];
