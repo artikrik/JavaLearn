@@ -34,7 +34,7 @@ public class Find_number_and_String_overload_9 {
         for (int i = 0; i < masiv.length; ++i) {
             if (masiv[i].equals(b)) {
                 index=i;
-                System.out.println("його індекс="+i); // Если ответ уже найден, имеет смысл прекратить дальнейший поиск. Я бы после этого поставил return; (даже не break;!) Или Вы хотели вывести все вхождения искомого данного?
+                System.out.println("його індекс="+i); 
             }
         }
         if (index==-1)System.out.println("такого слова нема");
@@ -49,9 +49,9 @@ public class Find_number_and_String_overload_9 {
             }
         if (index>=0) {
             System.out.println(" ");
-            System.out.println("індекс шуканого числа=" + index); // Аналогично
+            System.out.println("індекс шуканого числа=" + index); 
         }
-        else if (index==-1) {
+        else {
             System.out.println(" ");
             System.out.println("такого числа нема");
         }
