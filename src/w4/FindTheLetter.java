@@ -21,13 +21,14 @@ import java.util.Scanner;
 
 public class FindTheLetter {
     public static void main(String[] args) {
+
         Scanner scan = new Scanner(System.in);
         char letterNeedToBeFind = (char) ('a' + new Random().nextInt(26));
         int numberOfAttempts = 0;
-        char[] arrayChar = new char[26];
         boolean states;
+        char[] arrayChar = new char[26];
         for (int i = 0; i < arrayChar.length; i++) {
-            arrayChar[i] = (char) ('a' + i);
+            arrayChar[i] = (char) ('A' + i);
         }
         System.out.println(Arrays.toString(arrayChar));
         System.out.println(letterNeedToBeFind);
@@ -35,6 +36,7 @@ public class FindTheLetter {
 
         for (char i = 0; i < arrayChar.length; i++) {
             char inputLetter = scan.next().charAt(0);
+
 
             states = validationChacking(inputLetter);
 
