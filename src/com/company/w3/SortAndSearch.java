@@ -56,17 +56,17 @@ public class SortAndSearch {
          * 3.4 Линейный поиск String.
          */
 
-        String[] arrString = {"Сом", "Горбуша", "Лещ", "Плотва", "Окунь", "Форель"};
-        String stringToFind = "Окунь";
-        String element = arrString[0];
-        for (int i = 0; i < arrString.length; i++) {
-            if (arrString[i].equals(stringToFind))
-                element = arrString[i];
-        }
-        if (element == stringToFind)
-            System.out.println("Рыба есть");
-        else
-            System.out.println("Рыбы нет");
+//        String[] arrString = {"Сом", "Горбуша", "Лещ", "Плотва", "Окунь", "Форель"};
+//        String stringToFind = "Окунь";
+//        String element = arrString[0];
+//        for (int i = 0; i < arrString.length; i++) {
+//            if (arrString[i].equals(stringToFind))
+//                element = arrString[i];
+//        }
+//        if (element == stringToFind)
+//            System.out.println("Рыба есть");
+//        else
+//            System.out.println("Рыбы нет");
 
         /**
          * 3.6 Сортировка "пузырьком" String.
@@ -147,5 +147,47 @@ public class SortAndSearch {
 //            System.out.println("Рыба есть");
 //        else
 //            System.out.println("Рыбы нет");
+
+
+        /**
+         * 3.10 Перегрузка метода сортировки "пузырёк" int и String.
+         */
+
+        String[] arrString = {"Сом", "Горбуша", "Лещ", "Плотва", "Окунь", "Форель"};
+        int[] arrInt = {1, 4, 6, 23, 0, 54, 210, 25, 2, 14};
+        bubbleSortArray(arrInt);
+        bubbleSortArray(arrString);
+
+    }
+
+    public static void bubbleSortArray(int[] z) {
+
+        for (int i = 0; i < z.length - 1; i++) { // число итераций прогона для каждого числа
+            for (int j = z.length - 1; j > i; j--) { // прогон одного числа по массиву
+                if (z[j] < z[j - 1]) {
+                    int tmp = z[j];
+                    z[j] = z[j - 1];
+                    z[j - 1] = tmp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(z));
+
+    }
+
+    public static void bubbleSortArray(String[] a) {
+
+        for (int i = 0; i < a.length - 1; i++) { // число итераций прогона для каждого числа
+            for (int j = a.length - 1; j > i; j--) { // прогон одного числа по массиву
+                if (a[j].compareTo(a[j - 1]) < 0) {
+                    String tmp = a[j];
+                    a[j] = a[j - 1];
+                    a[j - 1] = tmp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(a));
+
+
     }
 }
