@@ -1,4 +1,4 @@
-package com.company;
+package w3;
 import java.util.Scanner;
 import java.util.Arrays;
 public class BinarySearchString {
