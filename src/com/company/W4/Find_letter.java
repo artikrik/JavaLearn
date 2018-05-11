@@ -25,8 +25,8 @@ public class Find_letter {
         String с = String.valueOf(character);
         do {
             a = scan.next().charAt(0);
-            if (a<65 || a>90){
-                if (a<97||a>122) {
+            if (a<'a' || a>'z'){
+                if (a<'A'||a>'Z') {
                     System.out.println("Кінець, почитайте ше разок правила");
                     break;
                 }
