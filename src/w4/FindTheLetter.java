@@ -23,34 +23,32 @@ public class FindTheLetter {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        char letterNeedToBeFind = (char) ('a' + new Random().nextInt(26));
+        char letterNeedToBeFind = (char) ('A' + new Random().nextInt(26));
         int numberOfAttempts = 0;
         boolean states;
-        char[] arrayChar = new char[26];
+        /*char[] arrayChar = new char[26];
         for (int i = 0; i < arrayChar.length; i++) {
             arrayChar[i] = (char) ('A' + i);
         }
-        System.out.println(Arrays.toString(arrayChar));
-        System.out.println(letterNeedToBeFind);
-        System.out.println("Try to find the hidden letter ?");
+        System.out.println(Arrays.toString(arrayChar));*/
+        System.out.println("Hidden letter - " + letterNeedToBeFind);
+        System.out.println("\nTry to find the hidden letter, you have 5 attempts");
 
-        for (char i = 0; i < arrayChar.length; i++) {
+        for (char i = 0; i < 7; i++) {
             char inputLetter = scan.next().charAt(0);
-
-
+            inputLetter = Character.toUpperCase(inputLetter);
             states = validationChacking(inputLetter);
 
-            if (states) {
-                numberOfAttempts++;
-            }else {
+            numberOfAttempts++;
+            if (!states) {
                 System.out.println("You enter not Latin letter, please try again");
+                continue;
             }
             if (letterNeedToBeFind == inputLetter) {
                 System.out.println("GREAT you have been found the hidden letter - " + inputLetter);
                 break;
             } else {
                 System.out.println("Wrong letter try again");
-
                 if (Character.getNumericValue(letterNeedToBeFind) > Character.getNumericValue(inputLetter)) {
                     System.out.println("You are <Too low!> to hidden letter");
                 } else if (Character.getNumericValue(letterNeedToBeFind) < Character.getNumericValue(inputLetter)) {
@@ -63,9 +61,7 @@ public class FindTheLetter {
 
     public static boolean validationChacking(int inputLetter) {
         boolean states;
-        if (inputLetter >= 97 && inputLetter <= 122 || inputLetter >= 65 && inputLetter <= 90) {
-            states = true;
-        } else states = false;
+        states = Character.isLetter(inputLetter);
         return states;
     }
 }
