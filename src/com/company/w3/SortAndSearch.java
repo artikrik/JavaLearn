@@ -101,28 +101,28 @@ public class SortAndSearch {
          * 3.5 Бинарный поиск String.
          */
 
-        String[] arrString = {"Сом", "Горбуша", "Лещ", "Плотва", "Окунь", "Форель"};
-        String stringToFind = "Горбуша";
-        int last = arrString.length-1;
-        int first = 0;
-        int mid = (last + 1) / 2;
-
-        Arrays.sort(arrString);
-
-        while (arrString[mid] != stringToFind && last != mid && first != mid) {
-            if (arrString[mid].compareTo(stringToFind) < 0) {
-                first = mid;
-                mid = (last + first) / 2;
-            } else {
-                last = mid;
-                mid = (last + first) / 2;
-            }
-        }
-        if (arrString[last].equals(stringToFind))
-            mid = last;
-        if (arrString[first].equals(stringToFind))
-            mid = first;
-        System.out.print(arrString[mid].equals(stringToFind) ? "Слово " + stringToFind + " найдено на позиции " + mid : "Слова нет");
+//        String[] arrString = {"Сом", "Горбуша", "Лещ", "Плотва", "Окунь", "Форель"};
+//        String stringToFind = "Горбуша";
+//        int last = arrString.length-1;
+//        int first = 0;
+//        int mid = (last + 1) / 2;
+//
+//        Arrays.sort(arrString);
+//
+//        while (arrString[mid] != stringToFind && last != mid && first != mid) {
+//            if (arrString[mid].compareTo(stringToFind) < 0) {
+//                first = mid;
+//                mid = (last + first) / 2;
+//            } else {
+//                last = mid;
+//                mid = (last + first) / 2;
+//            }
+//        }
+//        if (arrString[last].equals(stringToFind))
+//            mid = last;
+//        if (arrString[first].equals(stringToFind))
+//            mid = first;
+//        System.out.print(arrString[mid].equals(stringToFind) ? "Слово " + stringToFind + " найдено на позиции " + mid : "Слова нет");
 
 
         /**
@@ -141,6 +141,40 @@ public class SortAndSearch {
 //            }
 //        }
 //        System.out.println(Arrays.toString(arrString));
+
+
+        /**
+         * 3.7 Бинарный поиск String (метод).
+         */
+
+        String[] arrString = {"Сом", "Горбуша", "Лещ", "Плотва", "Окунь", "Форель"};
+        String stringToFind = "Горбуша";
+        binarySearch(arrString, stringToFind);
+
+    }
+
+    public static void binarySearch(String[] arr, String w) {
+        int last = arr.length - 1;
+        int first = 0;
+        int mid = (last + 1) / 2;
+
+        Arrays.sort(arr);
+
+        while (arr[mid] != w && last != mid && first != mid) {
+            if (arr[mid].compareTo(w) < 0) {
+                first = mid;
+                mid = (last + first) / 2;
+            } else {
+                last = mid;
+                mid = (last + first) / 2;
+            }
+        }
+        if (arr[last].equals(w))
+            mid = last;
+        if (arr[first].equals(w))
+            mid = first;
+        System.out.print(arr[mid].equals(w) ? "Слово " + w+ " найдено на позиции " + mid : "Слова нет");
+
 
 
         /**
