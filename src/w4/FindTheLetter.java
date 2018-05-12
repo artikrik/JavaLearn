@@ -23,7 +23,7 @@ public class FindTheLetter {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        char letterNeedToBeFind = (char) ('A' + new Random().nextInt(26));
+        char letterNeedToBeFind = (char) ('A' + new Random().nextInt('Z' - 'A'));
         int numberOfAttempts = 0;
         boolean states;
         /*char[] arrayChar = new char[26];
@@ -32,9 +32,9 @@ public class FindTheLetter {
         }
         System.out.println(Arrays.toString(arrayChar));*/
         System.out.println("Hidden letter - " + letterNeedToBeFind);
-        System.out.println("\nTry to find the hidden letter, you have 5 attempts");
+        System.out.println("\nTry to find the hidden letter");
 
-        for (char i = 0; i < 7; i++) {
+        for (char i = 0; i < letterNeedToBeFind;i++) {
             char inputLetter = scan.next().charAt(0);
             inputLetter = Character.toUpperCase(inputLetter);
             states = validationChacking(inputLetter);
@@ -49,9 +49,9 @@ public class FindTheLetter {
                 break;
             } else {
                 System.out.println("Wrong letter try again");
-                if (Character.getNumericValue(letterNeedToBeFind) > Character.getNumericValue(inputLetter)) {
+                if (letterNeedToBeFind > inputLetter) {
                     System.out.println("You are <Too low!> to hidden letter");
-                } else if (Character.getNumericValue(letterNeedToBeFind) < Character.getNumericValue(inputLetter)) {
+                } else if (letterNeedToBeFind < inputLetter) {
                     System.out.println("You are <Too high!> to hidden letter");
                 }
             }
@@ -60,8 +60,6 @@ public class FindTheLetter {
     }
 
     public static boolean validationChacking(int inputLetter) {
-        boolean states;
-        states = Character.isLetter(inputLetter);
-        return states;
+        return Character.isLetter(inputLetter);
     }
 }
