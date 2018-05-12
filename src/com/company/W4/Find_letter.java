@@ -25,8 +25,8 @@ public class Find_letter {
         String с = String.valueOf(character);
         do {
             a = scan.next().charAt(0);
-            if (a<'a' || a>'z'){
-                if (a<'A'||a>'Z') {
+            if (a<'a' || a>'z'){  // Может стоит Коллатор применить до этой проверки? Тогда и эти условия упростятся? 
+                if (a<'A'||a>'Z') { // это условие можно совместить с предыдущим
                     System.out.println("Кінець, почитайте ше разок правила");
                     break;
                 }
