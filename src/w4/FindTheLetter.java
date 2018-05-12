@@ -23,7 +23,7 @@ public class FindTheLetter {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        char letterNeedToBeFind = (char) ('A' + new Random().nextInt(26));
+        char letterNeedToBeFind = (char) ('A' + new Random().nextInt(26));  // 26 = 'Z' - 'A'. Не лучше ли второй вариант?
         int numberOfAttempts = 0;
         boolean states;
         /*char[] arrayChar = new char[26];
@@ -32,9 +32,9 @@ public class FindTheLetter {
         }
         System.out.println(Arrays.toString(arrayChar));*/
         System.out.println("Hidden letter - " + letterNeedToBeFind);
-        System.out.println("\nTry to find the hidden letter, you have 5 attempts");
+        System.out.println("\nTry to find the hidden letter, you have 5 attempts"); // Почему 5 попыток? "Игра продолжается до выигрыша пользователя."
 
-        for (char i = 0; i < 7; i++) {
+        for (char i = 0; i < 7; i++) {  // Что за чисо 7 и откуда оно взялось?
             char inputLetter = scan.next().charAt(0);
             inputLetter = Character.toUpperCase(inputLetter);
             states = validationChacking(inputLetter);
@@ -49,7 +49,7 @@ public class FindTheLetter {
                 break;
             } else {
                 System.out.println("Wrong letter try again");
-                if (Character.getNumericValue(letterNeedToBeFind) > Character.getNumericValue(inputLetter)) {
+                if (Character.getNumericValue(letterNeedToBeFind) > Character.getNumericValue(inputLetter)) { // не проще letterNeedToBeFind > inputLetter?
                     System.out.println("You are <Too low!> to hidden letter");
                 } else if (Character.getNumericValue(letterNeedToBeFind) < Character.getNumericValue(inputLetter)) {
                     System.out.println("You are <Too high!> to hidden letter");
@@ -59,9 +59,9 @@ public class FindTheLetter {
         System.out.println("Number of attempts = " + numberOfAttempts);
     }
 
-    public static boolean validationChacking(int inputLetter) {
+    public static boolean validationChacking(int inputLetter) {  
         boolean states;
         states = Character.isLetter(inputLetter);
-        return states;
+        return states;  // может проще return Character.isLetter(inputLetter); ? Вместо всего кода метода...
     }
 }
