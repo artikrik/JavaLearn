@@ -10,21 +10,15 @@ public class GameTheLetter {
         Random random = new Random(9);          // генерим букву, которую должен угадать пользователь
         char computerLetter = (char) (random.nextInt('z' - 'a') + 'a');
         int numberOfAttempts = winOrNo(computerLetter); //метод который вызывает метод guessedLetterIsClose до тех пор, пока мы не угадали букву
-        System.out.println("Количество попыток пользователя = " + numberOfAttempts);
+        System.out.print("Количество попыток пользователя = " + numberOfAttempts);
     }
 
     //метод проверка верно введеной букви
-    static char getInputNumber(char computerLetter) {
-        char inputNumber;
+    static char getInputNumber() throws RuntimeException {
         Scanner scanner = new Scanner(System.in);
-
-        if ((!scanner.hasNext("[a-zA-Z]"))) {
-            System.out.println("Если желаете продолжить игру, введите любую латинскую букву латинская букву");
-            inputNumber = 0;
-        } else if (scanner.hasNext("[A-Z]"))
-            inputNumber = (char) (scanner.next().charAt(0) + 32); // Букву вводите в строку? Смело. Читайте ниже
-        else
-            inputNumber = scanner.next().charAt(0); //Пользователь ввел строку. Почему Вы решили анализировать именно ПЕРВУЮ букву?
+        char inputNumber = scanner.next().charAt(0);
+        if (Character.isLetter(inputNumber)) inputNumber=Character.toLowerCase(inputNumber);
+        else throw new RuntimeException("Если желаете продолжить игру, введите любую латинскую букву");
         return inputNumber;
     }
 
@@ -39,13 +33,17 @@ public class GameTheLetter {
         return outValue;
     }
 
-
     static int winOrNo(char computerLetter) {
         int numberOfAttempts = 0;
         String valueOfcompareTwoLetter;
         do {
-            char userLetter = getInputNumber(computerLetter);
-            if ((userLetter < 'a' || userLetter > 'z') && (userLetter < 'A' || userLetter > 'Z')) {
+            char userLetter = 0;
+            try {
+                userLetter = getInputNumber();
+            } catch (RuntimeException e) {
+                System.out.println(e.getMessage());
+            }
+            if (!Character.isLetter(userLetter)) {
                 valueOfcompareTwoLetter = "";
             } else {
                 valueOfcompareTwoLetter = (guessedLetterIsClose(userLetter, computerLetter));
