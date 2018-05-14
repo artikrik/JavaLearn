@@ -31,8 +31,8 @@ public class FindTheLetter {
                 continue;
             }
 
-            if (letterNeedToBeFind == inputLetter) {
-                System.out.println("GREAT you have been found the hidden letter - " + inputLetter);
+            if (letterNeedToBeFind == inputLetter) {  // Зачем это условие, если оно вынесено в for?
+                System.out.println("GREAT you have been found the hidden letter - " + inputLetter); // этот вывод - после цикла?
 
             } else {
                 System.out.println("Wrong letter try again");
