@@ -16,7 +16,7 @@ public class FindTheLetter {
         System.out.println("Hidden letter - " + letterNeedToBeFind);
         System.out.println("\nTry to find the hidden letter");
 
-        for (int i = 0; ; i++) {
+        for (int i = 0; ; i++) { // зачем этот счетчик, если считает numberOfAttempts?
             char inputLetter = scan.next().charAt(0);
             inputLetter = Character.toUpperCase(inputLetter);
             states = validationChacking(inputLetter);
@@ -31,7 +31,7 @@ public class FindTheLetter {
                 continue;
             }
 
-            if (letterNeedToBeFind == inputLetter) {
+            if (letterNeedToBeFind == inputLetter) { // В операторе цикла условие пустое, а тут break...
                 System.out.println("GREAT you have been found the hidden letter - " + inputLetter);
                 break;
             } else {
