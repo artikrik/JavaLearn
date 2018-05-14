@@ -16,11 +16,11 @@ public class BubblesOverload {
                 "Hotel", "X-ray", "Sierra", "Charlie", "Juliett", "Oscar", "Zulu", "Papa", "Golf", "Tango", "Echo", "India", "Kilo"};
         System.out.println(Arrays.toString(stringAlphabet));
 
-        stringAlphabet = Bubbles(stringAlphabet);
+        stringAlphabet = Bubbles(stringAlphabet);  // stringAlphabet будет изменен как параметр. Зачем его возвращать и принимать?
         System.out.print("");
         System.out.println(Arrays.toString(stringAlphabet) + " - отсортированный алфавит");
 
-        intArray = Bubbles(intArray);
+        intArray = Bubbles(intArray); // Аналогично stringAlphabet
         System.out.print("");
         System.out.println(Arrays.toString(intArray) + " - отсортированный массив чисел");
 
@@ -38,7 +38,7 @@ public class BubblesOverload {
             }
         }
 
-        for (int i = 0; i < stringAlphabet.length; i++) {
+        for (int i = 0; i < stringAlphabet.length; i++) {  // Для чего этот пустой цикл?
 
 
         }
