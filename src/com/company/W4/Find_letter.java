@@ -1,5 +1,6 @@
 package com.company.W4;
 
+import java.io.IOException;
 import java.text.Collator;
 import java.util.Random;
 import java.util.Scanner;
@@ -10,9 +11,9 @@ public class Find_letter {
     public static void main(String[] args) {
         Random ran = new Random();
         char symbol = (char) (ran.nextInt(25) + 65);
-        System.out.println(symbol+" для мене");
-        int fail=compare(symbol);
-        System.out.println("кількість ваших спроб "+fail);
+        System.out.println(symbol + " для мене");
+        int fail = compare(symbol);
+        System.out.println("кількість ваших спроб " + fail);
     }
 
     public static int compare(char character) {
@@ -20,32 +21,27 @@ public class Find_letter {
         Collator collator = Collator.getInstance(new java.util.Locale("en", "US"));
         collator.setStrength(Collator.PRIMARY);
         System.out.println("Go!");
-        int fail=0;
+        int fail = 0;
         char a;
         String с = String.valueOf(character);
+        int result = 0;
         do {
             a = scan.next().charAt(0);
-            if (a<'a' || a>'z'){
-                if (a<'A'||a>'Z') {
-                    System.out.println("Кінець, почитайте ше разок правила");
-                    break;
-                }
+            fail += 1;
+            try {
+                if ((a < 'A') || (a > 'Z' && a < 'a') || (a > 'z'))
+                    throw new IOException("Не EN буква!");
+                String b = String.valueOf(a);
+                result = collator.compare(b, с);
+                if (result > 0)
+                    throw new IOException("Дуже високо!");
+                else if (result<0)
+                    throw new IOException("Дуже низько!");
+            } catch (IOException i) {
+                System.out.println(i.getMessage());
             }
-            String b = String.valueOf(a);
-            int result = collator.compare(b, с);
-            if (result ==0){
-                fail += 1;
-                System.out.println("Вітаємо! Ви перемогли!");
-                return fail;
-            }
-            if (result>0) {
-                System.out.println("Дуже високо!");
-                fail += 1;
-            } else {
-                System.out.println("Дуже низько!");
-                fail += 1;
-            }
-        } while (a!=character);
+        } while (result != 0);
+        System.out.println("Ви перемогли!");
         return fail;
     }
 }
