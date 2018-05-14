@@ -24,9 +24,9 @@ public class FindTheLetter {
 
             try {
                 if (!states) {
-                    ArithmeticException ArithmeticException;
-                    ArithmeticException = new ArithmeticException();
-                    throw ArithmeticException;
+                    ArithmeticException arithmeticException;
+                    arithmeticException = new ArithmeticException();
+                    throw arithmeticException;
                 }
             } catch (ArithmeticException e) {
                 System.out.println("You enter not Latin letter, please try again");
