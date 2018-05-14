@@ -16,16 +16,23 @@ public class FindTheLetter {
         System.out.println("Hidden letter - " + letterNeedToBeFind);
         System.out.println("\nTry to find the hidden letter");
 
-        for (int i = 0; ;i++) {
+        for (int i = 0; ; i++) {
             char inputLetter = scan.next().charAt(0);
             inputLetter = Character.toUpperCase(inputLetter);
             states = validationChacking(inputLetter);
-
             numberOfAttempts++;
-            if (!states) {
+
+            try {
+                if (!states) {
+                    ArithmeticException ArithmeticException;
+                    ArithmeticException = new ArithmeticException();
+                    throw ArithmeticException;
+                }
+            } catch (ArithmeticException e) {
                 System.out.println("You enter not Latin letter, please try again");
                 continue;
             }
+
             if (letterNeedToBeFind == inputLetter) {
                 System.out.println("GREAT you have been found the hidden letter - " + inputLetter);
                 break;
