@@ -10,12 +10,12 @@ public class BubbleSortMethods {
                 "Hotel", "X-ray", "Sierra", "Charlie", "Juliett", "Oscar", "Zulu", "Papa", "Golf", "Tango", "Echo", "India", "Kilo"};
         System.out.println(Arrays.toString(alphabet));
 
-        alphabet = Bubbles(alphabet);
+        Bubbles(alphabet);
         System.out.print("");
         System.out.println(Arrays.toString(alphabet) + " - отсортированный массив");
     }
 
-    public static String[] Bubbles(String[] alphabet) { // зачем возвращать массив? все равно параметр alphabet будет изменен
+    public static void Bubbles(String[] alphabet) { // зачем возвращать массив? все равно параметр alphabet будет изменен
         String tempStr;
         for (int t = 0; t < alphabet.length - 1; t++) {
             for (int i = 0; i < alphabet.length - t - 1; i++) {
@@ -26,14 +26,6 @@ public class BubbleSortMethods {
                 }
             }
         }
-
-        for (int i = 0; i < alphabet.length; i++) {  // зачем этот цикл?
-
-
-
-        }return alphabet;
     }
-
-
 }
 
