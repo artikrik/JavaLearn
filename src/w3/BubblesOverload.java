@@ -20,7 +20,7 @@ public class BubblesOverload {
         System.out.print(" ");
         System.out.println(Arrays.toString(stringAlphabet) + " - отсортированный алфавит");
 
-        intArray = Bubbles(intArray);
+        Bubbles(intArray);
         System.out.print(" ");
         System.out.println(Arrays.toString(intArray) + " - отсортированный массив чисел");
 
