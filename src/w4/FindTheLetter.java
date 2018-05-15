@@ -29,12 +29,19 @@ public class FindTheLetter {
                 System.out.println("You enter not Latin letter, please try again");
                 continue;
             }
-            if (letterNeedToBeFind > inputLetter) {
-                System.out.println("Wrong letter try again");
-                System.out.println("You are <Too low!> to hidden letter");
-            } else if (letterNeedToBeFind < inputLetter) {
-                System.out.println("Wrong letter try again");
-                System.out.println("You are <Too high!> to hidden letter");
+            try {
+                if (letterNeedToBeFind > inputLetter) {
+                    throw new IllegalArgumentException();
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println("You are <Too low!> to hidden letter\nWrong letter try again");
+            }
+            try {
+                if (letterNeedToBeFind < inputLetter) {
+                   throw new IllegalArgumentException();
+                }
+            }catch (IllegalArgumentException e) {
+                System.out.println("You are <Too high!> to hidden letter\nWrong letter try again");
             }
         }
         System.out.println("GREAT you have been found the hidden letter - " + inputLetter);
