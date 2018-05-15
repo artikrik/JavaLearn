@@ -16,15 +16,13 @@ public class BubblesOverload {
                 "Hotel", "X-ray", "Sierra", "Charlie", "Juliett", "Oscar", "Zulu", "Papa", "Golf", "Tango", "Echo", "India", "Kilo"};
         System.out.println(Arrays.toString(stringAlphabet));
 
-        Bubbles(stringAlphabet);
+        stringAlphabet = Bubbles(stringAlphabet);
         System.out.print("");
         System.out.println(Arrays.toString(stringAlphabet) + " - отсортированный алфавит");
 
-        Bubbles(intArray);
+        intArray = Bubbles(intArray);
         System.out.print("");
         System.out.println(Arrays.toString(intArray) + " - отсортированный массив чисел");
-
-
 
     }
 
@@ -40,7 +38,10 @@ public class BubblesOverload {
             }
         }
 
+        for (int i = 0; i < stringAlphabet.length; i++) {
 
+
+        }
         return stringAlphabet;
     }
 

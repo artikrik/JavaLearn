@@ -15,7 +15,7 @@ public class BubbleSortMethods {
         System.out.println(Arrays.toString(alphabet) + " - отсортированный массив");
     }
 
-    public static String[] Bubbles(String[] alphabet) {
+    public static String[] Bubbles(String[] alphabet) { // зачем возвращать массив? все равно параметр alphabet будет изменен
         String tempStr;
         for (int t = 0; t < alphabet.length - 1; t++) {
             for (int i = 0; i < alphabet.length - t - 1; i++) {
@@ -27,7 +27,7 @@ public class BubbleSortMethods {
             }
         }
 
-        for (int i = 0; i < alphabet.length; i++) {
+        for (int i = 0; i < alphabet.length; i++) {  // зачем этот цикл?
 
 
 
