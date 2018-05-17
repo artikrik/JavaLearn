@@ -20,6 +20,7 @@ public class GuessLetter {
         int asciiUserLetter;
         int otherSymbols;
         boolean b;
+        int counter = 0;
 
         do {
             //программа ожидает ввода с клавиатуры
@@ -61,8 +62,9 @@ public class GuessLetter {
             } catch (ArithmeticException n) {
                 System.out.println("Холодно. Недолёт!");
             }
+            counter++;
         }
         while (programLetter != userLetter);
-        System.out.println("Вы угадали букву " + userLetter + "!" + " Поздравляем!");
+        System.out.println("Вы угадали букву " + userLetter + " за " + counter + " попыток " + "!" + " Поздравляем!");
     }
 }
