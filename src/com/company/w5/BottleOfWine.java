@@ -59,7 +59,7 @@ public class BottleOfWine {
     }
 
     public int dateOfEndurance() {
-        GregorianCalendar currentYear = new GregorianCalendar();
+        GregorianCalendar currentYear = new GregorianCalendar(); // тогда зачем этот объект?
         return new GregorianCalendar().get(Calendar.YEAR) - year;
     }
 
