@@ -31,17 +31,17 @@ public class FindTheLetter {
             }
             try {
                 if (letterNeedToBeFind > inputLetter) {
-                    throw new IllegalArgumentException();
+                    throw new IllegalArgumentException("You are <Too low!> to hidden letter\nWrong letter try again");
                 }
             } catch (IllegalArgumentException e) {
-                System.out.println("You are <Too low!> to hidden letter\nWrong letter try again");
+                System.out.println(e.getMessage());
             }
             try {
                 if (letterNeedToBeFind < inputLetter) {
-                   throw new IllegalArgumentException();
+                   throw new IllegalArgumentException("You are <Too high!> to hidden letter\nWrong letter try again");
                 }
-            }catch (IllegalArgumentException e) {
-                System.out.println("You are <Too high!> to hidden letter\nWrong letter try again");
+            }catch (IllegalArgumentException w) {
+                System.out.println(w.getMessage());
             }
         }
         System.out.println("GREAT you have been found the hidden letter - " + inputLetter);
