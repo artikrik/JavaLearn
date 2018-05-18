@@ -21,7 +21,7 @@ public class GuessLetter {
         return transformSmallToCapitalLetter(symbol);
     }
 
-    private static char transformSmallToCapitalLetter(char symbol) {
+    private static char transformSmallToCapitalLetter(char symbol) {  // Стоит ли писать то, что есть в языке?
         if(symbol >= 'a' && symbol <= 'z')
             return (char)(symbol - ('a' - 'A'));
         else {
@@ -30,13 +30,13 @@ public class GuessLetter {
     }
 
     private static char systemSetsLetter() {
-        int intSystemsLetter = 65 + new Random().nextInt(26);
+        int intSystemsLetter = 65 + new Random().nextInt(26);  // магические числа
         return (char)intSystemsLetter;
     }
 
     private static void compareSymbols() {
         char usersLetter = userSetsLetter();
-        while(systemsLetter == '\u0000') {
+        while(systemsLetter == '\u0000') {   // какова цель этого цикла?
             systemsLetter = systemSetsLetter();
         }
         compareSymbolsMechanism(usersLetter, systemsLetter);
@@ -45,7 +45,7 @@ public class GuessLetter {
     private static void compareSymbolsMechanism(char usersLetter, int systemsLetter) {
         if(usersLetter == systemsLetter) {
             guessedMessage();
-            attemptsCounter();
+            attemptsCounter(); // зачем дублировать вызов эотого метода?
             printMessage("Количество попыток " + counter);
         }
         else if(usersLetter < systemsLetter) {
