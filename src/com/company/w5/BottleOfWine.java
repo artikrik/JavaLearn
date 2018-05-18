@@ -60,8 +60,7 @@ public class BottleOfWine {
 
     public int dateOfEndurance() {
         GregorianCalendar currentYear = new GregorianCalendar();
-        int dateOfEndurance = currentYear.get(Calendar.YEAR) - year;
-        return dateOfEndurance; //  это-же можно сделать одним опратором через анаонимый объект->:  return new GregorianCalendar().get(Calendar.YEAR) - year;
+        return new GregorianCalendar().get(Calendar.YEAR) - year;
     }
 
 }
