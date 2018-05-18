@@ -7,7 +7,7 @@ public class BottleOfWine {
     private String name;
     private String country;
     private String sweetnessOfWine;
-    private int year;
+    private int year;  // Использовать дату в формате: число месяц год (Data). И в методе используем только год
     private double bottleCapacity;
 
     public BottleOfWine(String name, String country, String sweetnessOfWine, int year, double bottleCapacity) {
