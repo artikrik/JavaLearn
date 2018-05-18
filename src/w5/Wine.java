@@ -12,7 +12,7 @@ public class Wine {
     Calendar now = Calendar.getInstance();
     int currentYear = now.get(Calendar.YEAR);
 
-    public String setName(String name1) {
+    public String setName(String name1) { 
         name = name1;
         return name;
     }
@@ -33,6 +33,6 @@ public class Wine {
     public int getWineExtract() {
         int extract;
         extract = currentYear - yearOfBottling;
-        return extract;
+        return extract;  // return currentYear - yearOfBottling; не проще так?
     }
 }
