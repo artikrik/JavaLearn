@@ -1,20 +1,23 @@
 package com.company.w5;
 
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class BottleOfWine {
     private String name;
     private String country;
     private String sweetnessOfWine;
-    private int year;  // Использовать дату в формате: число месяц год (Data). И в методе используем только год
+    private String dateOfEndurance;
     private double bottleCapacity;
 
-    public BottleOfWine(String name, String country, String sweetnessOfWine, int year, double bottleCapacity) {
+    public BottleOfWine(String name, String country, String sweetnessOfWine, String dateOfEndurance, double bottleCapacity) {
         setCountry(country);
         setName(name);
         setSweetnessOfWine(sweetnessOfWine);
-        setYear(year);
+        setDateOfEndurance(dateOfEndurance);
         setBottleCapacity(bottleCapacity);
     }
 
@@ -42,12 +45,12 @@ public class BottleOfWine {
         this.sweetnessOfWine = sweetnessOfWine;
     }
 
-    public int getYear() {
-        return year;
+    public Serializable getDateOfEndurance() {
+        return dateOfEndurance;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setDateOfEndurance(String dateOfEndurance) {
+        this.dateOfEndurance = dateOfEndurance;
     }
 
     public double getBottleCapacity() {
@@ -58,8 +61,17 @@ public class BottleOfWine {
         this.bottleCapacity = bottleCapacity;
     }
 
-    public int dateOfEndurance() {
-        return new GregorianCalendar().get(Calendar.YEAR) - year;
+    public long dateOfEndurance() throws Exception {
+        if (dateOfEndurance.isEmpty()) throw new Exception("Не указана дата розлива вина");
+        Calendar dateBirthOfWine = new GregorianCalendar();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+        try {
+            Date date = sdf.parse(dateOfEndurance);
+            dateBirthOfWine.setTime(date);
+        } catch (Exception e) {
+            System.out.println("Correct data format: \"dd.MM.yyyy\"");
+            throw new Exception(e.getMessage());
+        }
+        return new GregorianCalendar().get(Calendar.YEAR) - dateBirthOfWine.get(Calendar.YEAR);
     }
-
 }
