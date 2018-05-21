@@ -8,8 +8,8 @@ public class Wine {
 
     private String name;
     private String country;
-    GregorianCalendar dateRozlivu;
-    private int rikRozlivu;
+    GregorianCalendar dateRozlivu; // имена стоит придумывать на английском
+    private int rikRozlivu; // имена стоит придумывать на английском. И зачем нужно это поле? Не дублироет оно дату?
 
     public Wine(String name, String country, GregorianCalendar dateRozlivu) {
         setName(name);
@@ -23,7 +23,7 @@ public class Wine {
         int vytrymkaV = localD - rikRozlivu;
         if (vytrymkaV > 0) {
             return vytrymkaV;
-        } else return 0;
+        } else return 0;  // Это - исключение?
     }
 
 
@@ -49,7 +49,7 @@ public class Wine {
         return country;
     }
 
-    public int getDateRozlivu() {
+    public int getDateRozlivu() { // метод возвращает год, а не дату
         return rikRozlivu;
     }
 }
