@@ -1,4 +1,4 @@
-package com.company.w5;
+package com.company.w5.Car;
 
 public class Car {
     private int yearModel;

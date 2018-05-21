@@ -1,11 +1,13 @@
-package com.company.w5;
+package com.company.w5.Wine;
+
+import java.util.GregorianCalendar;
 
 public class WineCatalog {
     public static void main(String[] args) {
-        BottleOfWine bottle1 = new BottleOfWine("Vinedos", "Spain", "dry", "19.05.2000", 0.75);
+        Wine bottle1 = new Wine("Vinedos", "Spain", "dry", new GregorianCalendar(2000,5,17), 0.75);
         long date = -1;
         try {
-            date = bottle1.dateOfEndurance();
+            date = bottle1.periodOfWineHolding();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
