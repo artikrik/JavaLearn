@@ -10,7 +10,7 @@ public class BottleOfWine {
     private String name;
     private String country;
     private String sweetnessOfWine;
-    private String dateOfEndurance;
+    private String dateOfEndurance; // Сделав дату строкой, заложели проблему
     private double bottleCapacity;
 
     public BottleOfWine(String name, String country, String sweetnessOfWine, String dateOfEndurance, double bottleCapacity) {
@@ -61,12 +61,12 @@ public class BottleOfWine {
         this.bottleCapacity = bottleCapacity;
     }
 
-    public long dateOfEndurance() throws Exception {
+    public long dateOfEndurance() throws Exception { // странное название метода. Не понятно, что он делает
         if (dateOfEndurance.isEmpty()) throw new Exception("Не указана дата розлива вина");
         Calendar dateBirthOfWine = new GregorianCalendar();
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
         try {
-            Date date = sdf.parse(dateOfEndurance);
+            Date date = sdf.parse(dateOfEndurance); // Вот проблема. Корректность ввода даты имеет смысл в сеттере обеспечить. 
             dateBirthOfWine.setTime(date);
         } catch (Exception e) {
             System.out.println("Correct data format: \"dd.MM.yyyy\"");
