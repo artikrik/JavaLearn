@@ -10,7 +10,7 @@ public class BottleOfWine {
     private String name;
     private String country;
     private String sweetnessOfWine;
-    private String dateOfEndurance; // Сделав дату строкой, заложели проблему
+    private String dateOfEndurance; // Сделав дату строкой, заложили проблему
     private double bottleCapacity;
 
     public BottleOfWine(String name, String country, String sweetnessOfWine, String dateOfEndurance, double bottleCapacity) {
