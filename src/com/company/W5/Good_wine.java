@@ -6,7 +6,7 @@ public class Good_wine {
     public static void main(String[] args) {
 
         Wine wine1 = new Wine("Red flower", "France", new GregorianCalendar(2010, 11, 12));
-        Wine wine2 = new Wine("Red", "France", new GregorianCalendar(2002, 1, 12));
+        Wine wine2 = new Wine("Red", "France", new GregorianCalendar(2004, 1, 12));
 
         System.out.println("Витримка wine1 " + wine1.endurance() + " років");
         System.out.println("Витримка wine2 " + wine2.endurance() + " років");
