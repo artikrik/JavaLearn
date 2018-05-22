@@ -8,21 +8,22 @@ public class Wine {
 
     private String name;
     private String country;
-    GregorianCalendar dateRozlivu;
-    private int rikRozlivu;
+    GregorianCalendar dateBottling;
 
-    public Wine(String name, String country, GregorianCalendar dateRozlivu) {
+
+    public Wine(String name, String country, GregorianCalendar dateBottling) {
         setName(name);
         setCountry(country);
-        setDateRozlivu(dateRozlivu);
+        setdateBottling(dateBottling);
     }
 
-    public int vytrymka() {
+    public int endurance() {
         LocalDate localDate = LocalDate.now();
         int localD = localDate.getYear();
-        int vytrymkaV = localD - rikRozlivu;
-        if (vytrymkaV > 0) {
-            return vytrymkaV;
+        int yearBottling = dateBottling.get(Calendar.YEAR);
+        int enduranceV = localD - yearBottling;
+        if (enduranceV > 0) {
+            return enduranceV;
         } else return 0;
     }
 
@@ -35,9 +36,9 @@ public class Wine {
         this.country = country;
     }
 
-    public void setDateRozlivu(GregorianCalendar dateRozlivu) {
-        this.dateRozlivu = dateRozlivu;
-        rikRozlivu = dateRozlivu.get(Calendar.YEAR);
+    public void setdateBottling(GregorianCalendar dateBottling) {
+        this.dateBottling = dateBottling;
+
     }
 
 
@@ -49,9 +50,10 @@ public class Wine {
         return country;
     }
 
-    public int getDateRozlivu() {
-        return rikRozlivu;
+    public int getYearBottling(){
+        return dateBottling.get(Calendar.YEAR);
     }
+
 }
 
 // для себе
