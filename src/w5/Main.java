@@ -10,30 +10,21 @@
 
 package w5;
 
-public class WineCatalog {
+import java.util.GregorianCalendar;
+
+import com.sun.org.apache.xpath.internal.operations.String;
+
+public class Main {
 
     public static void main(String[] args) {
 
-        Wine drink1 = new Wine();
-        drink1.setName("Shabodun");
-        drink1.setCountry("France");
-        drink1.setYearOfBottling(2000);
-        drink1.getWineExtract();
+        Wine wine1 = new Wine();
+        wine1.setName ("Swabo");
 
-        Wine drink2 = new Wine();
-        drink2.setName("Bulbon");
-        drink2.setCountry("Greece");
-        drink2.setYearOfBottling(1985);
-        drink2.getWineExtract();
+        Wine wine2 = new Wine();
 
-        Wine drink3 = new Wine();
-        drink3.setName("Cruton");
-        drink3.setCountry("Crimea");
-        drink3.setYearOfBottling(2010);
-        drink3.getWineExtract();
+        Wine wine3 = new Wine();
 
-        System.out.println(
-                "Name- " + drink1.setName("Shabodun") + "\nCountry- " + drink1.setCountry("France") + "\nYear of Bottling- " + drink1.setYearOfBottling(2000)
-                        + "\nWine extract- " + drink1.getWineExtract() + " years");
+        System.out.println(wine1);
     }
 }

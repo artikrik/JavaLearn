@@ -49,6 +49,7 @@ public class FindTheLetter {
     }
 
     public static boolean validationChacking(int inputLetter) {
+
         return Character.isLetter(inputLetter);
     }
 }
