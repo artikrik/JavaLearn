@@ -1,16 +1,12 @@
 package w5;
 
-
-import java.util.Calendar;
 import java.util.GregorianCalendar;
-
-import static java.util.Calendar.*;
-
 
 public class Wine {
     private String name;
     private String country;
     private GregorianCalendar dateOfBottling;
+    GregorianCalendar gregorianCalendar = new GregorianCalendar();
 
     public Wine(String name, String country, GregorianCalendar dateOfBottling) {
         setName(name);
@@ -32,9 +28,8 @@ public class Wine {
     }
 
     public int wineExtract() {
-        return dateOfBottling.get(Calendar.DATE) - new GregorianCalendar().get(DATE);
+        return new GregorianCalendar().get(GregorianCalendar.YEAR) - dateOfBottling.get(GregorianCalendar.YEAR);
     }
-
 
     public String toString() {
         return "Name - " + name + "\nCountry -  " + country + "\nWine extract " + wineExtract() + " years";
