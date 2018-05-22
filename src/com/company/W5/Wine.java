@@ -18,10 +18,10 @@ public class Wine {
     }
 
     public int endurance() {
-        LocalDate localDate = LocalDate.now(); // этот и следующие 3 оператора можно заменить на комментарий в 24 строке
+        LocalDate localDate = LocalDate.now();
         int localD = localDate.getYear();
         int yearBottling = dateBottling.get(Calendar.YEAR);
-        int enduranceV = localD - yearBottling; //        int enduranceV = LocalDate.now().getYear() - dateBottling.get(Calendar.YEAR);
+        int enduranceV = localD - yearBottling;
         if (enduranceV > 0) {
             return enduranceV;
         } else return 0;
