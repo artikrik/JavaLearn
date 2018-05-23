@@ -21,27 +21,15 @@ public class Main {
 
 
         Car car = new Car(2000, "BMV");
-        int carAcceleration;
-        int carBraking;
+
         for (int i = 0; i < 5; i++) {
-            car.speed = acceleration(car.speed);
-            carAcceleration = car.speed;
-            System.out.print(carAcceleration + " ");
+            System.out.print(car.carAcceleration() + " ");
         }
+
         System.out.println(" ");
 
         for (int i = 0; i < 5; i++) {
-            car.speed = carBraking(car.speed);
-            carBraking = car.speed;
-            System.out.print(carBraking + " ");
+            System.out.print(car.carBraking() + " ");
         }
-    }
-
-    public static int acceleration(int carAcceleration) {
-        return carAcceleration += 5;
-    }
-
-    public static int carBraking(int carBraking) {
-        return carBraking -= 5;
     }
 }
