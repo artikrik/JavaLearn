@@ -1,44 +1,22 @@
 package w5;
 
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Wine {
     private String name;
     private String country;
-    private GregorianCalendar dateOfBottling;
+    private LocalDate localDate;
 
 
-    public Wine(String name, String country, GregorianCalendar dateOfBottling) {
-        setName(name);
-        setCountry(country);
-        setDateOfBottling(dateOfBottling);
-    }
-
-    public void setName(String name) {
+    public Wine(String name, String country, LocalDate localDate) {
         this.name = name;
-    }
-
-    public void setCountry(String country) {
         this.country = country;
+        this.localDate = localDate;
     }
 
-    public void setDateOfBottling(GregorianCalendar dateOfBottling) {
-        this.dateOfBottling = dateOfBottling;
-    }
-    public String getName(){
-        return name;
-    }
-
-    public String getCountry(){
-        return country;
-    }
-
-    public GregorianCalendar getDateOfBottling (){
-        return dateOfBottling;
-    }
-
-    int wineExtract() {
-        return new GregorianCalendar().get(GregorianCalendar.YEAR) - dateOfBottling.get(GregorianCalendar.YEAR);
+    long wineExtract() {
+        return ChronoUnit.YEARS.between(localDate, LocalDate.now());
     }
 
     public String toString() {
