@@ -1,4 +1,4 @@
-package w5;
+package w5_0;
 
 import java.util.GregorianCalendar;
 
@@ -14,7 +14,6 @@ public class Wine {
         setDateOfBottling(dateOfBottling);
     }
 
-
     public void setName(String name) {
         this.name = name;
     }
@@ -26,8 +25,19 @@ public class Wine {
     public void setDateOfBottling(GregorianCalendar dateOfBottling) {
         this.dateOfBottling = dateOfBottling;
     }
+    public String getName(){
+        return name;
+    }
 
-    public int wineExtract() {
+    public String getCountry(){
+        return country;
+    }
+
+    public GregorianCalendar getDateOfBottling (){
+        return dateOfBottling;
+    }
+
+    int wineExtract() {
         return new GregorianCalendar().get(GregorianCalendar.YEAR) - dateOfBottling.get(GregorianCalendar.YEAR);
     }
 
