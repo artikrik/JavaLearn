@@ -63,8 +63,6 @@ public class Wine {
         return new GregorianCalendar().get(Calendar.YEAR) - dateOfEndurance.get(Calendar.YEAR);
     }
 
-
-
     @Override
     public String toString() {
         return "Wine{" +
