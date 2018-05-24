@@ -37,11 +37,11 @@ public class Car {
     }
 
     protected void acceleration() {
-            speed += 5;
+        speed += 5;
     }
 
     protected void breaking() {
-            speed -= 5;
+        speed -= 5;
     }
 
 
