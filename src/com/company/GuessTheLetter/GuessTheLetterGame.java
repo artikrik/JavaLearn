@@ -31,22 +31,22 @@ public class GuessTheLetterGame {
                     throw new ArithmeticException();
                 }
             } catch (ArithmeticException a) {
-                System.out.println("Вы ввели не верный символ. Перечитайте вниметельно правила игры!");
+                System.out.println("Вы ввели не верный символ. Перечитайте внимательно правила игры!");
             }
             try {
                 if (usersInputLetter < computersLetter) {
                     throw new IllegalArgumentException("Ваша буква на порядок меньше загаданой," +
                                                                " попробуйте ещё");
                 }
-            } catch (IllegalArgumentException a){
+            } catch (IllegalArgumentException a) {
                 System.out.println(a.getMessage());
             }
             try {
                 if (usersInputLetter > computersLetter) {
-                    throw new IllegalArgumentException("ваша буква на порядок больше загаданной," +
+                    throw new IllegalArgumentException("Ваша буква на порядок больше загаданной," +
                                                                " попробуйте ещё");
                 }
-            } catch (IllegalArgumentException b){
+            } catch (IllegalArgumentException b) {
                 System.out.println(b.getMessage());
             }
         }
