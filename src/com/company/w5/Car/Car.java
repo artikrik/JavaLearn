@@ -4,6 +4,7 @@ public class Car {
     private int yearModel;
     private String make;
     private int speed;
+    private int numberOfrepetion;
 
     public Car(int yearModel, String make) {
         setYearModel(yearModel);
@@ -36,18 +37,24 @@ public class Car {
     }
 
     protected void acceleration() {
-        speed += 5;
-        System.out.println(toString());
+            speed += 5;
     }
 
     protected void breaking() {
-        speed -= 5;
-        System.out.println(toString());
+            speed -= 5;
     }
 
 
     @Override
     public String toString() {
         return "Car{" + "speed=" + speed + '}';
+    }
+
+    public int getNumberOfrepetion() {
+        return numberOfrepetion;
+    }
+
+    public void setNumberOfrepetion(int numberOfrepetion) {
+        this.numberOfrepetion = numberOfrepetion;
     }
 }
