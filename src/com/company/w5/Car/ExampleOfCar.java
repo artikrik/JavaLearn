@@ -10,7 +10,7 @@ public class ExampleOfCar {
             System.out.println(car1.getSpeed());
         }
         for (int i = 0; i <car1.getNumberOfrepetion(); i++) {
-            car1.breaking();;
+            car1.breaking();
             System.out.println(car1.getSpeed());
         }
 
