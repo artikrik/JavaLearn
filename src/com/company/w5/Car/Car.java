@@ -36,14 +36,10 @@ public class Car {
         this.speed = speed;
     }
 
-    protected void acceleration() {
-        speed += 5;
+    protected void action(char action){
+        if(action=='+') speed += 5;
+        else if (action=='-') speed -= 5;
     }
-
-    protected void breaking() {
-        speed -= 5;
-    }
-
 
     @Override
     public String toString() {

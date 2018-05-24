@@ -6,11 +6,11 @@ public class ExampleOfCar {
         car1.setNumberOfrepetion(5);
 
         for (int i = 0; i < car1.getNumberOfrepetion(); i++) {
-            car1.acceleration();
+            car1.action('+');
             System.out.println(car1.getSpeed());
         }
         for (int i = 0; i < car1.getNumberOfrepetion(); i++) {
-            car1.breaking();
+            car1.action('-');
             System.out.println(car1.getSpeed());
         }
 
