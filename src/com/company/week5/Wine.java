@@ -3,13 +3,14 @@ package com.company.week5;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 
 public class Wine {
     private String name;
     private String country;
     private LocalDate dateOfProduction;
 
-    public Wine (String name, String country, LocalDate dateOfProduction) {
+    public Wine(String name, String country, LocalDate dateOfProduction) {
         setName(name);
         setCountry(country);
         setDateOfProduction(dateOfProduction);
@@ -39,11 +40,11 @@ public class Wine {
         return dateOfProduction;
     }
 
-    public int calculateAgeingOfWine () {
-        return Period.between(dateOfProduction,LocalDate.now()).getYears();
+    public int calculateAgeingOfWine() {
+        return Period.between(dateOfProduction, LocalDate.now()).getYears();
     }
 
-    public String getDateString (LocalDate dateOfProduction) {
+    public String getDateString(LocalDate dateOfProduction) {
         return dateOfProduction.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
     }
 
@@ -55,4 +56,14 @@ public class Wine {
                 ", dateOfProduction=" + getDateString(dateOfProduction) +
                 '}';
     }
+
+    public static Comparator<Wine> WineDateProdComparator = new Comparator<Wine>() {
+        @Override
+        public int compare(Wine o1, Wine o2) {
+            int ageing1 = o1.calculateAgeingOfWine();
+            int ageing2 = o2.calculateAgeingOfWine();
+            return ageing1 - ageing2;
+        }
+    };
 }
+
