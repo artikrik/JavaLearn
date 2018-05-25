@@ -12,7 +12,7 @@ public class Task1 {
 
         System.out.println("");
         for (int i = array.length - 1; i >= 0; i--) {
-            array[i] = i * 2 + 1;
+            array[i] = i * 2 + 1; // зачем при выводе опять иннициализация?
             System.out.print(array[i] + " ");
         }
     }
