@@ -26,7 +26,7 @@ public class GuessTheLetterGame {
             usersInputLetter = Character.toUpperCase(usersInputLetter);
             correctionCheck = isLetterCheck(usersInputLetter);
 
-            try {
+            try {  // сведите все try в один с перегрузкой catch
                 if (!correctionCheck) {
                     throw new ArithmeticException();
                 }
