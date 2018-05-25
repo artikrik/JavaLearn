@@ -65,12 +65,6 @@ public class Wine {
 
     @Override
     public String toString() {
-        return "Wine{" +
-                "name='" + name + '\'' +
-                ", country='" + country + '\'' +
-                ", sweetnessOfWine='" + sweetnessOfWine + '\'' +
-                ", dateOfEndurance=" + dateOfEndurance.get(Calendar.YEAR) +
-                ", bottleCapacity=" + bottleCapacity +
-                '}';
+        return  name;
     }
 }

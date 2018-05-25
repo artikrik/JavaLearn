@@ -46,11 +46,11 @@ public class Car {
         return "Car{" + "speed=" + speed + '}';
     }
 
-    public int getNumberOfrepetion() {
+    public int getNumberOfRepetion() {
         return numberOfrepetion;
     }
 
-    public void setNumberOfrepetion(int numberOfrepetion) {
+    public void setNumberOfRepetion(int numberOfrepetion) {
         this.numberOfrepetion = numberOfrepetion;
     }
 }

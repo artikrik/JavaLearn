@@ -7,14 +7,17 @@ import java.util.GregorianCalendar;
 public class CatalogOfWine {
 
     public static void main(String[] args) {
-        Wine bottleVinedos = new Wine("Vinedos", "Spain", "dry", new GregorianCalendar(2017, 5, 10), 0.75);
-        Wine donnafugata = new Wine("Donnafugata", "Italy", "dry", new GregorianCalendar(2011, 9, 11), 0.75);
+        Wine bottleVinedos = new Wine("Vinedos", "Spain", "dry", new GregorianCalendar(2018, 5, 10), 0.75);
+        Wine donnafugata = new Wine("Donnafugata", "Italy", "dry", new GregorianCalendar(2017, 9, 11), 0.75);
         Wine nexusOne = new Wine("Nexus One", "France", "dry", new GregorianCalendar(2015, 2, 1), 0.75);
-        Wine tareniNero = new Wine("TareniNero", "Sicily", "semi-dry", new GregorianCalendar(2017, 7, 21), 0.75);
+        Wine tareniNero = new Wine("TareniNero", "Sicily", "semi-dry", new GregorianCalendar(2018, 7, 21), 0.75);
         Wine maisonBouey = new Wine("MaisonBouey", "France", "semi-dry", new GregorianCalendar(2017, 7, 21), 0.75);
 
         ArrayList<Wine> wineCatalog = new ArrayList(Arrays.asList(bottleVinedos, donnafugata, nexusOne, tareniNero, maisonBouey));
-        printWine(wineCatalog, howManyTimesMinValueRepeated(wineCatalog, youngestWine(wineCatalog)));
+        //printWine(wineCatalog, howManyTimesMinValueRepeated(wineCatalog, youngestWine(wineCatalog)));
+        howManyTimesMinValueRepeated(wineCatalog, youngestWine(wineCatalog));
+
+
     }
 
     public static long youngestWine(ArrayList<Wine> catalog) {
@@ -25,22 +28,14 @@ public class CatalogOfWine {
         return minValue;
     }
 
-    public static int[] howManyTimesMinValueRepeated(ArrayList<Wine> catalog, long minValue) {  // без массива чисел можно обойтись?
-        int[] mass = new int[catalog.size()];
-        int counter = 0;
-
+    public static void howManyTimesMinValueRepeated(ArrayList<Wine> catalog, long minValue) {  // без массива чисел можно обойтись?
+        ArrayList youngestWineCatalog = new ArrayList();
         for (Wine tmp : catalog) {
-            if (minValue == tmp.periodOfWineHolding()) mass[counter] = catalog.indexOf(tmp);
-            else mass[counter] = -1;
-            ++counter;
+            if (minValue == tmp.periodOfWineHolding()) {
+                youngestWineCatalog.add(tmp);
+            }
         }
-        return mass;
-    }
-
-    public static void printWine(ArrayList<Wine> catalog, int[] mass) {
-        for (int tmp : mass) {
-            if (tmp != -1) System.out.println(catalog.get(mass[tmp]).toString());
-        }
+        System.out.println(youngestWineCatalog.toString());
     }
 }
 
