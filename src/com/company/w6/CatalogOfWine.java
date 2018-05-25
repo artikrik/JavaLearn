@@ -26,7 +26,7 @@ public class CatalogOfWine {
     }
 
     public static ArrayList howManyTimesMinValueRepeated(ArrayList<Wine> catalog, long minValue) {  // без массива чисел можно обойтись?
-        ArrayList youngestWineCatalog = new ArrayList();
+        ArrayList youngestWineCatalog = new ArrayList(); //Надежнее указывать тип элементов списка ArrayList<Wine>. и в сигнатуре метода тоже
         for (Wine tmp : catalog) {
             if (minValue == tmp.periodOfWineHolding()) {
                 youngestWineCatalog.add(tmp);
