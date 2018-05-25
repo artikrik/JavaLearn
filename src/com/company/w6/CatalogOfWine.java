@@ -14,7 +14,7 @@ public class CatalogOfWine {
         Wine maisonBouey = new Wine("MaisonBouey", "France", "semi-dry", new GregorianCalendar(2017, 7, 21), 0.75);
 
         ArrayList<Wine> wineCatalog = new ArrayList(Arrays.asList(bottleVinedos, donnafugata, nexusOne, tareniNero, maisonBouey));
-        System.out.println(howManyTimesMinValueRepeated(wineCatalog, youngestWine(wineCatalog)).toString());
+        System.out.println(youngestWineCatalog(wineCatalog, youngestWine(wineCatalog)).toString());
     }
 
     public static long youngestWine(ArrayList<Wine> catalog) {
@@ -25,7 +25,7 @@ public class CatalogOfWine {
         return minValue;
     }
 
-    public static ArrayList howManyTimesMinValueRepeated(ArrayList<Wine> catalog, long minValue) {  // без массива чисел можно обойтись?
+    public static ArrayList<Wine> youngestWineCatalog(ArrayList<Wine> catalog, long minValue) {  // без массива чисел можно обойтись?
         ArrayList youngestWineCatalog = new ArrayList();
         for (Wine tmp : catalog) {
             if (minValue == tmp.periodOfWineHolding()) {
