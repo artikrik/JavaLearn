@@ -25,7 +25,7 @@ public class CatalogOfWine {
         return minValue;
     }
 
-    public static int[] howManyTimesMinValueRepeated(ArrayList<Wine> catalog, long minValue) {
+    public static int[] howManyTimesMinValueRepeated(ArrayList<Wine> catalog, long minValue) {  // без массива чисел можно обойтись?
         int[] mass = new int[catalog.size()];
         int counter = 0;
 
