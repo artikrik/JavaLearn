@@ -9,12 +9,12 @@ import com.company.week5.Wine;
 
 public class WineList {
     public static void main(String[] args) {
-        ArrayList<Wine> wine = getWineList();
+        ArrayList<Wine> wine = getWineList(); // wine - список объектов класса Wine... Может wines?
         printWineList(getAllWinesOfSomeYear(wine, getMinimumAgeingOfWineInList(wine)));
     }
 
     public static ArrayList<Wine> getWineList () {
-        ArrayList<Wine> wines = new ArrayList<>();
+        ArrayList<Wine> wines = new ArrayList<>();  
         wines.add(new Wine("Muskat", "Ukraine", LocalDate.of(2017, Month.NOVEMBER, 17)));
         wines.add(new Wine("Fragollino", "Italy", LocalDate.of(2015, Month.DECEMBER, 31)));
         wines.add(new Wine("Yellow Tail", "Australia", LocalDate.of(2013, Month.APRIL, 13)));
@@ -30,7 +30,7 @@ public class WineList {
     }
 
     public static void sortArrayList (ArrayList<Wine> wines) {
-        Collections.sort(wines,Wine.WineDateProdComparator);
+        Collections.sort(wines,Wine.WineDateProdComparator);  // Перемудрили. Во вторник объясню
     }
 
     public static int getMinimumAgeingOfWineInList (ArrayList<Wine> wines) {
