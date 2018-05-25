@@ -25,7 +25,7 @@ public class CatalogOfWine {
         return minValue;
     }
 
-    public static ArrayList<Wine> youngestWineCatalog(ArrayList<Wine> catalog, long minValue) {  // без массива чисел можно обойтись?
+    public static ArrayList<Wine> youngestWineCatalog(ArrayList<Wine> catalog, long minValue) {
         ArrayList <Wine> youngestWineCatalog = new ArrayList();
         for (Wine tmp : catalog) {
             if (minValue == tmp.periodOfWineHolding()) {
