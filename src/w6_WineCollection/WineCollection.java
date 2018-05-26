@@ -47,14 +47,14 @@ public class WineCollection{
         return wineExtract();
     }
 
-    public static Comparator<WineCollection> Extracting = new Comparator<WineCollection>() {
+    /*public static Comparator<WineCollection> Extracting = new Comparator<WineCollection>() {
 
         public int compare(WineCollection w1, WineCollection w2) {
             int wineExtract0 = w1.getWineExtract();
             int wineExtract1 = w2.getWineExtract();
             return wineExtract0 - wineExtract1;
         }
-    };
+    };*/
 
     public String toString() {
         return "\nName - " + name + "\nCountry -  " + country + "\nWine extract " + wineExtract() + " years " + "\n";

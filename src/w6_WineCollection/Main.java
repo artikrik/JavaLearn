@@ -14,7 +14,7 @@ public class Main {
         arrayList.add(new WineCollection("Kagore", "Krim", new GregorianCalendar(2000, 5, 13)));
         arrayList.add(new WineCollection("Kagorenei", "Krimatoriy", new GregorianCalendar(2010, 5, 13)));
 
-        arrayList.sort(WineCollection.Extracting);
+        //arrayList.sort(WineCollection.Extracting);
 
         int minExtracting = arrayList.get(0).wineExtract();
 
