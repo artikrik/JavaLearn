@@ -3,6 +3,9 @@ package w5;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import java.util.GregorianCalendar;
+import java.util.Calendar;
+
 public class Wine {
     private String name;
     private String countryName;
@@ -31,12 +34,25 @@ public class Wine {
         return new GregorianCalendar().get(Calendar.YEAR) - yearOfHarvest.get(Calendar.YEAR);
     }
 
+    public int wineAge() {
+        return yearOfHarvest.get(Calendar.YEAR);
+    }
+
     public String getName() {
         return name;
     }
 
     public String getCountryName() {
         return countryName;
+    }
+
+    @Override
+    public String toString() {
+        return "Wine{" +
+                "Название: '" + name + '\'' +
+                ", Страна: '" + countryName + '\'' +
+                ", Урожай: " + yearOfHarvest.get(Calendar.YEAR) + " года" +
+                '}';
     }
 }
 
