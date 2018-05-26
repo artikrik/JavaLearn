@@ -15,6 +15,7 @@ public class Wine {
                 "name='" + name + '\'' +
                 ", country='" + country + '\'' +
                 ", birthOfWine=" + birthOfWine +
+                ", currentDate=" + currentDate +
                 '}';
     }
 
@@ -22,10 +23,11 @@ public class Wine {
         this.name = name;
         this.country = country;
         this.birthOfWine = birthOfWine;
+        currentDate = LocalDate.now();
     }
 
 
-    public int calculateAge(LocalDate birthDate, LocalDate currentDate) {
+    public int calculateAgeInYears(LocalDate birthDate, LocalDate currentDate) {
         if ((birthDate != null) && (currentDate != null)) {
             return Period.between(birthDate, currentDate).getYears();
         } else {
@@ -59,9 +61,5 @@ public class Wine {
 
     public LocalDate getCurrentDate() {
         return currentDate;
-    }
-
-    public static void setCurrentDate(LocalDate currentDate) {
-        Wine.currentDate = LocalDate.now();
     }
 }
