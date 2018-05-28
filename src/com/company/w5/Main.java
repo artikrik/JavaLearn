@@ -22,10 +22,10 @@ public class Main {
         }
         Arrays.sort(tempArray);
         int tmp = tempArray[tempArrayLength - 1];
-        for (int i = 0; i < tempArray.length; i++) {
-            if (tmp == listOfWine.get(i).wineAge())
-                System.out.println(listOfWine.get(i));
-        }
+        for (int i = 0; i < tempArray.length; i++) {     // почему не foreach?         for (Wine wine:listOfWine){
+            if (tmp == listOfWine.get(i).wineAge())      //                                 if (tmp == wine.wineAge())
+                System.out.println(listOfWine.get(i));   //                                      System.out.println(wine.toString());
+        }                                                //                            }  
 //        Wine bottleOfWine = new Wine("Кагор", "Украина", new GregorianCalendar(1980, 10, 25));
 //        System.out.println("Вино " + bottleOfWine.getName() + " производства " + bottleOfWine.getCountryName() + " с выдержкой " + bottleOfWine.getWineAge() + " лет");
 //
