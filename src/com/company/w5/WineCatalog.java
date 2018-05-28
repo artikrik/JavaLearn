@@ -18,7 +18,7 @@ public class WineCatalog {
         }
 
 //самое молодое вино
-        int min = wines.get(0).calculateAgeInYears(wines.get(0).getBirthOfWine(), wines.get(0).getCurrentDate());
+        int min = wines.get(0).calculateAgeInYears(wines.get(0).getBirthOfWine(), wines.get(0).getCurrentDate());  // calculateAgeInYears выглядит как статический метод. Чтобы узнать возраст своего вина, ему нужно дать свой возрасти текущую дату
         int minIndex = 0;
         for (int i = 0; i < wines.size(); i++) {
             if (min >= wines.get(i).calculateAgeInYears(wines.get(i).getBirthOfWine(), wines.get(i).getCurrentDate())) {
