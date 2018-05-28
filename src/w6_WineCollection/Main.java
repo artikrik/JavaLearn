@@ -23,13 +23,13 @@ public class Main {
                 minExtracting = i.wineExtract();
             }
         }
-        youngestWine(arrayList, minExtracting);
+        youngestWine(arrayList, minExtracting);  // зачем дважды подряд вызывать этот метод?
 
         System.out.println(youngestWine(arrayList,minExtracting));
     }
 
-    public static ArrayList<WineCollection> youngestWine(ArrayList<WineCollection> arrayList, int minExtracting) {
-        ArrayList<WineCollection> youngestWine = new ArrayList<>();
+    public static ArrayList<WineCollection> youngestWine(ArrayList<WineCollection> arrayList, int minExtracting) {  // имя метода не отражает его назначения
+        ArrayList<WineCollection> youngestWine = new ArrayList<>(); // имя списка... там будет одно вино? или несколько?
         for (WineCollection w : arrayList) {
             if (minExtracting == w.wineExtract()) {
                 youngestWine.add(w);
