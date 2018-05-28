@@ -45,7 +45,6 @@ public class Wine {
     public String getCountryName() {
         return countryName;
     }
-
     @Override
     public String toString() {
         return "Wine{" +
