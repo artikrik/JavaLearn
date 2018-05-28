@@ -31,7 +31,7 @@ public class Wine {
     }
 
     public int getWineAge() {
-        return new GregorianCalendar().get(Calendar.YEAR) - wineAge();
+        return new GregorianCalendar().get(Calendar.YEAR) - yearOfHarvest.get(Calendar.YEAR);
     }
 
     public int wineAge() {
@@ -45,12 +45,13 @@ public class Wine {
     public String getCountryName() {
         return countryName;
     }
+
     @Override
     public String toString() {
         return "Wine{" +
                 "Название: '" + name + '\'' +
                 ", Страна: '" + countryName + '\'' +
-                ", Урожай: " + wineAge() + " года" +
+                ", Урожай: " + yearOfHarvest.get(Calendar.YEAR) + " года" +
                 '}';
     }
 }
