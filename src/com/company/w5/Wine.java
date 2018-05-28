@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class Wine {
-    private static LocalDate currentDate;
+    private static LocalDate currentDate;  // Вычисляемое данное. Стоит ли его хранить?
     private String name;
     private String country;
     private LocalDate birthOfWine;
@@ -20,15 +20,15 @@ public class Wine {
     }
 
     public Wine(String name, String country, LocalDate birthOfWine) {
-        this.name = name;
-        this.country = country;
-        this.birthOfWine = birthOfWine;
-        currentDate = LocalDate.now();
+        this.name = name; // Вы сделали сеттеры для иннициализации полей. пользуйтесь ими и не дублируйте код: setName(name);
+        this.country = country;  //  setCountry(country);
+        this.birthOfWine = birthOfWine;  // setBirthOfWine(birthOfWine);
+        currentDate = LocalDate.now();  // Если программа будет работать несколько дней - кто и как должен обновлять это поле?
     }
 
 
-    public int calculateAgeInYears(LocalDate birthDate, LocalDate currentDate) {
-        if ((birthDate != null) && (currentDate != null)) {
+    public int calculateAgeInYears(LocalDate birthDate, LocalDate currentDate) {  // не понятно, что делает метод? Вычисляет разность выдержек между двумя винами? или свой возраст?
+        if ((birthDate != null) && (currentDate != null)) {  // birthDate и currentDate это поля или параметры? 
             return Period.between(birthDate, currentDate).getYears();
         } else {
             return 0;
