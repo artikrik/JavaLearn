@@ -22,11 +22,10 @@ public class Main {
         }
         Arrays.sort(tempArray);
         int tmp = tempArray[tempArrayLength - 1];
-        for (Wine wine: listOfWine)
+        for (Wine wine : listOfWine)
             if (wine.wineAge() == tmp)
                 System.out.println(wine.toString());
-        
-//        Wine bottleOfWine = new Wine("Кагор", "Украина", new GregorianCalendar(1980, 10, 25));
+        //        Wine bottleOfWine = new Wine("Кагор", "Украина", new GregorianCalendar(1980, 10, 25));
 //        System.out.println("Вино " + bottleOfWine.getName() + " производства " + bottleOfWine.getCountryName() + " с выдержкой " + bottleOfWine.getWineAge() + " лет");
 //
 //        Car mercedes = new Car("Mercedes", 60, 2017);
