@@ -9,7 +9,7 @@ public class WineCatalog {
     private GregorianCalendar bottlingYear;
 
     public WineCatalog(String wineName, String wineCountry,
-                       GregorianCalendar bottlingYear){
+                       GregorianCalendar bottlingYear) {
         setWineName(wineName);
         setWineCountry(wineCountry);
         setBottlingYear(bottlingYear);
