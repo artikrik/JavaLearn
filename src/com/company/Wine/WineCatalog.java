@@ -9,7 +9,7 @@ public class WineCatalog {
     private GregorianCalendar bottlingYear;
 
     public WineCatalog(String wineName, String wineCountry,
-                       GregorianCalendar bottlingYear) {
+                       GregorianCalendar bottlingYear){
         setWineName(wineName);
         setWineCountry(wineCountry);
         setBottlingYear(bottlingYear);
@@ -38,11 +38,5 @@ public class WineCatalog {
 
     public int getBottlingYear() {
         return new GregorianCalendar().get(Calendar.YEAR) - bottlingYear.get(Calendar.YEAR);
-    }
-
-    @Override
-    public String toString() {
-        return "Вино " + wineName + " произведено в " + wineCountry +
-                " c выдержкой " + bottlingYear + ".";
     }
 }
