@@ -9,7 +9,7 @@ import com.company.week5.Wine;
 
 public class WineList {
     public static void main(String[] args) {
-        ArrayList<Wine> wine = getWineList(); // wine - список объектов класса Wine... Может wines?
+        ArrayList<Wine> wine = getWineList(); // wine - список объектов класса Wine... Может wines? Или SetOfWines// Их же несколько
         printWineList(getAllWinesOfSomeYear(wine, getMinimumAgeingOfWineInList(wine)));
     }
 
@@ -38,7 +38,7 @@ public class WineList {
         return wines.get(0).calculateAgeingOfWine();
     }
 
-    public static ArrayList<Wine> getAllWinesOfSomeYear (ArrayList<Wine> wines, int age) {
+    public static ArrayList<Wine> getAllWinesOfSomeYear (ArrayList<Wine> wines, int age) { // ..OfSomeAge?
         ArrayList<Wine> tmp = new ArrayList<>();
         for (Wine w : wines) {
             if (w.calculateAgeingOfWine() == age)
