@@ -35,12 +35,12 @@ public class Main {
 
     public static ArrayList<WineCollection> listOfYoungestWine(ArrayList<WineCollection> arrayList, int minExtracting) {  // даный метод формирует лист из самого
         // молодого вина
-        ArrayList<WineCollection> youngestWine = new ArrayList<>(); // в данном случае несколько
+        ArrayList<WineCollection> listOfYoungestWine = new ArrayList<>(); // в данном случае несколько
         for (WineCollection w : arrayList) {
             if (minExtracting == w.wineExtract()) {
-                youngestWine.add(w);
+                listOfYoungestWine.add(w);
             }
         }
-        return youngestWine;
+        return listOfYoungestWine;
     }
 }
