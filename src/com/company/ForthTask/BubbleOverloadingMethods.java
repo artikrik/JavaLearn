@@ -21,7 +21,7 @@ public class BubbleOverloadingMethods {
         System.out.println(Arrays.toString(mass));
     }
 
-    static int[] bubleSort(int[] mass) {
+    static int[] bubleSort(int[] mass) {  // возвращаемый тип можно сделать void
         for (int i = mass.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (mass[j] > mass[j + 1]) {
@@ -34,7 +34,7 @@ public class BubbleOverloadingMethods {
         return mass;
     }
 
-    static String[] bubleSort(String[] mass) {
+    static String[] bubleSort(String[] mass) {   // возвращаемый тип можно сделать void
         for (int i = mass.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (mass[j].compareTo(mass[j + 1]) > 0) {
