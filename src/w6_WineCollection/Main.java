@@ -30,10 +30,10 @@ public class Main {
         }
         //youngestWine(arrayList, minExtracting);
 
-        System.out.println(youngestWine(arrayList,minExtracting));
+        System.out.println(listOfYoungestWine(arrayList,minExtracting));
     }
 
-    public static ArrayList<WineCollection> youngestWine(ArrayList<WineCollection> arrayList, int minExtracting) {  // даный метод формирует лист из самого
+    public static ArrayList<WineCollection> listOfYoungestWine(ArrayList<WineCollection> arrayList, int minExtracting) {  // даный метод формирует лист из самого
         // молодого вина
         ArrayList<WineCollection> youngestWine = new ArrayList<>(); // в данном случае несколько
         for (WineCollection w : arrayList) {
