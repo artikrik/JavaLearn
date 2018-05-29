@@ -21,7 +21,7 @@ public class LineOverloadingMethods {
 
     }
 
-    static String linearSearch(String[] mass, String key) {
+    static String linearSearch(String[] mass, String key) {  // String в ответ поиска - не совем удобно
         for (int i = 0; i < mass.length; i++) {
             if (mass[i].equals(key)) return "находится под индексом: " + i;
         }
