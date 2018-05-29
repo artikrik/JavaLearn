@@ -1,3 +1,8 @@
+/*Используя ранее разработанный класс Wine,
+        написать программу, формирующую коллекцию вин в списке ArrayList,
+        и находящую самое молодое вино.
+        Если таких вин будет несколько – вывести информацию обо всех винах*/
+
 package w6_WineCollection;
 
 import java.util.ArrayList;
@@ -23,13 +28,14 @@ public class Main {
                 minExtracting = i.wineExtract();
             }
         }
-        youngestWine(arrayList, minExtracting);  // зачем дважды подряд вызывать этот метод?
+        //youngestWine(arrayList, minExtracting);
 
         System.out.println(youngestWine(arrayList,minExtracting));
     }
 
-    public static ArrayList<WineCollection> youngestWine(ArrayList<WineCollection> arrayList, int minExtracting) {  // имя метода не отражает его назначения
-        ArrayList<WineCollection> youngestWine = new ArrayList<>(); // имя списка... там будет одно вино? или несколько?
+    public static ArrayList<WineCollection> youngestWine(ArrayList<WineCollection> arrayList, int minExtracting) {  // даный метод формирует лист из самого
+        // молодого вина
+        ArrayList<WineCollection> youngestWine = new ArrayList<>(); // в данном случае несколько
         for (WineCollection w : arrayList) {
             if (minExtracting == w.wineExtract()) {
                 youngestWine.add(w);
