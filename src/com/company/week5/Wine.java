@@ -5,7 +5,7 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 
-public class Wine {
+public class Wine implements Comparable <Wine> {
     private String name;
     private String country;
     private LocalDate dateOfProduction;
@@ -65,5 +65,10 @@ public class Wine {
             return ageing1 - ageing2;
         }
     };
+
+    @Override
+    public int compareTo(Wine o) {
+        return this.calculateAgeingOfWine() - o.calculateAgeingOfWine();
+    }
 }
 
