@@ -23,12 +23,10 @@ public class Wine {
         setBirthOfWine(birthOfWine);
     }
 
-
-    public static int calculateAgeOfWineInYears(LocalDate birthDate) {
+    public static int calculateAgeOfWineInYears(Wine wine) {
         LocalDate currentDate = LocalDate.now();
-        // не понятно, что делает метод? Вычисляет разность выдержек между двумя винами? или свой возраст?
-        if (birthDate != null) {  // birthDate и currentDate это поля или параметры?
-            return Period.between(birthDate, currentDate).getYears();
+        if (wine.birthOfWine != null) {
+            return Period.between(wine.birthOfWine, currentDate).getYears();
         } else {
             return 0;
         }
@@ -58,5 +56,7 @@ public class Wine {
         this.birthOfWine = birthOfWine;
     }
 
-    public int getAgeOfWine(){return calculateAgeOfWineInYears(birthOfWine);}
+    public int getAgeOfWine() {
+        return calculateAgeOfWineInYears(this);
+    }
 }
