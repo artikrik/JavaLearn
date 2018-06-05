@@ -38,6 +38,6 @@ public class Sprinter implements Comparable<Sprinter> {
 
     @Override
     public String toString() {
-        return "Sprinter name: " + name + '\n' + "Time: " + time + "seconds";
+        return "Sprinter name: " + name + '\n' + "Time: " + time + " seconds";
     }
 }
