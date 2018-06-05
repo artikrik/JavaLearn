@@ -2,14 +2,18 @@ package com.company.w6.marathon;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Race {
     public static void main(String[] args) {
 
         ArrayList<Marathon> raceOfMarathon = new ArrayList<>(Arrays.asList(addMembersToRace()));
+
+        Collections.sort(raceOfMarathon, new MarathonComparator());
         console(raceOfMarathon, raceOfMarathon.size()); // вывод всех участников марафона
-        raceOfMarathon.sort(Marathon::compareTo);
+
         System.out.println("\nПобедители марафона:\n");
+        Collections.sort(raceOfMarathon);
         console(raceOfMarathon, 3);
     }
 

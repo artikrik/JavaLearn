@@ -2,7 +2,7 @@ package com.company.w6.marathon;
 import java.time.LocalTime;
 import java.util.Random;
 
-public class Marathon implements Comparable<Marathon> {
+public class Marathon implements Comparable<Marathon>{
     private String name;
     private String lastName;
     private int age;
@@ -56,7 +56,9 @@ public class Marathon implements Comparable<Marathon> {
         return "Marathon{" + "name=" + name + ", lastName=" + lastName + ", age=" + age + ", runTime=" + runTime + '}';
     }
 
-    public int compareTo(Marathon marathon) {
-        return this.runTime.compareTo(marathon.getRunTime());
+
+    @Override
+    public int compareTo(Marathon o) {
+            return this.getRunTime().compareTo(o.getRunTime());
     }
 }
