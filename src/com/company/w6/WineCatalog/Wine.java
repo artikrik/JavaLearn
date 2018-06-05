@@ -1,6 +1,5 @@
-package com.company.w6;
+package com.company.w6.WineCatalog;
 
-import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -19,20 +18,20 @@ public class Wine {
         setBottleCapacity(bottleCapacity);
     }
 
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getSweetnessOfWine() {
@@ -43,7 +42,7 @@ public class Wine {
         this.sweetnessOfWine = sweetnessOfWine;
     }
 
-    public Serializable getDateOfEndurance() {
+    public GregorianCalendar getDateOfEndurance() {
         return dateOfEndurance;
     }
 
@@ -65,6 +64,6 @@ public class Wine {
 
     @Override
     public String toString() {
-        return  name;
+        return name;
     }
 }
