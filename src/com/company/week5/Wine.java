@@ -60,9 +60,9 @@ public class Wine implements Comparable <Wine> {
     public static Comparator<Wine> WineDateProdComparator = new Comparator<Wine>() {
         @Override
         public int compare(Wine o1, Wine o2) {
-            int ageing1 = o1.calculateAgeingOfWine();
+            int ageing1 = o1.calculateAgeingOfWine(); // вот здесь имеет смысл обойтись без переменных
             int ageing2 = o2.calculateAgeingOfWine();
-            return ageing1 - ageing2;
+            return ageing1 - ageing2;   // return o1.calculateAgeingOfWine() - o2.calculateAgeingOfWine();
         }
     };
 
