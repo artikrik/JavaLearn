@@ -34,6 +34,6 @@ public class MarathoneCompAndCompar implements Comparable<MarathoneCompAndCompar
     public int compareTo(MarathoneCompAndCompar m) {
         if (this.name.compareTo(m.getName()) != 0)
             return this.name.compareTo(m.getName());
-        else return this.time - m.getTime();
+        else return this.time - m.getTime(); // return this.getTime() - m.getTime();
     }
 }
