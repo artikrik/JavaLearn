@@ -23,7 +23,7 @@ public class MarathonComparableAndComparator {
             System.out.print(sportsmen.toString());
         }
 
-        Collections.sort(sportsmenList,Comparator.comparing(Sportsmen::getSeconds));
+        Collections.sort(sportsmenList,Comparator.comparing(Sportsmen::getSeconds)); // Очень хорошо!!! А через new Comparator сможите?
         System.out.println("1 place -  " + sportsmenList.get(0) + "2 place -  " + sportsmenList.get(1) + "3 place -  " + sportsmenList.get(2));
 
     }
