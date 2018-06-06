@@ -38,8 +38,8 @@ public class Sportsmen implements Comparable<Sportsmen> {
     @Override
     public int compareTo(Sportsmen o) {
         if (this.name.compareTo(o.getName()) != 0)
-            return this.name.compareTo(o.getName());
+            return this.name.compareTo(o.getName());  // return this.getName().compareTo(o.getName());
         else
-            return this.seconds - o.getSeconds();
+            return this.seconds - o.getSeconds(); // return this.getSeconds() - o.getSeconds();
     }
 }
