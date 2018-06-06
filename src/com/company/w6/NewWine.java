@@ -68,7 +68,7 @@ public class NewWine implements Comparable<NewWine>, Comparator<NewWine> {
     }
 
     @Override
-    public int compare(NewWine newWine1Age, NewWine newWine2Age) {
+    public int compare(NewWine newWine1Age, NewWine newWine2Age) {  // Одинаковые компараторы. Стоит ли дублировать в одном классе? Или потренировались?
         return newWine1Age.getAgeOfWine() - newWine2Age.getAgeOfWine();
     }
 }
