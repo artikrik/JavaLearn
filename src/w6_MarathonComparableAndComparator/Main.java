@@ -26,8 +26,13 @@ public class Main {
                 return m1.getTime() - m2.getTime();
             }
         });
+        System.out.println("Whole list of sportsmen " + "\n" + arrayList.toString()+ "\n");
+
 // Где вывод всех участников?
-        for (MarathoneCompAndCompar marathone : arrayList) ;  // зачем эта строка? или что здесь делает символ ";"?
-        System.out.println(arrayList.get(0).toString() + "\n" + arrayList.get(1).toString() + "\n" + arrayList.get(2).toString());
+        // Добавил
+
+        //  for (MarathoneCompAndCompar marathone : arrayList) ;  // зачем эта строка? или что здесь делает символ ";"?
+                                                                  // можно и без нее. Тоже работает ))
+        System.out.println("List of winners " + arrayList.get(0).toString() + arrayList.get(1).toString() + arrayList.get(2).toString());
     }
 }
