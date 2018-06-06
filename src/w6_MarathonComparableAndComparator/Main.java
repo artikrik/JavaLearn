@@ -26,13 +26,10 @@ public class Main {
                 return m1.getTime() - m2.getTime();
             }
         });
-        System.out.println("Whole list of sportsmen " + "\n" + arrayList.toString()+ "\n");
+        System.out.println("Whole list of sportsmen " + "\n" + arrayList.toString() + "\n");
 
-// Где вывод всех участников?
-        // Добавил
-
-        //  for (MarathoneCompAndCompar marathone : arrayList) ;  // зачем эта строка? или что здесь делает символ ";"?
-                                                                  // строка ненужна 
-        System.out.println("List of winners " + arrayList.get(0).toString() + arrayList.get(1).toString() + arrayList.get(2).toString());
+        for (int i = 0; i < 3; i++) {
+            System.out.println("List of winners " + arrayList.get(i).toString());
+        }
     }
 }
