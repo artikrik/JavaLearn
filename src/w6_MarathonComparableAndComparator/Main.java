@@ -15,9 +15,9 @@ public class Main {
         ArrayList<MarathoneCompAndCompar> arrayList = new ArrayList<>();
         arrayList.add(new MarathoneCompAndCompar("Begunovenko", 15));
         arrayList.add(new MarathoneCompAndCompar("Petrov", 3));
-        arrayList.add(new MarathoneCompAndCompar("Begunova", 5));
-        arrayList.add(new MarathoneCompAndCompar("Morgunov", 40));
         arrayList.add(new MarathoneCompAndCompar("Begunova", 13));
+        arrayList.add(new MarathoneCompAndCompar("Morgunov", 40));
+        arrayList.add(new MarathoneCompAndCompar("Begunova", 5));
         arrayList.add(new MarathoneCompAndCompar("Plavunov", 47));
 
         Collections.sort(arrayList, new Comparator<MarathoneCompAndCompar>() {
