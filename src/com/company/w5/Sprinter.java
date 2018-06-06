@@ -1,5 +1,6 @@
 package com.company.w5;
 
+import java.util.Comparator;
 import java.util.Random;
 
 public class Sprinter implements Comparable<Sprinter> {
@@ -33,7 +34,10 @@ public class Sprinter implements Comparable<Sprinter> {
 
     @Override
     public int compareTo(Sprinter s) {
-        return this.getTime() - s.getTime(); // return this.getTime() - s.getTime();
+        if (getName().compareTo(s.getName()) != 0)
+            return getName().compareTo(s.getName());
+        else
+            return getTime() - s.getTime();
     }
 
     @Override

@@ -24,11 +24,10 @@ public class NewWine implements Comparable<NewWine>, Comparator<NewWine> {
         setBirthOfWine(birthOfWine);
     }
 
-
     public static int calculateAgeOfWineInYears(NewWine newWine) {
         LocalDate currentDate = LocalDate.now();
         if (newWine.birthOfWine != null) {
-            return Period.between(newWine.birthOfWine, currentDate).getYears();
+            return Period.between(newWine.getBirthOfWine(), currentDate).getYears();
         } else {
             return 0;
         }
