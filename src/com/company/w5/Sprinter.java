@@ -33,7 +33,7 @@ public class Sprinter implements Comparable<Sprinter> {
 
     @Override
     public int compareTo(Sprinter s) {
-        return this.time - s.getTime(); // return this.getTime() - s.getTime();
+        return this.getTime() - s.getTime(); // return this.getTime() - s.getTime();
     }
 
     @Override
