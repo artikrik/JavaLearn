@@ -27,13 +27,13 @@ public class MarathoneCompAndCompar implements Comparable<MarathoneCompAndCompar
     }
 
     public String toString() {
-        return "\nName - " + name + "\nTime " + time + "\n";
+        return "\nName - " + name + "\nTime " + time;
     }
 
     @Override
     public int compareTo(MarathoneCompAndCompar m) {
         if (this.name.compareTo(m.getName()) != 0)
-            return this.name.compareTo(m.getName());
-        else return this.time - m.getTime(); // return this.getTime() - m.getTime();
+            return this.getName().compareTo(m.getName());
+        else return this.getTime() - m.getTime(); // return this.getTime() - m.getTime();
     }
 }

@@ -28,8 +28,9 @@ public class Main {
         });
         System.out.println("Whole list of sportsmen " + "\n" + arrayList.toString() + "\n");
 
+        System.out.println("List of winners ");
         for (int i = 0; i < 3; i++) {
-            System.out.println("List of winners " + arrayList.get(i).toString());
+            System.out.println(arrayList.get(i).toString());
         }
     }
 }
