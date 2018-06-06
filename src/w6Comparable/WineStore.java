@@ -12,13 +12,16 @@ public class WineStore {
         wineCatalog.add(new Wine("NoName1", "NoWhere1", 14));
         wineCatalog.add(new Wine("NoName1", "NoWhere1", 13));
         wineCatalog.add(new Wine("NoName1", "NoWhere1", 12));
-        wineCatalog.add(new Wine("NoName1", "NoWhere1", 11));
+        wineCatalog.add(new Wine("NoName1", "NoWhere1", 9));
         wineCatalog.add(new Wine("NoName1", "NoWhere1", 10));
+        Wine youngestWine = Collections.min(wineCatalog);
 
-        Collections.sort(wineCatalog);
-        for(Wine wine:wineCatalog) {
-            System.out.println(wine.toString());
+        for (Wine wine : wineCatalog) {
+            if (youngestWine.compareTo(wine) == 0) {
+                System.out.println(wine.toString());
+            }
         }
     }
 }
+
 
