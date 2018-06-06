@@ -19,7 +19,6 @@ package w5_1;
 public class Main {
     public static void main(String[] args) {
 
-
         Car car = new Car(2000, "BMV");
 
         for (int i = 0; i < 5; i++) {

@@ -6,7 +6,6 @@ public class Wine {
     private String name;
     private String country;
     private GregorianCalendar dateOfBottling;
-    GregorianCalendar gregorianCalendar = new GregorianCalendar();
 
     public Wine(String name, String country, GregorianCalendar dateOfBottling) {
         setName(name);
@@ -37,12 +36,12 @@ public class Wine {
         return dateOfBottling;
     }
 
-    int wineExtract() {
+    public int wineExtract() {
         return new GregorianCalendar().get(GregorianCalendar.YEAR) - dateOfBottling.get(GregorianCalendar.YEAR);
     }
 
     public String toString() {
-        return "Name - " + name + "\nCountry -  " + country + "\nWine extract " + wineExtract() + " years";
+        return "\nName - " + name + "\nCountry -  " + country + "\nWine extract " + wineExtract() + " years"+"\n";
     }
 
 

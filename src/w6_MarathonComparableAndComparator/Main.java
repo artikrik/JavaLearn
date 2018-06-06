@@ -32,7 +32,7 @@ public class Main {
         // Добавил
 
         //  for (MarathoneCompAndCompar marathone : arrayList) ;  // зачем эта строка? или что здесь делает символ ";"?
-                                                                  // можно и без нее. Тоже работает ))
+                                                                  // строка ненужна 
         System.out.println("List of winners " + arrayList.get(0).toString() + arrayList.get(1).toString() + arrayList.get(2).toString());
     }
 }

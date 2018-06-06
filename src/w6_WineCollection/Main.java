@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
 
         ArrayList<WineCollection> arrayList = new ArrayList<WineCollection>();
-        arrayList.add(new WineCollection("Shabodun", "France", new GregorianCalendar(1800, 5, 13)));
+        arrayList.add(new WineCollection("Shabodun", "France", new GregorianCalendar(2000, 3, 15)));
         arrayList.add(new WineCollection("Kagore", "Krim", new GregorianCalendar(2010, 1, 27)));
         arrayList.add(new WineCollection("Marami", "Hawaiy", new GregorianCalendar(1970, 11, 4)));
         arrayList.add(new WineCollection("Kagore", "Krim", new GregorianCalendar(2000, 5, 13)));
