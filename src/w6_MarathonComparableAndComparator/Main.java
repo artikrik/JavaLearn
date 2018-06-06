@@ -26,7 +26,7 @@ public class Main {
                 return m1.getTime() - m2.getTime();
             }
         });
-
+// Где вывод всех участников?
         for (MarathoneCompAndCompar marathone : arrayList) ;  // зачем эта строка? или что здесь делает символ ";"?
         System.out.println(arrayList.get(0).toString() + "\n" + arrayList.get(1).toString() + "\n" + arrayList.get(2).toString());
     }
