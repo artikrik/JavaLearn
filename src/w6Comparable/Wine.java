@@ -18,11 +18,11 @@ class Wine implements Comparable<Wine> {
     }
 
     @Override
-    public String toString() {
-        return "Wine{" +
-                "country='" + country + '\'' +
-                ", name='" + name + '\'' +
-                ", ageOfWine=" + ageOfWine +
-                '}';
-    }
+public String toString() {
+    return "Wine{" +
+            "country='" + country + '\'' +
+            ", name='" + name + '\'' +
+            ", ageOfWine=" + ageOfWine +
+            '}';
+}
 }
