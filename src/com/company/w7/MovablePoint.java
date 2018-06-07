@@ -1,61 +1,59 @@
 package com.company.w7;
 
 public class MovablePoint extends Point {
-    private int xSpeed;
-    private int ySpeed;
+    private float xSpeed;
+    private float ySpeed;
 
-    public MovablePoint() {
-        setXSpeed(0);
-        setYSpeed(0);
+    public MovablePoint(){
+        setXSpeed(0.0f);
+        setYSpeed(0.0f);
     }
 
-    public MovablePoint(int xSpeed, int ySpeed) {
+    public MovablePoint(float xSpeed, float ySpeed){
         super();
         setXSpeed(xSpeed);
         setYSpeed(ySpeed);
     }
 
-    public MovablePoint(int x, int y, int xSpeed, int ySpeed) {
-        super(x, y);
+    public MovablePoint(float x, float y, float xSpeed, float ySpeed){
+        super(x,y);
         setXSpeed(xSpeed);
         setYSpeed(ySpeed);
     }
 
-    public int getXSpeed() {
+    public float getXSpeed() {
         return xSpeed;
     }
 
-    public void setXSpeed(int xSpeed) {
+    public void setXSpeed(float xSpeed) {
         this.xSpeed = xSpeed;
     }
 
-    public int getYSpeed() {
+    public float getYSpeed() {
         return ySpeed;
     }
 
-    public void setYSpeed(int ySpeed) {
+    public void setYSpeed(float ySpeed) {
         this.ySpeed = ySpeed;
     }
 
-    public void setSpeed(int xSpeed, int ySpeed) {
+    public void setSpeed(float xSpeed, float ySpeed){
         setXSpeed(xSpeed);
         setYSpeed(ySpeed);
     }
 
-    public MovablePoint getSpeed(int xSpeed, int ySpeed) {
-        return new MovablePoint(xSpeed, ySpeed);
+    public MovablePoint getSpeed(float xSpeed, float ySpeed){
+        return new MovablePoint(xSpeed,ySpeed);
     }
 
-    public MovablePoint move(int xSpeed, int ySpeed) {
-        super.setX(getX()+xSpeed);
-        super.setY(getY()+ySpeed);
-        setXSpeed(getXSpeed()+xSpeed);
-        setYSpeed(getYSpeed()+ySpeed);
-        return new MovablePoint();
+    public MovablePoint move(){
+        super.setX(super.getX()+xSpeed);
+        super.setY(super.getY()+xSpeed);
+        return this;
     }
 
     @Override
     public String toString() {
-        return super.toString() + ",speed=(" + xSpeed + "," + ySpeed + ')';
+        return super.toString()+",speed=(" + xSpeed + "," + ySpeed + ')';
     }
 }
