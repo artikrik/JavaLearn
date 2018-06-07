@@ -3,49 +3,43 @@ package com.company.w7;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MovablePointsSet extends ArrayList<MovablePoint> {
-    private int numberOfPoint;
-
-    public int getNumberOfPoint() {
-        return numberOfPoint;
-    }
-
-    public void setNumberOfPoint(int numberOfPoint) {
-        this.numberOfPoint = numberOfPoint;
-    }
+public class MovablePointsSet {
+    ArrayList<MovablePoint> points = new ArrayList<>();
 
     public MovablePointsSet() {
-        setNumberOfPoint(5);
-    }
-
-    public MovablePointsSet(int numberOfPoin) {
-        setNumberOfPoint(numberOfPoin);
-    }
-
-    public static ArrayList<MovablePoint> createPointCatalog(int number, ArrayList<MovablePoint> pointCatalog) {
-        for (int i = 0; i < number; i++) {
-            pointCatalog.add(
-                    new MovablePoint(new Random().nextInt(26) + 10, new Random().nextInt(25) + 10, new Random().nextInt(11),
-                                     new Random().nextInt(11)));
+        for (int i = 0; i < 5; i++) {
+            points.add(new MovablePoint(10 + new Random().nextInt(26) + 10, new Random().nextInt(26) + 10, new Random().nextInt(11), new Random().nextInt(11)));
         }
-        return pointCatalog;
+    }
+
+    public MovablePointsSet(int numberOfPoint) {
+        for (int i = 0; i < numberOfPoint; i++) {
+            points.add(new MovablePoint(new Random().nextInt(26) + 10, new Random().nextInt(26) + 10, new Random().nextInt(11), new Random().nextInt(11)));
+        }
     }
 
     @Override
     public String toString() {
+        for (MovablePoint tmp : points) {
+            System.out.println(tmp.toString());
+        }
         return super.toString();
     }
 
+    public static void numberOfMove(MovablePointsSet movablePointsSet, int number) {
+        for (int i = 0; i < number; i++) {
+            System.out.println("Перемещаем каждую из точек " + (i + 1) + " раз");
+            for (MovablePoint valueSpeed : movablePointsSet.points) {
+                valueSpeed.move(new Random().nextInt(7) - 3, new Random().nextInt(7) - 3);
+            }
+            movablePointsSet.toString();
+        }
+    }
+
     public static void main(String[] args) {
-        MovablePointsSet pointMoveExample = new MovablePointsSet();
-        createPointCatalog(pointMoveExample.getNumberOfPoint(), pointMoveExample);
-        for (MovablePoint tmp : pointMoveExample) {
-            System.out.println(tmp.toString());
-        }
-        for (MovablePoint tmp : pointMoveExample) {
-            tmp.move();
-        }
-
-
+        System.out.println("Создание объектов");
+        MovablePointsSet movablePointsSet = new MovablePointsSet();
+        movablePointsSet.toString();
+        numberOfMove(movablePointsSet, 5); // метод для объект класса MovablePointsSet, который перемещает все точки 5 раз
     }
 }
