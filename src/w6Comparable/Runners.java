@@ -38,9 +38,9 @@ class Runners implements Comparable<Runners> {
     @Override
     public String toString() {
         return "Марафонцы{" +
-                "Страна='" + country + '\'' +
-                ", Имя='" + name + '\'' +
-                ", Время=" + time +
+                "Country='" + country + '\'' +
+                ", Name='" + name + '\'' +
+                ", Time=" + time +
                 '}';
     }
 }
