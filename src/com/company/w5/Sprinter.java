@@ -32,16 +32,14 @@ public class Sprinter implements Comparable<Sprinter> {
         return new Random().nextInt(10000);
     }
 
-    @Override
-    public int compareTo(Sprinter s) {
-        if (getName().compareTo(s.getName()) != 0)
-            return getName().compareTo(s.getName());
-        else
-            return getTime() - s.getTime();
-    }
 
     @Override
     public String toString() {
         return "Sprinter name: " + name + '\n' + "Time: " + time + " seconds";
+    }
+
+    @Override
+    public int compareTo(Sprinter s) {
+        return this.getTime() - s.getTime();
     }
 }
