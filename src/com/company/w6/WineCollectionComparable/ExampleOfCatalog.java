@@ -2,8 +2,10 @@ package com.company.w6.WineCollectionComparable;
 
 import com.company.w5.Wine.WineCatalog;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.GregorianCalendar;
+import java.util.TreeSet;
 
 public class ExampleOfCatalog extends WineCatalog {
     public static void main(String[] args) {
@@ -22,9 +24,17 @@ public class ExampleOfCatalog extends WineCatalog {
                     System.out.println(wine.toString());
                 }
             }
-        }
-        catch (ClassCastException e){
+        } catch (ClassCastException e) {
             e.printStackTrace();
+        }
+        System.out.println("Сортировка по имени: ");
+        Collections.sort(winesSet, (o1, o2) -> {
+            return (o1.getName().compareTo(o2.getName()));
+        });
+        for (Wine wine : winesSet) {
+            {
+                System.out.print(wine.toString() + "; ");
+            }
         }
     }
 }
