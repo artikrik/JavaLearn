@@ -1,13 +1,13 @@
 package w6Comparable;
 
 
-class Runners implements Comparable<Runners> {
+class Runner implements Comparable<Runner> {
 
     private String name;
     private String country;
     private int time;
 
-    public Runners(String name, String country, int time) {
+    public Runner(String name, String country, int time) {
         this.name = name;
         this.country = country;
         this.time = time;
@@ -28,7 +28,7 @@ class Runners implements Comparable<Runners> {
 
     @Override
 
-    public int compareTo(Runners o) {
+    public int compareTo(Runner o) {
         if (getName().compareTo(o.getName()) != 0)
             return getName().compareTo(o.getName());
         else

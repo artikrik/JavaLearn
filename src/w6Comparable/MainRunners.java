@@ -9,19 +9,22 @@ import java.util.List;
 
 public class MainRunners {
     public static void main(String[] args) {
-        List<Runners> listOfRunners = new ArrayList<Runners>();
-        listOfRunners.add(new Runners("a", "NoWhere3", 343));
-        listOfRunners.add(new Runners("b", "NoWhere1",343));
-        listOfRunners.add(new Runners("c", "NoWhere2", 552));
+        List<Runner> listOfRunners = new ArrayList<>();
+        listOfRunners.add(new Runner("Вася", "NoWhere3", 33));
+        listOfRunners.add(new Runner("Ася", "NoWhere1",34));
+        listOfRunners.add(new Runner("Петя", "NoWhere2", 35));
 
-        Collections.sort(listOfRunners, new Comparator<Runners>() {
+        Collections.sort(listOfRunners);
+        System.out.println(listOfRunners);
+
+        Collections.sort(listOfRunners, new Comparator<Runner>() {
 
             @Override
-            public int compare(Runners o1, Runners o2) {
+            public int compare(Runner o1, Runner o2) {
                 return o1.getTime() - o2.getTime();
             }
         });
-        System.out.println("\n" + listOfRunners.get(0));
+        System.out.println(listOfRunners.get(0));
         System.out.println(listOfRunners.get(1));
         System.out.println(listOfRunners.get(2));
     }
