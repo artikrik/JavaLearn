@@ -1,6 +1,18 @@
 package com.company.w7;
 
 public class Point {
+    private float x;
+    private float y;
+
+    public Point(float x, float y) {
+        setX(x);
+        setY(y);
+    }
+
+    public Point() {
+        setX(0.0f);
+        setY(0.0f);
+    }
 
     public float getX() {
         return x;
@@ -18,18 +30,8 @@ public class Point {
         this.y = y;
     }
 
-
-    private float x;
-    private float y;
-
-    public Point(float x, float y) {
-        setX(x);
-        setY(y);
-    }
-
-    private Point() {
-        setX(0.0f);
-        setY(0.0f);
+    public float[] getXY() {
+        return new float[]{x, y};
     }
 
     @Override
