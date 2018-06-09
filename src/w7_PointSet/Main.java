@@ -1,9 +1,9 @@
 package w7_PointSet;
 
 public class Main {
-    public static void main(String[]args) {
+    public static void main(String[] args) {
 
-        MovablePointsSet movablePointsSet = new MovablePointsSet(7);
-
+        MovablePointsSet movablePointsSet = new MovablePointsSet(5);
+        movablePointsSet.toString();
     }
 }

@@ -17,6 +17,7 @@ package w6_WineCollectionComparable;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.GregorianCalendar;
 
 public class Main {
@@ -33,6 +34,9 @@ public class Main {
             if (youngestWine.compareTo(wine) == 0) {
                 System.out.println(wine.toString());
             }
+
+            Collections.sort(winesSet,(w1,w2)->{return (w1.getName().compareTo(w2.getName()));
+            });
         }
     }
 }
