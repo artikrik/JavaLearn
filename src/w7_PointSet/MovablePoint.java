@@ -6,6 +6,10 @@ public class MovablePoint extends Point {
     private float ySpeed = 0.0f;
 
     public MovablePoint(float x, float y, float xSpeed, float ySpeed) {
+        this.xSpeed = xSpeed;
+        this.ySpeed = ySpeed;
+        this.setX(x);
+        this.setY(y);
     }
 
     public MovablePoint(float xSpeed, float ySpeed) {
@@ -38,7 +42,7 @@ public class MovablePoint extends Point {
     }
 
     public String toString (){
-        return "(x,y), speed = (xs,ys)";
+        return "speed " + xSpeed + "," + ySpeed;
     }
 
     public MovablePoint move(float xSpeed, float ySpeed){
