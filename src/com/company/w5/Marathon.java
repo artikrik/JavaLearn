@@ -19,6 +19,7 @@ public class Marathon {
         sprinters.add(new Sprinter("LKGJ"));
         Collections.shuffle(sprinters);
 
+        sprinters.sort(new MarathonComparator());
         System.out.println("Sprinters:");
         for (Sprinter sprinter : sprinters) {
             System.out.println(sprinter.toString());
