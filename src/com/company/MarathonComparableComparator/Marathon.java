@@ -28,5 +28,5 @@ public class Marathon implements Comparable<Marathon> {
     }
 
     @Override
-    public int compareTo(Marathon o) { return (int) (this.timeInMins - o.getTimeInMins()); }
+    public int compareTo(Marathon o) { return (int) (this.timeInMins - o.getTimeInMins()); }  // return (int) (this.getTimeInMins() - o.getTimeInMins());
 }
