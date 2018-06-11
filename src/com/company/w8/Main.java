@@ -18,8 +18,6 @@ public class Main {
         Bird bird = new Bird();
         Dog dog = new Dog();
 
-        System.out.println(animal);
-
         animal.sleep();
         animal.eat();
 
