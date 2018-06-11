@@ -37,6 +37,6 @@ public class Point {
     }
 
      public String toString (){
-         return "coordinate " + x + "\n" + y;
+         return  x + "\n" + y;
      }
 }

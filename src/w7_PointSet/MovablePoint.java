@@ -41,15 +41,15 @@ public class MovablePoint extends Point {
         return new MovablePoint(xSpeed,ySpeed);
     }
 
-    public String toString (){
-        return "speed " + xSpeed + "," + ySpeed;
-    }
-
-    public MovablePoint move(float xSpeed, float ySpeed){
+    public MovablePoint move(float xSpeed){
        super.setX(getX()+xSpeed);
        super.setY(getY()+ySpeed);
        setxSpeed(getxSpeed()+xSpeed);
        setySpeed(getySpeed()+ySpeed);
        return new MovablePoint();
+    }
+
+    public String toString (){
+        return super.toString() + "speed " + xSpeed + "," + ySpeed;
     }
 }
