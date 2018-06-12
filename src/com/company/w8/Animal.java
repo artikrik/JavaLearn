@@ -1,14 +1,16 @@
 package w8;
 
-public abstract class Animal {
-    private String eat;
-    private String sleep;
+public class Animal {
 
     public Animal() {
         System.out.println("A new animal has been created!");
     }
 
-    public abstract void eat(); {}
+    public void eat() {
+        System.out.println("An animal eats...");
+    }
 
-    public abstract void sleep(); {}
+    public void sleep() {
+        System.out.println("An animal sleeps...");
+    }
 }

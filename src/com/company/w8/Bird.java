@@ -1,6 +1,6 @@
 package w8;
 
-public class Bird extends Animal{
+public class Bird extends Animal {
 
     public Bird() {
         System.out.println("A new bird has been created!");
