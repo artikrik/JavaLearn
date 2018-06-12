@@ -5,14 +5,14 @@ public class Animal {
     private String sleep;
 
     public Animal() {
-        System.out.println("A new animal has been created!....");
+        System.out.println("A new animal has been created!");
     }
 
     public void eat() {
-        System.out.println("An animal eats... ");
+        System.out.println("An animal eats");
     }
 
     public void sleep() {
-        System.out.println("An animal sleeps... ");
+        System.out.println("An animal sleeps");
     }
 }
