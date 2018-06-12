@@ -1,27 +1,26 @@
 package w8_Animals;
 
-public class Main {
+public class Main{
     public static void main(String[] args) {
-
-        Animal animal = new Animal("meal", "z-z-z-z");
-        Bird bird = new Bird("corn", "fu-fu-fu");
-        Dog dog = new Dog("meet", "tu-tu-tu");
+        Animal animal = new Animal();
+        Bird bird = new Bird();
+        Dog dog = new Dog();
 
         System.out.println();
 
-        animal.getSleep();
-        animal.getEat();
+        animal.sleep();
+        animal.eat();
 
-        bird.getSleep();
-        bird.getEat();
+        bird.sleep();
+        bird.eat();
 
-        dog.getSleep();
-        dog.getEat();
+        dog.sleep();
+        dog.eat();
 
-        Animal a1 = new Dog("bird", "zu-zu-zu");
-        Animal a2 = new Bird("bred", "su-sus-su");
+        Animal a1 = new Dog();
+        Animal a2 = new Bird();
 
-        a1.getEat();
-        a2.getSleep();
+        a1.eat();
+        a2.sleep();
     }
 }
