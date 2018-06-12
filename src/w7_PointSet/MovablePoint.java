@@ -4,18 +4,24 @@ public class MovablePoint extends Point {
 
     private float xSpeed = 0.0f;
     private float ySpeed = 0.0f;
+    private int id;
 
-    public MovablePoint(float x, float y, float xSpeed, float ySpeed) {
-        super (x, y);
+    public MovablePoint(int id, float x, float y, float xSpeed, float ySpeed) {
+        super(x, y);
         this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
+        this.id = id;
     }
 
-    public MovablePoint(float xSpeed, float ySpeed) {
+    public MovablePoint(int id, float xSpeed, float ySpeed) {
         setxSpeed(xSpeed);
         setySpeed(ySpeed);
+        this.id=id;
     }
 
+    public int getId() {
+        return id;
+    }
 
     public float getxSpeed() {
         return xSpeed;
@@ -38,8 +44,8 @@ public class MovablePoint extends Point {
         setySpeed(ySpeed);
     }
 
-    public MovablePoint getSpeed(float xSpeed, float ySpeed) {
-        return new MovablePoint(xSpeed, ySpeed);
+    public MovablePoint getSpeed(int id, float xSpeed, float ySpeed) {
+        return new MovablePoint(id, xSpeed, ySpeed);
     }
 
     public MovablePoint move(float xSpeed, float ySpeed) {
@@ -52,6 +58,6 @@ public class MovablePoint extends Point {
 
     @Override
     public String toString() {
-        return super.toString() + "speed =" + "(" + getxSpeed() + ", " + getySpeed()+")";
+        return "point # " + id + " " + super.toString() + "speed =" + "(" + getxSpeed() + ", " + getySpeed() + ")";
     }
 }
