@@ -28,11 +28,12 @@ public class MovablePointsSet {
         return new MovablePoint(x, y, xSpeed, ySpeed);
     }
 
+
     public void movePoints (MovablePointsSet movablePointsSet, int amountOfMovement) {
-        Random random = new Random();
-        for (int i = 0; i < amountOfMovement; i++) {
+        for (int i = 1; i <= amountOfMovement; i++) {
+            System.out.println("Значення полів всіх точок після "+ i + "-ого переміщення:" );
             for (MovablePoint point : movablePointsSet.listPoints) {
-                point.move((float) random.nextInt(7) - 3, (float) random.nextInt(7) - 3);
+                point.move((float) new Random().nextInt(7) - 3, (float) new Random().nextInt(7) - 3);
                 System.out.println(point.toString());
             }
         }

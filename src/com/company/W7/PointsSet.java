@@ -2,11 +2,9 @@ package com.company.W7;
 
 public class PointsSet {
     public static void main (String[] args){
-        MovablePointsSet movablePointsSet = new MovablePointsSet(1);
+        MovablePointsSet movablePointsSet = new MovablePointsSet(2);
+        System.out.println(movablePointsSet.toString());
 
-            System.out.println(movablePointsSet.toString());
-movablePointsSet.movePoints(movablePointsSet, 2);
-
-
+        movablePointsSet.movePoints(movablePointsSet, 5);
     }
 }
