@@ -1,12 +1,16 @@
 package w7_PointSet;
 
+
 public class Main {
     public static void main(String[] args) {
+        System.out.println("New point with coordinate");
 
-        MovablePointsSet movablePointsSet = new MovablePointsSet(5);
+        MovablePointsSet movablePointsSet = new MovablePointsSet();
 
-        System.out.println(movablePointsSet.toString());
+        movablePointsSet.toString();
 
         movablePointsSet.pointsMove(movablePointsSet, 5);
+
+        movablePointsSet.MovablePointsSet(3);
     }
 }
