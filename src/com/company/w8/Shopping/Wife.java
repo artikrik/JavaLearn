@@ -3,6 +3,7 @@ package com.company.w8.Shopping;
 import java.util.ArrayList;
 
 public class Wife extends  Person {
+    public Husband husband;
     private ArrayList<Item> listWhatToBuy = new ArrayList<>();
 
     public Wife(String name){
@@ -13,7 +14,7 @@ public class Wife extends  Person {
         listWhatToBuy.add(itemToBuy);
     }
 
-//    public ArrayList<String> getNameOfItem(){
-//
-//    }
+    public ArrayList<Item> giveHusbandListToBuy( ){
+        return  listWhatToBuy;
+    }
 }

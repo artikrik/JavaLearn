@@ -3,20 +3,24 @@ package com.company.w8.Shopping;
 import java.util.ArrayList;
 
 public class Shop {
-    ArrayList <Item> items = new ArrayList<>();
+    ArrayList <Item> listItems = new ArrayList<>();
+
+    public Shop(Item item) {
+        addItem(item);
+    }
 
     public void addItem(Item item){
-        items.add(item);
+        listItems.add(item);
     }
 
     public void printItemsOfShop() {
-        for (Item tmp: items) {
+        for (Item tmp: listItems) {
             System.out.println(tmp.toString());
         }
     }
-    public  void getName(){
-        for (Item tmp: items) {
-            tmp.getName();
-        }
-    }
+//    public  void getName(){
+//        for (Item tmp: listItems) {
+//            tmp.getName();
+//        }
+//    }
 }
