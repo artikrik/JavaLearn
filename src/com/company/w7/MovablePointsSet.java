@@ -25,12 +25,21 @@ public class MovablePointsSet {
 
     public MovablePoint setRandomValue(int maxCoordinate, int minCoordinate, int xSpeedRandom, int ySpeedRandom) {
         return new MovablePoint(
-                new Random().nextInt(maxCoordinate) + minCoordinate,
-                new Random().nextInt(maxCoordinate) + minCoordinate,
-                new Random().nextInt(xSpeedRandom) + ySpeedRandom,
-                new Random().nextInt(xSpeedRandom) + ySpeedRandom);
+                new Random().nextInt(maxCoordinate-minCoordinate) + minCoordinate,
+                new Random().nextInt(maxCoordinate-minCoordinate) + minCoordinate,
+                new Random().nextInt(xSpeedRandom-ySpeedRandom) + ySpeedRandom,
+                new Random().nextInt(xSpeedRandom-ySpeedRandom) + ySpeedRandom);
     }
 
+    public void numberOfMove(MovablePointsSet points, int numberOfMove, int maxValueOfMove, int minValueOfMove)  {
+        for (int i = 0; i < numberOfMove; i++) {
+            System.out.println("Перемещаем каждую из точек " + (i + 1) + " раз");
+            for (MovablePoint valueSpeed : points.points) {
+                valueSpeed.move(setRandomMove(maxValueOfMove, minValueOfMove), setRandomMove(maxValueOfMove, minValueOfMove));
+            }
+            points.toString();
+        }
+    }
     @Override
     public String toString() {
         for (MovablePoint tmp : points) {
