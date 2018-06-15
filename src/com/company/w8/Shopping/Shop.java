@@ -18,9 +18,10 @@ public class Shop {
             System.out.println(tmp.toString());
         }
     }
-//    public  void getName(){
-//        for (Item tmp: listItems) {
-//            tmp.getName();
-//        }
-//    }
+
+    public  void getName(){
+        for (Item tmp: listItems) {
+            tmp.getName();
+        }
+   }
 }

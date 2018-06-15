@@ -10,11 +10,13 @@ public class Husband extends Person {
         super(name);
     }
 
-//    public void showAllShopItems(ArrayList <Shop> listOfShops){
-//        for (Shop tmp: listOfShops) {
-//            tmp.printItemsOfShop();
-//        }
-//    }
+    public void showAllShopItems(ArrayList <Shop> listOfShops){
+        for (Shop tmp: listOfShops) {
+            for (Item itemTmp: tmp.listItems) {
+                itemTmp.getName();
+            }
+        }
+    }
 
     public void takeListToBuy(){
         listWhatToBuy= wife.giveHusbandListToBuy();
