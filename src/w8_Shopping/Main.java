@@ -5,13 +5,18 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-//Wife wife = new Wife();
+        Wife wife = new Wife("");
+
+        Store storeElectronic = new Store();
+
         ArrayList<Item> itemsElectronic = new ArrayList<>();
         itemsElectronic.add(new Item("Sony", 100));
         itemsElectronic.add(new Item("Samsung", 80));
-        itemsElectronic.add(new Item("Sharp",70));
-        itemsElectronic.add(new Item("Apple",300));
-        itemsElectronic.add(new Item("Aser",40));
+        itemsElectronic.add(new Item("Sharp", 70));
+        itemsElectronic.add(new Item("Apple", 300));
+        itemsElectronic.add(new Item("Aser", 40));
+
+        Store storeProducts = new Store();
 
         ArrayList<Item> itemsProducts = new ArrayList<>();
         itemsProducts.add(new Item("Bread", 110));
@@ -21,6 +26,6 @@ public class Main {
         itemsProducts.add(new Item("Potato", 40));
 
 
-        System.out.println();
+        System.out.println("TotalList" + itemsElectronic.toString() + itemsProducts.toString());
     }
 }

@@ -1,6 +1,5 @@
 package w8_Shopping;
 
-import java.util.ArrayList;
 
 public class Item {
 
@@ -27,8 +26,6 @@ public class Item {
         public double getPrice (){
         return price;
         }
-        ArrayList<Item>itemsSet = new ArrayList<>();
-
 
     Item item0 = new Item("Sony", 100);
     Item item1 = new Item("Samsung", 80);

@@ -1,13 +1,15 @@
 package w8_Shopping;
 
+import java.util.ArrayList;
+
 public class Store {
 
-    public Store (){
+    public Store(){
 
     }
 
-    Store storeElectronic = new Store();
+    ArrayList<Item>itemsSet = new ArrayList<>();
 
-    Store storeGrosery = new Store();
+
 
 }
