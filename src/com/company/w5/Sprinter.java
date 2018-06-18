@@ -1,7 +1,6 @@
 package com.company.w5;
 
-import java.util.Comparator;
-import java.util.Random;
+import java.util.*;
 
 public class Sprinter implements Comparable<Sprinter> {
     private String name;
