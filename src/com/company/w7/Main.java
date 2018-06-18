@@ -6,8 +6,8 @@ public class Main {
     public static void main(String[] args) {
 
         MovablePointsSet movablePointsSet = new MovablePointsSet(3);
+//        pointSetMove(movablePointsSet,5);
         pointSetMove(movablePointsSet,5);
-//        MovablePointsSet.pointSetMove(movablePointsSet);
 //        movablePointsSet.toString();
     }
 }

@@ -3,7 +3,7 @@ package com.company.w7;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MovablePointsSet extends MovablePoint {
+public class MovablePointsSet {
     private int count;
     private ArrayList<MovablePoint> movablePoints = new ArrayList<>();
 
@@ -25,6 +25,10 @@ public class MovablePointsSet extends MovablePoint {
         return count;
     }
 
+    public ArrayList<MovablePoint> getMovablePoints() {
+        return movablePoints;
+    }
+
     private void setCount() {
         setCount(5);
     }
@@ -34,40 +38,28 @@ public class MovablePointsSet extends MovablePoint {
     }
 
     private MovablePoint setRandomToMovablePoint() {
-        float minCoord = 10f;
-        float maxCoord = 35f;
-        float minSpeed = 0f;
-        float maxSpeed = 10f;
         Random random = new Random();
 
+        float MIN_COORD = 10f;
+        float MAX_COORD = 35f;
         return new MovablePoint(
-                random.nextFloat() * (maxCoord - minCoord) + minCoord,
-                random.nextFloat() * (maxCoord - minCoord) + minCoord,
-                random.nextFloat() * (maxSpeed - minSpeed) + minSpeed,
-                random.nextFloat() * (maxSpeed - minSpeed) + minSpeed
+                random.nextFloat() * (MAX_COORD - MIN_COORD) + MIN_COORD,
+                random.nextFloat() * (MAX_COORD - MIN_COORD) + MIN_COORD,
+                0f,
+                0f
         );
     }
 
     static void pointSetMove(MovablePointsSet movablePointsSet, int times) {
-        ArrayList<MovablePoint> movablePoints1 = movablePointsSet.movablePoints;
+        ArrayList<MovablePoint> movablePoints = movablePointsSet.movablePoints;
 
-        for (int i1 = 0; i1 < movablePoints1.size(); i1++) {
-            MovablePoint point = movablePoints1.get(i1);
-            System.out.println("Элемент номер " + i1+1 + movablePointsSet.movablePoints.get(i1).toString());
+        for (int i1 = 0; i1 < movablePoints.size(); i1++) {
+            MovablePoint point = movablePoints.get(i1);
+            System.out.println("Элемент номер " + i1 + " " + movablePointsSet.movablePoints.get(i1).toString());
             for (int i = 0; i < times; i++) {
-                point.move(new Random().nextFloat() * (3 - -3) + -3);
+                point.move(new Random().nextFloat() * (3 - -3) + -3, new Random().nextFloat() * (3 - -3) + -3);
                 System.out.println(">>>" + point.toString());
             }
         }
-
     }
-
-    @Override
-    public String toString() {
-        for (MovablePoint m : movablePoints) {
-            System.out.println(m.toString());
-        }
-        return super.toString();
-    }
-
 }

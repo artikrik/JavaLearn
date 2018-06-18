@@ -1,6 +1,6 @@
 package com.company.w7;
 
-public class Point {
+public class Point{
     private float x;
     private float y;
 
