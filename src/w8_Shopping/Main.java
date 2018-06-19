@@ -7,9 +7,9 @@ public class Main {
 
         Wife wife = new Wife("");
 
-       Store storeElectronic = new Store();
+       /*Store storeElectronic = new Store();
 
-        ArrayList<Store> storeElectronic = new ArrayList<>();
+        ArrayList<Item> storeElectronic = new ArrayList<>();
         storeElectronic.add(new Store("Sony", 100));
         storeElectronic.add(new Store("Samsung", 80));
         storeElectronic.add(new Store("Sharp", 70));
@@ -18,14 +18,14 @@ public class Main {
 
         Store storeProducts = new Store();
 
-        ArrayList<Store> storeProducts = new ArrayList<>();
+        ArrayList<Item> storeProducts = new ArrayList<>();
         storeProducts.add(new Item("Bread", 110));
         storeProducts.add(new Item("Sausage", 80));
         storeProducts.add(new Item("Butter", 70));
         storeProducts.add(new Item("Milk", 300));
         storeProducts.add(new Item("Potato", 40));
+*/
 
-
-        System.out.println("TotalList" + storeElectronic.toString() + storeProducts.toString());
+        System.out.println();
     }
 }
