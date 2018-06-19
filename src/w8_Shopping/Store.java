@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Store {
 
-    public Store(){
+private Item name, price;
 
-    }
+
 
     ArrayList<Item>itemsSet = new ArrayList<>();
 

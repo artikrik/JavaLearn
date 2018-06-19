@@ -7,25 +7,25 @@ public class Main {
 
         Wife wife = new Wife("");
 
-        Store storeElectronic = new Store();
+       Store storeElectronic = new Store();
 
-        ArrayList<Item> itemsElectronic = new ArrayList<>();
-        itemsElectronic.add(new Item("Sony", 100));
-        itemsElectronic.add(new Item("Samsung", 80));
-        itemsElectronic.add(new Item("Sharp", 70));
-        itemsElectronic.add(new Item("Apple", 300));
-        itemsElectronic.add(new Item("Aser", 40));
+        ArrayList<Store> storeElectronic = new ArrayList<>();
+        storeElectronic.add(new Store("Sony", 100));
+        storeElectronic.add(new Store("Samsung", 80));
+        storeElectronic.add(new Store("Sharp", 70));
+        storeElectronic.add(new Store("Apple", 300));
+        storeElectronic.add(new Store("Aser", 40));
 
         Store storeProducts = new Store();
 
-        ArrayList<Item> itemsProducts = new ArrayList<>();
-        itemsProducts.add(new Item("Bread", 110));
-        itemsProducts.add(new Item("Sausage", 80));
-        itemsProducts.add(new Item("Butter", 70));
-        itemsProducts.add(new Item("Milk", 300));
-        itemsProducts.add(new Item("Potato", 40));
+        ArrayList<Store> storeProducts = new ArrayList<>();
+        storeProducts.add(new Item("Bread", 110));
+        storeProducts.add(new Item("Sausage", 80));
+        storeProducts.add(new Item("Butter", 70));
+        storeProducts.add(new Item("Milk", 300));
+        storeProducts.add(new Item("Potato", 40));
 
 
-        System.out.println("TotalList" + itemsElectronic.toString() + itemsProducts.toString());
+        System.out.println("TotalList" + storeElectronic.toString() + storeProducts.toString());
     }
 }

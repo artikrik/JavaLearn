@@ -9,6 +9,6 @@ public class Main {
 
         movablePointsSet.toString();
 
-        movablePointsSet.pointsMove(movablePointsSet, 5);
+        movablePointsSet.movePoints(movablePointsSet, 5);
     }
 }
