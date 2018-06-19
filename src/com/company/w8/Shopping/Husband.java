@@ -6,20 +6,18 @@ public class Husband extends Person {
     public Wife wife;
     ArrayList<Item> listWhatToBuy;
 
-    public Husband(String name){
+    public Husband(String name) {
         super(name);
     }
 
-    public void showAllShopItems(ArrayList <Shop> listOfShops){
-        for (Shop tmp: listOfShops) {
-            for (Item itemTmp: tmp.listItems) {
-                itemTmp.getName();
-            }
+    public void showAllShopItems(ArrayList<IShop> listOfShops) {
+        for (IShop itemInEveryShop : listOfShops) {
+            itemInEveryShop.printItemsOfShop();
         }
     }
 
-    public void takeListToBuy(){
-        listWhatToBuy= wife.giveHusbandListToBuy();
+    public void takeListToBuy() {
+        listWhatToBuy = wife.giveHusbandListToBuy();
         for (Item tmp : listWhatToBuy) {
             System.out.println(tmp.getName());
         }

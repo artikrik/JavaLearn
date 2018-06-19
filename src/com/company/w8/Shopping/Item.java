@@ -31,6 +31,11 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" + "name='" + name + '\'' + ", price=" + price + '}';
+        return name + " - " + price;
+    }
+
+    public int compareTo(Item item) {
+        if (this.getName().compareTo(item.getName())==0) return 1;
+        else return -1;
     }
 }

@@ -1,5 +1,7 @@
 package com.company.w8.Shopping;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -14,11 +16,11 @@ public class Main {
         Item potato = new Item("Potato", 40);
         Item sharp = new Item("Sharp", 70);
 
-        Shop comfy = new Shop(aser);
+        Comfy comfy = new Comfy(aser);
         comfy.addItem(apple);
         comfy.addItem(samsung);
         comfy.addItem(sony);
-        Shop ekoMarket = new Shop(sausege);
+        GroceryStore ekoMarket = new GroceryStore(sausege);
         ekoMarket.addItem(bread);
         ekoMarket.addItem(butter);
         ekoMarket.addItem(milk);
@@ -31,6 +33,11 @@ public class Main {
         wifeNice.husband=smartMan;
         wifeNice.addItemToTheList(sony);
         wifeNice.addItemToTheList(bread);
+
+        ArrayList<IShop> myShops = new ArrayList<>();
+        myShops.add(comfy);
+        myShops.add(ekoMarket);
         smartMan.takeListToBuy();
+        smartMan.showAllShopItems(myShops);
     }
 }
