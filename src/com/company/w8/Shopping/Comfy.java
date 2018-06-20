@@ -35,11 +35,19 @@ public class Comfy implements IShop {
 
     @Override
     public boolean checkIfItemInStore(Item checkItemToBuy) {
-        boolean itemPresentInSohop = false;
+        boolean itemPresentInShop=false;
         for (Item itemFromShop : listItems) {
-            if (itemFromShop.compareTo(checkItemToBuy) == 0) itemPresentInSohop = true;
-            else itemPresentInSohop = false;
+            if (itemFromShop.compareTo(checkItemToBuy) == 1) {itemPresentInShop=true;}
+            else itemPresentInShop=false;
         }
-        return itemPresentInSohop;
+        return itemPresentInShop;
     }
+
+    @Override
+    public ArrayList<Item> whatYouCanBuyInShops(ArrayList<Item> listWhatToBuy) {
+        for (Item checkItemIsPresent : listWhatToBuy) {
+            if(checkIfItemInStore(checkItemIsPresent)){listToBought.add(checkItemIsPresent);}
+        }return listToBought;
+    }
+
 }

@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        Item sony = new Item("Sony",100);
-        Item samsung = new Item("Samsung",80);
-        Item apple = new Item("Apple",300);
-        Item aser = new Item("Acer",40);
+        Item sony = new Item("Sony", 100);
+        Item samsung = new Item("Samsung", 80);
+        Item apple = new Item("Apple", 300);
+        Item aser = new Item("Acer", 40);
         Item sausege = new Item("Sausage", 80);
         Item bread = new Item("Bread", 110);
         Item butter = new Item("Butter", 70);
@@ -30,8 +30,8 @@ public class Main {
         Husband smartMan = new Husband("Pedro");
         Wife wifeNice = new Wife("Francesca");
         smartMan.wife = wifeNice;
-        wifeNice.husband=smartMan;
-        wifeNice.addItemToTheList(sony);
+        wifeNice.husband = smartMan;
+        wifeNice.addItemToTheList(aser);
         wifeNice.addItemToTheList(bread);
 
         ArrayList<IShop> myShops = new ArrayList<>();
@@ -39,5 +39,15 @@ public class Main {
         myShops.add(ekoMarket);
         smartMan.takeListToBuy();
         smartMan.showAllShopItems(myShops);
+        ArrayList<Item> manBoughtIt = new ArrayList<>();
+
+        ArrayList<Item> ttt= comfy.whatYouCanBuyInShops(smartMan.listWhatToBuy);
+        ArrayList<Item> ttt2=ekoMarket.whatYouCanBuyInShops(smartMan.listWhatToBuy);
+
+        System.out.println("Bought:");
+
+        for (Item itemToPrint : manBoughtIt) {
+            System.out.println(itemToPrint.toString());
+        }
     }
 }

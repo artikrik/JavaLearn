@@ -1,16 +1,21 @@
 package com.company.w8.Shopping;
 
+import java.util.ArrayList;
+
 public interface IShop {
+    ArrayList<Item> listToBought = new ArrayList<>();
 
+    void addItem(Item item);
 
-    public void addItem(Item item);
+    void printItemsOfShop();
 
-    public void printItemsOfShop();
+    void getName();
 
-    public  void getName();
+    void removeItem(int indexOfItem);
 
-   public  void removeItem(int indexOfItem);
+    boolean checkIfItemInStore(Item checkItemToBuy);
 
-   public boolean checkIfItemInStore(Item checkItemToBuy);
+    ArrayList<Item> whatYouCanBuyInShops(ArrayList<Item> listWhatToBuy);
+
 
 }

@@ -11,6 +11,7 @@ public class Husband extends Person {
     }
 
     public void showAllShopItems(ArrayList<IShop> listOfShops) {
+        System.out.println("Total list:");
         for (IShop itemInEveryShop : listOfShops) {
             itemInEveryShop.printItemsOfShop();
         }
@@ -18,8 +19,8 @@ public class Husband extends Person {
 
     public void takeListToBuy() {
         listWhatToBuy = wife.giveHusbandListToBuy();
-        for (Item tmp : listWhatToBuy) {
-            System.out.println(tmp.getName());
-        }
+//        for (Item tmp : listWhatToBuy) {
+//            System.out.println(tmp.getName());
+//        }
     }
 }
