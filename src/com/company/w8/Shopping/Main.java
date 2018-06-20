@@ -37,12 +37,15 @@ public class Main {
         ArrayList<IShop> myShops = new ArrayList<>();
         myShops.add(comfy);
         myShops.add(ekoMarket);
+
         smartMan.takeListToBuy();
         smartMan.showAllShopItems(myShops);
+
         ArrayList<Item> manBoughtIt = new ArrayList<>();
 
-        ArrayList<Item> ttt= comfy.whatYouCanBuyInShops(smartMan.listWhatToBuy);
-        ArrayList<Item> ttt2=ekoMarket.whatYouCanBuyInShops(smartMan.listWhatToBuy);
+        for (IShop currentShop: myShops) {
+            manBoughtIt.addAll(currentShop.whatYouCanBuyInShops(smartMan.listWhatToBuy));
+        }
 
         System.out.println("Bought:");
 

@@ -34,19 +34,12 @@ public class GroceryStore implements IShop {
     }
 
     @Override
-    public boolean checkIfItemInStore(Item checkItemToBuy) {
-        boolean itemPresentInSohop = false;
-        for (Item itemFromShop : listItems) {
-            if (itemFromShop.compareTo(checkItemToBuy) == 1) itemPresentInSohop = true;
-            else itemPresentInSohop = false;
-        }
-        return itemPresentInSohop;
-    }
-
-    @Override
     public ArrayList<Item> whatYouCanBuyInShops(ArrayList<Item> listWhatToBuy) {
-        for (Item checkItemIsPresent : listWhatToBuy) {
-            if(checkIfItemInStore(checkItemIsPresent)){listToBought.add(checkItemIsPresent);}
-        }return listToBought;
+        for (Item checkItemToBuy : listWhatToBuy) {
+            for (Item itemFromShop : listItems) {
+                if (itemFromShop.compareTo(checkItemToBuy) == 1)
+                    presentInCurrentShop.add(itemFromShop);
+            }
     }
+        return presentInCurrentShop;}
 }

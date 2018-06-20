@@ -1,4 +1,4 @@
-package com.company.w8;
+package com.company.w8.Animal;
 
 public  class Animal {
 
