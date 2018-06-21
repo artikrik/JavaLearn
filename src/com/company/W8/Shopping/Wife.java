@@ -5,7 +5,11 @@ import java.util.ArrayList;
 public class Wife {
 
     ArrayList<String> listWife = new ArrayList<>();
-    Husband husband = new Husband();
+    Husband husband;// = new Husband();
+    
+    public Wife(Husband husband){
+        this.husband = husband;
+    }
 
     public void addGoodInListWife(String name){
        listWife.add(name);
