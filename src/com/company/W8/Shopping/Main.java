@@ -10,7 +10,7 @@ public class Main {
         shop1.addInListGood("Sony", 100);
         shop2.addInListGood("Shark",70);
 
-Husband husband = new Husband();
+Husband husband = new Husband(husband);
 husband.moveInfoAboutShopProductsToHusband(shop2);
 husband.moveInfoAboutShopTechnicsToHusband(shop1);
 
