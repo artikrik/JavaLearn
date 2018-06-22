@@ -6,7 +6,7 @@ public class Comfy implements IShop {
     ArrayList<Item> listItems = new ArrayList<>();
 
     public Comfy(Item item) {
-        listItems.add(item);
+        addItem(item);
     }
 
     @Override
@@ -34,10 +34,10 @@ public class Comfy implements IShop {
     }
 
     @Override
-    public ArrayList<Item> whatYouCanBuyInShops(ArrayList<Item> listWhatToBuy) {
-        for (Item checkItemToBuy : listWhatToBuy) {
+    public ArrayList<Item> compareWhatYouCanBuyFromShopsList(ArrayList<Item> listWhatToBuy) {
+        for (Item manItemToBuy : listWhatToBuy) {
             for (Item itemFromShop : listItems) {
-                if (itemFromShop.compareTo(checkItemToBuy) == 1)
+                if (itemFromShop.compareTo(manItemToBuy) == 0)
                     presentInCurrentShop.add(itemFromShop);
             }
         }

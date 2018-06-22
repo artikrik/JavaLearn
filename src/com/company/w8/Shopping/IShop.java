@@ -13,7 +13,6 @@ public interface IShop {
 
     void removeItem(int indexOfItem);
 
-    ArrayList<Item> whatYouCanBuyInShops(ArrayList<Item> listWhatToBuy);
-
+    ArrayList<Item> compareWhatYouCanBuyFromShopsList(ArrayList<Item> listWhatToBuy);
 
 }

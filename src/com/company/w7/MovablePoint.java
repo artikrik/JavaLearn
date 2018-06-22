@@ -46,10 +46,13 @@ public class MovablePoint extends Point {
         return new MovablePoint(xSpeed,ySpeed);
     }
 
-    public MovablePoint move(int xSpeed, int ySpeed) {
+    public MovablePoint moveX( int xSpeed) {
         super.setX(getX()+xSpeed);
-        super.setY(getY()+ySpeed);
         setXSpeed(getXSpeed()+xSpeed);
+        return new MovablePoint();
+    }
+    public MovablePoint moveY( int ySpeed) {
+        super.setY(getY()+ySpeed);
         setYSpeed(getYSpeed()+ySpeed);
         return new MovablePoint();
     }

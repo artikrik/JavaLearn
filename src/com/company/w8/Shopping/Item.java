@@ -35,7 +35,7 @@ public class Item {
     }
 
     public int compareTo(Item item) {
-        if (this.getName().compareTo(item.getName())==0) return 1;
+        if (this.getName().compareTo(item.getName())==0) return 0;
         else return -1;
     }
 }
