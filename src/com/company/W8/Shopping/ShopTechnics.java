@@ -17,6 +17,20 @@ public class ShopTechnics implements Shop  {
         return shopTechnicsList;
     }
 
+    @Override
+    public void getName() {
+        for (Good good : shopTechnicsList) {
+            good.getName();
+        }
+    }
+
+    @Override
+    public void getPrice() {
+        for (Good good : shopTechnicsList) {
+            good.getPrice();
+        }
+    }
+
     public void toPrint() {
         for (Good tmp : shopTechnicsList) {
             System.out.print(tmp.toString());

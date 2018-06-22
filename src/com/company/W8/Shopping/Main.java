@@ -16,13 +16,14 @@ public class Main {
         husband.moveInfoAboutShopTechnicsToHusband(shop1);
 
         Wife wife = new Wife(husband);
-        wife.addGoodInListWife("Potato", 70);
-        wife.addGoodInListWife("Shark",70);
+        wife.addGoodInListWife("Potato", 0);
+        wife.addGoodInListWife("Shark",0);
 
         wife.getListAllGoodsInHusband();
-        System.out.println(wife.getListWife());
 
         wife.getListGoodsThatIsInSelling();
+
+        wife.getPriceAllGoods();
 
     }
 }

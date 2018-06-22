@@ -24,11 +24,15 @@ public class Wife {
     }
 
     public void getListAllGoodsInHusband(){
-        System.out.println(husband.getlistAllGoodsinAllShops());
+        System.out.println("Total list: " + husband.getlistAllGoodsinAllShops());
     }
 
     public void getListGoodsThatIsInSelling(){
-        System.out.println(husband.getlistGoodsthatispresent(listWife));
+        System.out.println("Goods are available to buy : " + husband.getlistGoodsthatispresent(listWife));
+    }
+
+    public void getPriceAllGoods(){
+        System.out.println("Bought: " +husband.getPriceofAvaiableGoods());
     }
 
 }

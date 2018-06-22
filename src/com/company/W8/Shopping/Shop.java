@@ -8,6 +8,10 @@ interface Shop {
 
     public ArrayList<Good> getListGoods();
 
+    public void getName();
+
+    public void getPrice();
+
 
 
 }
