@@ -43,25 +43,25 @@ public class MovablePointsSet {
             int xCheck=0, yCheck=0;
             for (MovablePoint currentPoint : pointsSet.pointFromSet) {
                 // PROBLEMS :
-                xCheck= currentPoint.moveX(setRandomMove(maxValueOfMove, minValueOfMove)).getX();
+                xCheck = currentPoint.moveX(setRandomMove(maxValueOfMove, minValueOfMove)).getX();
                 System.out.println(xCheck);
                 yCheck = currentPoint.moveY(setRandomMove(maxValueOfMove, minValueOfMove)).getY();
 
                 do {
-                    if (xCheck > maxCoordinate && xCheck < minCoordinate) {
+                    if (xCheck > maxCoordinate || xCheck < minCoordinate) {
                         xCheck = currentPoint.getX() - currentPoint.getXSpeed();
                         throw new OverflowPointException("X coordinate can't be bigger " + maxCoordinate + " or smaller than " + minCoordinate);
                     }
 
                 }
-                while (xCheck > maxCoordinate && xCheck < minCoordinate);
+                while (xCheck > maxCoordinate || xCheck < minCoordinate);
                 do {
                     if (yCheck > maxCoordinate || yCheck < minCoordinate) {
                         yCheck = currentPoint.getY() - currentPoint.getYSpeed();
                         throw new OverflowPointException("Y coordinate can't be bigger " + maxCoordinate + " or smaller than " + minCoordinate);
                     }
                 }
-                while (yCheck > maxCoordinate && yCheck < minCoordinate);
+                while (yCheck > maxCoordinate || yCheck < minCoordinate);
                 currentPoint.moveX(xCheck);
                 currentPoint.moveY(yCheck);
             }
