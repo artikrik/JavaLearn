@@ -4,22 +4,22 @@ import java.util.ArrayList;
 
 public class Wife {
 
-    ArrayList<String> listWife = new ArrayList<>();
-    Husband husband;// = new Husband();
+    ArrayList<Good> listWife = new ArrayList<>();
+    Husband husband;
     
     public Wife(Husband husband){
         this.husband = husband;
     }
 
-    public void addGoodInListWife(String name){
-       listWife.add(name);
+    public void addGoodInListWife(String name, int price){
+        listWife.add(new Good(name, price));
     }
 
     public void clearListWife(){
         listWife.clear();
     }
 
-    public ArrayList<String> getListWife() {
+    public ArrayList<Good> getListWife() {
         return listWife;
     }
 
@@ -27,5 +27,8 @@ public class Wife {
         System.out.println(husband.getlistAllGoodsinAllShops());
     }
 
+    public void getListGoodsThatIsInSelling(){
+        System.out.println(husband.getlistGoodsthatispresent(listWife));
+    }
 
 }

@@ -9,16 +9,20 @@ public class Main {
         ShopProducts shop2 = new ShopProducts();
         shop1.addInListGood("Sony", 100);
         shop2.addInListGood("Shark",70);
+        shop2.addInListGood("Milk",30);
 
-Husband husband = new Husband();
-husband.moveInfoAboutShopProductsToHusband(shop2);
-husband.moveInfoAboutShopTechnicsToHusband(shop1);
+        Husband husband = new Husband();
+        husband.moveInfoAboutShopProductsToHusband(shop2);
+        husband.moveInfoAboutShopTechnicsToHusband(shop1);
 
         Wife wife = new Wife(husband);
-        wife.addGoodInListWife("Sony");
+        wife.addGoodInListWife("Potato", 70);
+        wife.addGoodInListWife("Shark",70);
 
-     wife.getListAllGoodsInHusband();
+        wife.getListAllGoodsInHusband();
+        System.out.println(wife.getListWife());
 
-    //    System.out.println(husband.getlistAllGoods(shop1,shop2));
+        wife.getListGoodsThatIsInSelling();
+
     }
 }

@@ -24,7 +24,4 @@ public class ShopTechnics implements Shop  {
 
     }
 
-
-
-
 }
