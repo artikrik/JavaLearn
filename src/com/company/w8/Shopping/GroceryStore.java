@@ -3,7 +3,7 @@ package com.company.w8.Shopping;
 import java.util.ArrayList;
 
 public class GroceryStore implements IShop {
-    ArrayList<Item> listItems = new ArrayList<>();
+    ArrayList<Item> listItemsGrocery = new ArrayList<>();
 
     public GroceryStore(Item item) {
         addItem(item);
@@ -11,35 +11,30 @@ public class GroceryStore implements IShop {
 
     @Override
     public void addItem(Item item) {
-        listItems.add(item);
+        listItemsGrocery.add(item);
     }
 
     @Override
     public void printItemsOfShop() {
-        for (Item itemsOfShop : listItems) {
+        for (Item itemsOfShop : listItemsGrocery) {
             System.out.println(itemsOfShop.toString());
         }
     }
 
     @Override
-    public void getName() {
-        for (Item nameOfItem : listItems) {
-            nameOfItem.getName();
-        }
-    }
-
-    @Override
     public void removeItem(int indexOfItem) {
-        listItems.remove(indexOfItem);
+        listItemsGrocery.remove(indexOfItem);
     }
 
     @Override
     public ArrayList<Item> compareWhatYouCanBuyFromShopsList(ArrayList<Item> listWhatToBuy) {
+        ArrayList<Item> presentInCurrentShop = new ArrayList<>();
         for (Item checkItemToBuy : listWhatToBuy) {
-            for (Item itemFromShop : listItems) {
+            for (Item itemFromShop : listItemsGrocery) {
                 if (itemFromShop.compareTo(checkItemToBuy) == 0)
                     presentInCurrentShop.add(itemFromShop);
             }
+        }
+        return presentInCurrentShop;
     }
-        return presentInCurrentShop;}
 }

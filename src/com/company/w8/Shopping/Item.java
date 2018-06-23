@@ -1,8 +1,18 @@
 package com.company.w8.Shopping;
 
 public class Item {
+
     private String name;
     private double price;
+
+    public Item(String name) {
+        setName(name);
+    }
+
+    public Item(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
 
     public String getName() {
         return name;
@@ -20,22 +30,13 @@ public class Item {
         this.price = price;
     }
 
-    public Item(String name) {
-        this.name = name;
-    }
-
-    public Item(String name, double price) {
-        this.name = name;
-        this.price = price;
-    }
-
     @Override
     public String toString() {
         return name + " - " + price;
     }
 
     public int compareTo(Item item) {
-        if (this.getName().compareTo(item.getName())==0) return 0;
+        if (this.getName().compareTo(item.getName()) == 0) return 0;
         else return -1;
     }
 }
