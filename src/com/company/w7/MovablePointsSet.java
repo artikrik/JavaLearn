@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class MovablePointsSet {
 
-    ArrayList<MovablePoint> pointFromSet = new ArrayList<>();
+    private ArrayList<MovablePoint> pointFromSet = new ArrayList<>();
     int maxCoordinate;
     int minCoordinate;
 
@@ -27,45 +27,53 @@ public class MovablePointsSet {
 
     public MovablePoint setRandomValueForConstuctor(int maxCoordinate, int minCoordinate, int xSpeedRandom, int ySpeedRandom) {
         return new MovablePoint(
-                new Random().nextInt(maxCoordinate - minCoordinate) + minCoordinate,
-                new Random().nextInt(maxCoordinate - minCoordinate) + minCoordinate,
-                new Random().nextInt(xSpeedRandom - ySpeedRandom) + ySpeedRandom,
-                new Random().nextInt(xSpeedRandom - ySpeedRandom) + ySpeedRandom);
+                new Random(4).nextInt(maxCoordinate - minCoordinate) + minCoordinate,
+                new Random(4).nextInt(maxCoordinate - minCoordinate) + minCoordinate,
+                new Random(4).nextInt(xSpeedRandom - ySpeedRandom) + ySpeedRandom,
+                new Random(4).nextInt(xSpeedRandom - ySpeedRandom) + ySpeedRandom);
     }
 
     public static int setRandomMove(int maxValueOfMove, int minValueOfMove) {
         return new Random().nextInt(maxValueOfMove) + minValueOfMove;
     }
 
-    public void numberOfMove(MovablePointsSet pointsSet, int numberOfMove, int maxValueOfMove, int minValueOfMove) throws OverflowPointException {
+    public void pointMove(MovablePointsSet pointsSet, int maxValueOfMove, int minValueOfMove) throws OverflowPointException {
+        int xCheck, yCheck;
+
+        for (MovablePoint currentPoint : pointsSet.pointFromSet) {
+            // Сохраняем значение рандома для (х,у)
+            xCheck = setRandomMove(maxValueOfMove, minValueOfMove);
+            yCheck = setRandomMove(maxValueOfMove, minValueOfMove);
+
+            // проверка вышла ли точка  за диапазон (текущее значение + рандомное)
+            if (!checkXCoordinaDontOverflow(xCheck, currentPoint)) {
+                //xCheck = currentPoint.getX() - currentPoint.getXSpeed();
+                throw new OverflowPointException("X coordinate can't be bigger " + maxCoordinate + " or smaller than " + minCoordinate + "; Point(x)=" + (xCheck+currentPoint.getX()));
+            }
+            if (!checkYCoordinaDontOverflow(yCheck, currentPoint)) {
+               // yCheck = currentPoint.getX() - currentPoint.getXSpeed();
+                throw new OverflowPointException("Y coordinate can't be bigger " + maxCoordinate + " or smaller than " + minCoordinate+ "; Point(y)=" + (yCheck+currentPoint.getY()));
+            }
+            currentPoint.moveX(xCheck);
+            currentPoint.moveY(yCheck);
+        }
+        pointsSet.toString();
+    }
+
+    private boolean checkXCoordinaDontOverflow(int value, MovablePoint currentPoint) {
+        if (value + currentPoint.getX() > maxCoordinate || value + currentPoint.getX() < minCoordinate) return false;
+        else return true;
+    }
+
+    private boolean checkYCoordinaDontOverflow(int value, MovablePoint currentPoint) {
+        if (value + currentPoint.getY() > maxCoordinate || value + currentPoint.getY() < minCoordinate) return false;
+        else return true;
+    }
+
+    static void repeatMove(MovablePointsSet pointsSet, int numberOfMove, int maxValueOfMove, int minValueOfMove) {
         for (int i = 0; i < numberOfMove; i++) {
             System.out.println("Перемещаем каждую из точек " + (i + 1) + " раз");
-            int xCheck=0, yCheck=0;
-            for (MovablePoint currentPoint : pointsSet.pointFromSet) {
-                // PROBLEMS :
-                xCheck = currentPoint.moveX(setRandomMove(maxValueOfMove, minValueOfMove)).getX();
-                System.out.println(xCheck);
-                yCheck = currentPoint.moveY(setRandomMove(maxValueOfMove, minValueOfMove)).getY();
-
-                do {
-                    if (xCheck > maxCoordinate || xCheck < minCoordinate) {
-                        xCheck = currentPoint.getX() - currentPoint.getXSpeed();
-                        throw new OverflowPointException("X coordinate can't be bigger " + maxCoordinate + " or smaller than " + minCoordinate);
-                    }
-
-                }
-                while (xCheck > maxCoordinate || xCheck < minCoordinate);
-                do {
-                    if (yCheck > maxCoordinate || yCheck < minCoordinate) {
-                        yCheck = currentPoint.getY() - currentPoint.getYSpeed();
-                        throw new OverflowPointException("Y coordinate can't be bigger " + maxCoordinate + " or smaller than " + minCoordinate);
-                    }
-                }
-                while (yCheck > maxCoordinate || yCheck < minCoordinate);
-                currentPoint.moveX(xCheck);
-                currentPoint.moveY(yCheck);
-            }
-            pointsSet.toString();
+            pointsSet.pointMove(pointsSet, maxValueOfMove, minValueOfMove);
         }
     }
 
