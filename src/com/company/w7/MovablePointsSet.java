@@ -13,19 +13,18 @@ public class MovablePointsSet {
         this.maxCoordinate = maxCoordinate;
         this.minCoordinate = minCoordinate;
         for (int i = 0; i < 5; i++) {
-            pointFromSet.add(setRandomValueForConstuctor(maxCoordinate, minCoordinate, maxSpeed, minSpeed));
+            pointFromSet.add(setRandomValueForConstuctor( maxSpeed, minSpeed));
         }
     }
 
     public MovablePointsSet(int numberOfPoint, int maxCoordinate, int minCoordinate, int maxSpeed, int minSpeed) {
-        this.maxCoordinate = maxCoordinate;
-        this.minCoordinate = minCoordinate;
+        new MovablePointsSet(maxCoordinate, minCoordinate, maxSpeed, minSpeed);
         for (int i = 0; i < numberOfPoint; i++) {
-            pointFromSet.add(setRandomValueForConstuctor(maxCoordinate, minCoordinate, maxSpeed, minSpeed));
+            pointFromSet.add(setRandomValueForConstuctor( maxSpeed, minSpeed));
         }
     }
 
-    public MovablePoint setRandomValueForConstuctor(int maxCoordinate, int minCoordinate, int xSpeedRandom, int ySpeedRandom) {
+    public MovablePoint setRandomValueForConstuctor( int xSpeedRandom, int ySpeedRandom) {
         return new MovablePoint(
                 new Random(4).nextInt(maxCoordinate - minCoordinate) + minCoordinate,
                 new Random(4).nextInt(maxCoordinate - minCoordinate) + minCoordinate,
@@ -57,7 +56,7 @@ public class MovablePointsSet {
             currentPoint.moveX(xCheck);
             currentPoint.moveY(yCheck);
         }
-        pointsSet.toString();
+        pointsSet.print();
     }
 
     private boolean checkXCoordinaDontOverflow(int value, MovablePoint currentPoint) {
@@ -77,11 +76,9 @@ public class MovablePointsSet {
         }
     }
 
-    @Override
-    public String toString() {
+    public void print() {
         for (MovablePoint movablePoint : pointFromSet) {
             System.out.println(movablePoint.toString());
         }
-        return super.toString();
     }
 }
