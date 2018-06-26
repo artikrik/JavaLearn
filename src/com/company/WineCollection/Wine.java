@@ -1,14 +1,15 @@
 package com.company.WineCollection;
 
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class WineCollection {
+public class Wine {
     private String wineName;
     private String wineCountry;
     private GregorianCalendar bottlingYear;
 
-    public WineCollection(String wineName, String wineCountry, GregorianCalendar bottlingYear) {
+    public Wine(String wineName, String wineCountry, GregorianCalendar bottlingYear) {
         setWineName(wineName);
         setWineCountry(wineCountry);
         setBottlingYear(bottlingYear);
