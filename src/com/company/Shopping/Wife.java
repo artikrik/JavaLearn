@@ -7,7 +7,7 @@ public class Wife {
     ArrayList<PurchasingCharacteristics> wifeList = new ArrayList<>();
     Husband husband = new Husband();
 
-    public void productsInWifeList(String purchaseName, double purchasePrise){
+    public void productsInWifeList(String purchaseName, int purchasePrise){
         wifeList.add(new PurchasingCharacteristics(
                 purchaseName, purchasePrise));
     }

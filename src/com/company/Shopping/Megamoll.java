@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 interface Megamoll {
 
-    public void addInListPurchasingCharacteristics(String purchaseName, double purchasePrise);
+    public void addInListPurchasingCharacteristics(String purchaseName, int purchasePrise);
 
     public ArrayList<PurchasingCharacteristics> getListPurchasingCharacteristics();
 

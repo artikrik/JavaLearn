@@ -5,7 +5,7 @@ public class PurchasingCharacteristics {
     private String purchaseName;
     private double purchasePrise;
 
-    public PurchasingCharacteristics(String purchaseName, double purchasePrise) {
+    public PurchasingCharacteristics(String purchaseName, int purchasePrise) {
         setPurchaseName(purchaseName);
         setPurchasePrise(purchasePrise);
     }
@@ -14,7 +14,7 @@ public class PurchasingCharacteristics {
         this.purchaseName = purchaseName;
     }
 
-    private void setPurchasePrise(double purchasePrise) {
+    private void setPurchasePrise(int purchasePrise) {
         this.purchasePrise = purchasePrise;
     }
 

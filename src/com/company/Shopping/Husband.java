@@ -18,6 +18,28 @@ public class Husband {
         comfy = gadgets;
     }
 
-    public List<PurchasingCharacteristics>
+    public List<PurchasingCharacteristics> getAllItemsInAllShops(){
+        allItemsInAllShops.addAll(silpo.getListPurchasingCharacteristics());
+        allItemsInAllShops.addAll(comfy.getListPurchasingCharacteristics());
+        return allItemsInAllShops;
+    }
+
+    public List<PurchasingCharacteristics> getAllowableProducts(ArrayList<PurchasingCharacteristics> list){
+        for (PurchasingCharacteristics purchasingCharacteristics : allItemsInAllShops){
+            for (PurchasingCharacteristics wifePurchasing : list){
+                if (purchasingCharacteristics.getPurchaseName().equals(wifePurchasing.getPurchaseName()))
+                    allowableProducts.add(purchasingCharacteristics);
+            }
+        }
+        return allowableProducts;
+    }
+
+    public int getTotalCostBougthItems(){
+        int startPrice = 0;
+        for (PurchasingCharacteristics purchasingCharacteristics : allowableProducts){
+            startPrice += purchasingCharacteristics.getPurchasePrise();
+        }
+        return startPrice;
+    }
 
 }

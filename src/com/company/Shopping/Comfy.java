@@ -12,7 +12,7 @@ public class Comfy implements Megamoll {
     }
 
     @Override
-    public void addInListPurchasingCharacteristics(String purchaseName, double purchasePrise) {
+    public void addInListPurchasingCharacteristics(String purchaseName, int purchasePrise) {
         productsComfy.add(new PurchasingCharacteristics(purchaseName, purchasePrise));
     }
 
