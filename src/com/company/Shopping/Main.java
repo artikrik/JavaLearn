@@ -25,14 +25,16 @@ public class Main {
         husband.comfyInfo(comfy);
 
         Wife wife = new Wife(husband);
-        wife.getAllItemsListFromHusband();
-        wife.getNeedToBuyItems();
-        wife.getTotalCost();
-
         wife.productsInWifeList("Sony", 0);
         wife.productsInWifeList("Bread", 0);
         wife.productsInWifeList("Lenovo", 0);
         wife.productsInWifeList("Onion", 0);
+
+        wife.getAllItemsListFromHusband();
+        wife.getNeedToBuyItems();
+        wife.getTotalCost();
+
+
 
 
 

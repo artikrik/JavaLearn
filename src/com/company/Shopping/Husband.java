@@ -18,25 +18,25 @@ public class Husband {
         comfy = gadgets;
     }
 
-    public List<PurchasingCharacteristics> getAllItemsInAllShops(){
+    public List<PurchasingCharacteristics> getAllItemsInAllShops() {
         allItemsInAllShops.addAll(silpo.getListPurchasingCharacteristics());
         allItemsInAllShops.addAll(comfy.getListPurchasingCharacteristics());
         return allItemsInAllShops;
     }
 
-    public ArrayList <PurchasingCharacteristics> getAllowableProducts(ArrayList<PurchasingCharacteristics> list){
-        for (PurchasingCharacteristics purchasingCharacteristics : allItemsInAllShops){
-            for (PurchasingCharacteristics wifePurchasing : list){
+
+    public ArrayList<PurchasingCharacteristics> getAllowableProducts(ArrayList<PurchasingCharacteristics> listToBuy) {
+        for (PurchasingCharacteristics purchasingCharacteristics : allItemsInAllShops) {
+            for (PurchasingCharacteristics wifePurchasing : listToBuy)
                 if (purchasingCharacteristics.getPurchaseName().equals(wifePurchasing.getPurchaseName()))
                     allowableProducts.add(purchasingCharacteristics);
-            }
         }
         return allowableProducts;
     }
 
-    public int getTotalCostBougthItems(){
+    public int getTotalCostBougthItems() {
         int startPrice = 0;
-        for (PurchasingCharacteristics purchasingCharacteristics : allowableProducts){
+        for (PurchasingCharacteristics purchasingCharacteristics : allowableProducts) {
             startPrice += purchasingCharacteristics.getPurchasePrise();
         }
         return startPrice;

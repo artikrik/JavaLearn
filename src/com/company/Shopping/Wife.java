@@ -7,30 +7,29 @@ public class Wife {
     ArrayList<PurchasingCharacteristics> wifeList = new ArrayList<>();
     Husband husband;
 
-    public Wife(Husband husband){
+    public Wife(Husband husband) {
         this.husband = husband;
     }
 
 
-    public void productsInWifeList(String purchaseName, int purchasePrise){
-        wifeList.add(new PurchasingCharacteristics(
-                purchaseName, purchasePrise));
+    public void productsInWifeList(String purchaseName, int purchasePrise) {
+        wifeList.add(new PurchasingCharacteristics(purchaseName, purchasePrise));
     }
 
-    public void deleteWifelist(){
+    public void deleteWifelist() {
         wifeList.clear();
     }
 
-    public ArrayList<PurchasingCharacteristics> getWifeList(){
+    public ArrayList<PurchasingCharacteristics> getWifeList() {
         return wifeList;
     }
 
-    public void getAllItemsListFromHusband(){
+    public void getAllItemsListFromHusband() {
         System.out.println("Список всех продуктов: " + husband.getAllItemsInAllShops());
     }
 
-    public void getNeedToBuyItems(){
-        System.out.println("Допустимые к покупке продукты: " + husband.getAllowableProducts(wifeList));
+    public void getNeedToBuyItems() {
+        System.out.println("Дорогая, я нам купил: " + husband.getAllowableProducts(wifeList));
     }
 
     public void getTotalCost() {

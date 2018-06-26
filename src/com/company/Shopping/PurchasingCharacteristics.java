@@ -1,5 +1,7 @@
 package com.company.Shopping;
 
+import java.util.ArrayList;
+
 public class PurchasingCharacteristics {
 
     private String purchaseName;
@@ -30,5 +32,4 @@ public class PurchasingCharacteristics {
     public String toString() {
         return purchaseName + " " + purchasePrise;
     }
-
 }
