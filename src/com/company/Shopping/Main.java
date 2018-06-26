@@ -24,7 +24,7 @@ public class Main {
         husband.silpoInfo(silpo);
         husband.comfyInfo(comfy);
 
-        Wife wife = new Wife();
+        Wife wife = new Wife(husband);
         wife.getAllItemsListFromHusband();
         wife.getNeedToBuyItems();
         wife.getTotalCost();

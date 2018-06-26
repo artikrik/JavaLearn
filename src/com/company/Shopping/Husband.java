@@ -24,7 +24,7 @@ public class Husband {
         return allItemsInAllShops;
     }
 
-    public List<PurchasingCharacteristics> getAllowableProducts(ArrayList<PurchasingCharacteristics> list){
+    public ArrayList <PurchasingCharacteristics> getAllowableProducts(ArrayList<PurchasingCharacteristics> list){
         for (PurchasingCharacteristics purchasingCharacteristics : allItemsInAllShops){
             for (PurchasingCharacteristics wifePurchasing : list){
                 if (purchasingCharacteristics.getPurchaseName().equals(wifePurchasing.getPurchaseName()))

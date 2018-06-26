@@ -3,7 +3,7 @@ package com.company.Shopping;
 public class PurchasingCharacteristics {
 
     private String purchaseName;
-    private double purchasePrise;
+    private int purchasePrise;
 
     public PurchasingCharacteristics(String purchaseName, int purchasePrise) {
         setPurchaseName(purchaseName);

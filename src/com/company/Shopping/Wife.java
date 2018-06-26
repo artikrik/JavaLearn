@@ -5,7 +5,12 @@ import java.util.ArrayList;
 public class Wife {
 
     ArrayList<PurchasingCharacteristics> wifeList = new ArrayList<>();
-    Husband husband = new Husband();
+    Husband husband;
+
+    public Wife(Husband husband){
+        this.husband = husband;
+    }
+
 
     public void productsInWifeList(String purchaseName, int purchasePrise){
         wifeList.add(new PurchasingCharacteristics(
