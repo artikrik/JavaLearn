@@ -8,7 +8,7 @@ public class MovablePoint extends Point {
     public float ySpeed = 0.0f;
 
     MovablePoint(float x, float y, float xSpeed, float ySpeed) {
-        super();
+        super(x,y);
         setXSpeed(xSpeed);
         setYSpeed(ySpeed);
     }
@@ -42,20 +42,19 @@ public class MovablePoint extends Point {
         return point;
     }
 
-    public Pair<Float, Float> move() {
-        float x = getX();
-        float y = getY();
+    public MovablePoint move() {
+
         x += xSpeed;
         y += ySpeed;
         setXY(x, y);
-        return super.getXY();
+        return this;
     }
 
     @Override
     public String toString() {
         return "MovablePoint{" + "x=" + x
                 + ", y=" + y +
-                "xSpeed=" + xSpeed +
+                ", xSpeed=" + xSpeed +
                 ", ySpeed=" + ySpeed +
                 '}';
     }
