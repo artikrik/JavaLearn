@@ -17,25 +17,21 @@ public class FlightList {
         flightArrayList.remove(id);
     }
 
-    public void sortByAirLineByNameOrByDistance() {
-        Collections.sort(flightArrayList, new ComparatorByAirlineByPrice());
-    }
 
     public void sortByDistance() {
-        Collections.sort(flightArrayList, new Comparator<Flight>() {
-            @Override
-            public int compare(Flight o1, Flight o2) {
-                return Double.compare(o1.getDistance(), o2.getDistance());
-            }
-        });
+        Collections.sort(flightArrayList, new ComparatorByDistance().thenComparing(new ComparatorByPlaneFirm()));
     }
 
     public void  sortByPrice(){
         Collections.sort(flightArrayList, new ComparatorByPrice());
     }
 
+    public void sortByAirLineNameThenByPrice() {
+        Collections.sort(flightArrayList, new ComparatorByAirline().thenComparing(new ComparatorByPrice()));
+    }
+
     public void sortByDistanceByPlaneFirmByPlaneModel(){
-        //Collections.sort(flightArrayList, new ComparatorByPrice()); переделать для расстояния
+        Collections.sort(flightArrayList, Comparator.comparing(Flight::getDistance).thenComparing(new ComparatorByPlaneFirm()).thenComparing(new ComparatorByPlaneModel()));
     }
 
     public void printFlightList() {

@@ -10,15 +10,12 @@ public class MovablePointsSet {
     int minCoordinate;
 
     public MovablePointsSet(int maxCoordinate, int minCoordinate, int maxSpeed, int minSpeed) {
-        this.maxCoordinate = maxCoordinate;
-        this.minCoordinate = minCoordinate;
-        for (int i = 0; i < 5; i++) {
-            pointFromSet.add(setRandomValueForConstuctor( maxSpeed, minSpeed));
-        }
+        this( 5, maxCoordinate, minCoordinate,maxSpeed,minSpeed);
     }
 
     public MovablePointsSet(int numberOfPoint, int maxCoordinate, int minCoordinate, int maxSpeed, int minSpeed) {
-        new MovablePointsSet(maxCoordinate, minCoordinate, maxSpeed, minSpeed);
+        this.maxCoordinate=maxCoordinate;
+        this.minCoordinate=minCoordinate;
         for (int i = 0; i < numberOfPoint; i++) {
             pointFromSet.add(setRandomValueForConstuctor( maxSpeed, minSpeed));
         }
@@ -36,10 +33,10 @@ public class MovablePointsSet {
         return new Random().nextInt(maxValueOfMove) + minValueOfMove;
     }
 
-    public void pointMove(MovablePointsSet pointsSet, int maxValueOfMove, int minValueOfMove) throws OverflowPointException {
+    public void pointMove( int maxValueOfMove, int minValueOfMove) throws OverflowPointException {
         int xCheck, yCheck;
 
-        for (MovablePoint currentPoint : pointsSet.pointFromSet) {
+        for (MovablePoint currentPoint : pointFromSet) {
             // Сохраняем значение рандома для (х,у)
             xCheck = setRandomMove(maxValueOfMove, minValueOfMove);
             yCheck = setRandomMove(maxValueOfMove, minValueOfMove);
@@ -56,7 +53,7 @@ public class MovablePointsSet {
             currentPoint.moveX(xCheck);
             currentPoint.moveY(yCheck);
         }
-        pointsSet.print();
+        print();
     }
 
     private boolean checkXCoordinaDontOverflow(int value, MovablePoint currentPoint) {
@@ -69,10 +66,10 @@ public class MovablePointsSet {
         else return true;
     }
 
-    static void repeatMove(MovablePointsSet pointsSet, int numberOfMove, int maxValueOfMove, int minValueOfMove) {
+    public void repeatMove( int numberOfMove, int maxValueOfMove, int minValueOfMove) {
         for (int i = 0; i < numberOfMove; i++) {
             System.out.println("Перемещаем каждую из точек " + (i + 1) + " раз");
-            pointsSet.pointMove(pointsSet, maxValueOfMove, minValueOfMove);
+            pointMove( maxValueOfMove, minValueOfMove);
         }
     }
 
