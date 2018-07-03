@@ -3,45 +3,45 @@ package w7;
 import javafx.util.Pair;
 
 public class Point {
-    public float x;
-    public float y;
 
-    Point(float x, float y) {
-        setX(x);
-        setY(y);
+    private int x = 0;
+    private int y = 0;
+
+    public Point() {
     }
 
-    Point() {
-    }
-
-    public void setX(float x) {
-        this.x = x;
-    }
-
-    public void setY(float y) {
-        this.y = y;
-    }
-
-    public void setXY(float x, float y) {
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public float getX() {
+    public int getX() {
         return x;
     }
 
-    public float getY() {
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
         return y;
     }
 
-    public Pair<Float, Float> getXY() {
-        Pair<Float, Float> point = new Pair<>(x, y);
-        return point;
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public Pair<Integer, Integer> getXY() {
+        return new Pair<>(x, y);
+    }
+
+    public void setXY(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     @Override
     public String toString() {
-        return "Point{" + this.getX() + "," + this.getY() + ")";
+        return "(" + getX() + "," + getY() + ")";
     }
 }

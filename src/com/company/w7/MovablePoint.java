@@ -3,59 +3,56 @@ package w7;
 
 import javafx.util.Pair;
 
-public class MovablePoint extends Point {
-    public float xSpeed = 0.0f;
-    public float ySpeed = 0.0f;
+public class MovablePoint extends Point{
+    private int xSpeed = 0;
+    private int ySpeed = 0;
 
-    MovablePoint(float x, float y, float xSpeed, float ySpeed) {
+    public MovablePoint() {
+    }
+
+    public MovablePoint(int xSpeed, int ySpeed) {
+        setXSpeed(xSpeed);
+        setYSpeed(ySpeed);
+    }
+
+    public MovablePoint(int x, int y, int xSpeed, int ySpeed) {
         super(x,y);
         setXSpeed(xSpeed);
         setYSpeed(ySpeed);
     }
 
-    MovablePoint(float xSpeed, float ySpeed) {
-        setXSpeed(xSpeed);
-        setYSpeed(ySpeed);
-    }
-
-    MovablePoint() {
-    }
-
-    public void setXSpeed(float xSpeed) {
-        this.xSpeed = xSpeed;
-    }
-
-    public void setYSpeed(float ySpeed) {
-        this.ySpeed = ySpeed;
-    }
-
-    public float getxSpeed() {
+    public int getXSpeed() {
         return xSpeed;
     }
 
-    public float getySpeed() {
+    public void setXSpeed(int xSpeed) {
+        this.xSpeed = xSpeed;
+    }
+
+    public int getYSpeed() {
         return ySpeed;
     }
 
-    public Pair<Float, Float> getSpeed() {
-        Pair<Float, Float> point = new Pair<>(xSpeed, ySpeed);
-        return point;
+    public void setYSpeed(int ySpeed) {
+        this.ySpeed = ySpeed;
+    }
+
+    public Pair<Integer, Integer> getSpeed() {
+        return new Pair<>(xSpeed, ySpeed);
+    }
+
+    public void setSpeed(int xSpeed, int ySpeed) {
+        this.xSpeed = xSpeed;
+        this.ySpeed = ySpeed;
     }
 
     public MovablePoint move() {
-
-        x += xSpeed;
-        y += ySpeed;
-        setXY(x, y);
+        setXY(getX() + getXSpeed(), getY() + getYSpeed());
         return this;
     }
 
     @Override
     public String toString() {
-        return "MovablePoint{" + "x=" + x
-                + ", y=" + y +
-                ", xSpeed=" + xSpeed +
-                ", ySpeed=" + ySpeed +
-                '}';
+        return super.toString() + ", speed=(" + getXSpeed() + "," + getYSpeed() + ")";
     }
 }

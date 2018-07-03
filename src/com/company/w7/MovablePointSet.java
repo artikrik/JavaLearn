@@ -1,65 +1,57 @@
 package w7;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class MovablePointSet {
 
-    final static int COORDINATE_LOW = 10;
-    final static int COORDINATE_HIGH = 35;
-    final static int SPEED_LOW = 0;
-    final static int SPEED_HIGH = 9;
-    final static int SPEED_LOW_DIAPASON = -3;
-    final static int SPEED_HIGH_DIAPASON = 3;
-    final static int VALUE_OF_POINS = 5;
+    final static int COORDINATES_MIN = 10;
+    final static int COORDINATES_MAX = 35;
 
-    ArrayList<MovablePoint> movablePointArrayList = new ArrayList<>();
-    Random random = new Random();
-
-    public int generateCoordinateRandomValue() {
-        return random.nextInt((COORDINATE_HIGH - COORDINATE_LOW + 1) + COORDINATE_LOW);
-
-    }
-
-    public int generateSpeedRandomValue() {
-        int randomSpeedNumber = random.nextInt((SPEED_HIGH - SPEED_LOW + 1) + SPEED_LOW);
-        return randomSpeedNumber;
-    }
-
-    public MovablePointSet(int valueOfPoint) {
-        createMovablePointSet(valueOfPoint);
-    }
+    private ArrayList<MovablePoint> points = new ArrayList<>();
 
     public MovablePointSet() {
     }
 
-    public void createMovablePointSet(){
-        createMovablePointSet(2);
-    }
-
-
-    public void createMovablePointSet(int valueOfPoint) {
-        for (int i = 0; i < 2; i++) {
-            addPoint(new MovablePoint(generateCoordinateRandomValue(), generateCoordinateRandomValue(), 0, 0));
-
+    public MovablePointSet(int numberOfPoints) {
+        for (int i = 0; i < numberOfPoints; i++) {
+            points.add(new MovablePoint(generateCoordinate(), generateCoordinate(), 0, 0));
         }
     }
 
-    public void addPoint(MovablePoint point){
-        movablePointArrayList.add(point);
+    public boolean isValid(Point point) {
+        return COORDINATES_MIN <= point.getX() && point.getX() <= COORDINATES_MAX &&
+                COORDINATES_MIN <= point.getY() && point.getY() <= COORDINATES_MAX;
     }
 
-    public void makeRandomMove() {
-        int randomMove = random.nextInt((SPEED_HIGH_DIAPASON - SPEED_LOW_DIAPASON + 1) + SPEED_LOW_DIAPASON);
-
-
-    }
-
-    public void printPointSet(){
-        for(MovablePoint point: movablePointArrayList){
-            System.out.println(point.toString());
+    public void addPoint(MovablePoint point) {
+        if (isValid(point)) {
+            points.add(point);
+        } else {
+            throw new IllegalArgumentException("Coordinates are out of allowed limits");
         }
-        System.out.println();
+    }
+
+    public int generateCoordinate() {
+        return MainApp.generate(COORDINATES_MIN, COORDINATES_MAX);
+    }
+
+    public void move(int xSpeed, int ySpeed) {
+        for (MovablePoint p: points) {
+            p.setSpeed(xSpeed, ySpeed);
+            p.move();
+            if (!isValid(p)) {
+                throw new IllegalStateException("Point " + p + " is out of allowed range [" + COORDINATES_MIN + "," + COORDINATES_MAX + "]");
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        for (MovablePoint p: points) {
+            s.append(p).append("\r\n");
+        }
+        return s.toString();
     }
 }
 
