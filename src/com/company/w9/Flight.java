@@ -6,16 +6,7 @@ public class Flight {
     private double price;
     private Enum planeProducer;
     private Enum modelOfPlane;
-
-    public Enum getModelOfPlane() {
-        return modelOfPlane;
-    }
-
     private double distance;
-
-    public String getAirline() {
-        return airline;
-    }
 
     public Flight(String id, String airline, double price, Enum planeProducer, Enum modelOfPlane, double distance) {
         this.id = id;
@@ -34,6 +25,12 @@ public class Flight {
         return price;
     }
 
+    public String getAirline() {
+        return airline;
+    }
+    public Enum getModelOfPlane() {
+        return modelOfPlane;
+    }
     public Enum getPlaneProducer() {
         return planeProducer;
     }
