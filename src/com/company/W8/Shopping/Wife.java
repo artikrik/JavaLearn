@@ -6,7 +6,7 @@ public class Wife {
 
     ArrayList<Good> listWife = new ArrayList<>();
     Husband husband;
-    
+
     public Wife(Husband husband){
         this.husband = husband;
     }
@@ -28,7 +28,7 @@ public class Wife {
     }
 
     public void getListGoodsThatIsInSelling(){
-        System.out.println("Goods are available to buy : " + husband.getlistGoodsthatispresent(listWife));
+        System.out.println("Goods are available to buy : " + husband.getlistGoodsThatIsPresent(listWife));
     }
 
     public void getPriceAllGoods(){

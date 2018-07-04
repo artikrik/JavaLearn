@@ -12,12 +12,13 @@ public class Main {
         shop2.addInListGood("Milk",30);
 
         Husband husband = new Husband();
-        husband.moveInfoAboutShopProductsToHusband(shop2);
-        husband.moveInfoAboutShopTechnicsToHusband(shop1);
+
+        husband.addGoodsThisShopInListAllGoodsOfHusband(shop1);
+        husband.addGoodsThisShopInListAllGoodsOfHusband(shop2);
 
         Wife wife = new Wife(husband);
-        wife.addGoodInListWife("Potato", 0);
-        wife.addGoodInListWife("Shark",0);
+        wife.addGoodInListWife("Potato",22);
+        wife.addGoodInListWife("Shark",11);
 
         wife.getListAllGoodsInHusband();
 

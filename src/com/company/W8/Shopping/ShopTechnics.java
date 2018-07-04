@@ -1,14 +1,15 @@
 package com.company.W8.Shopping;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class ShopTechnics implements Shop  {
+public class ShopTechnics implements Shop {
 
     ArrayList<Good> shopTechnicsList = new ArrayList<>();
 
     @Override
     public void addInListGood(String name, int price) {
-        shopTechnicsList.add(new Good (name, price));
+        shopTechnicsList.add(new Good(name, price));
     }
 
 
@@ -35,7 +36,5 @@ public class ShopTechnics implements Shop  {
         for (Good tmp : shopTechnicsList) {
             System.out.print(tmp.toString());
         }
-
     }
-
 }

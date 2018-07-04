@@ -12,6 +12,4 @@ interface Shop {
 
     public void getPrice();
 
-
-
 }
