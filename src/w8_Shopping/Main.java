@@ -6,7 +6,7 @@ public class Main {
         Husband husband = new Husband();
 
 
-        Wife wife = new Wife(husband);
+        Wife wife = new Wife();
         wife.itemsNeedToBought("Sony", 100);
         wife.itemsNeedToBought("Bread", 110);
         wife.itemsNeedToBought("Baraban", 999);

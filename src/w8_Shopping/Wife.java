@@ -7,11 +7,7 @@ public class Wife {
 
     public ArrayList<Item> listOfNeededItems = new ArrayList<>();
 
-    Husband husband;
-
-    public Wife(Husband husband){
-        this.husband = husband;
-    }
+    Husband husband = new Husband();
 
     public void itemsNeedToBought (String name, double price){
         listOfNeededItems.add(new Item(name, price));
