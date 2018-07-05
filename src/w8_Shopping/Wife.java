@@ -7,6 +7,12 @@ public class Wife {
 
     public ArrayList<Item> listOfNeededItems = new ArrayList<>();
 
+    Husband husband;
+
+    public Wife(Husband husband){
+        this.husband = husband;
+    }
+
     public void itemsNeedToBought (String name, double price){
         listOfNeededItems.add(new Item(name, price));
     }
@@ -14,6 +20,10 @@ public class Wife {
     public ArrayList<Item> getListOfNeededItems() {
         return listOfNeededItems;
     }
+
+    /*public void getListOfAllItems(){
+        System.out.println("Total list:"+ husband.avalibleListOfItems);
+    }*/
 
     @Override
     public String toString() {
