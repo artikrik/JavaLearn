@@ -11,6 +11,9 @@ public class Main {
         wife.itemsNeedToBought("Bread", 110);
         wife.itemsNeedToBought("Baraban", 999);
 
+        wife.getTotalListOfItemsFromHusband();
+        wife.getTotalPriceOfFoundItems();
+
         TechnoStore technoStore = new TechnoStore();
         technoStore.listOfTechnoItems("Sony", 100);
         technoStore.listOfTechnoItems("Samsung", 80);
@@ -24,15 +27,6 @@ public class Main {
         groseryStore.listOfGroseryItems("Butter", 17);
         groseryStore.listOfGroseryItems("Milk", 55);
         groseryStore.listOfGroseryItems("Potato", 10.58);
-
-        System.out.println("Total list:");
-        for (Item item1 : groseryStore.itemsList) {
-            System.out.println(item1);
-        }
-        for (Item item2:technoStore.itemsList) {
-            System.out.println(item2);
-        }
-
 
     }
 }

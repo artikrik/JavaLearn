@@ -21,6 +21,14 @@ public class Wife {
         System.out.println("Total list:"+ husband.avalibleListOfItems);
     }
 
+    public void getTotalListOfItemsFromHusband() {
+        System.out.println("Total list:" + husband.getListOfItemsThatArePresent());
+    }
+
+    public void getTotalPriceOfFoundItems(){
+        System.out.println("Total price = " + husband.getTotalAmountOfAvailableItems());
+    }
+
     @Override
     public String toString() {
         return listOfNeededItems.toString();
