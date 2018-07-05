@@ -12,10 +12,17 @@ public class Husband {
 
     public ArrayList<Item> getExecutableListOfItems(ArrayList<Item> listOfNeededItems) {
         ArrayList<Item> wifeList = listOfNeededItems;
-
-// add compare method avalibleListOfItems & listOfNeededItems
-
+        for (Item item : avalibleListOfItems){
+            for (Item listFromWife : listOfNeededItems){
+                if (item.getName().equals(listFromWife.getName()))
+                    wifeList.add(item);
+            }
+        }
         return wifeList;
+    }
+
+    public ArrayList<Item> getAvalibleListOfItems() {
+        return avalibleListOfItems;
     }
 
     public String toString() {

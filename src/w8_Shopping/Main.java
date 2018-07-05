@@ -5,6 +5,7 @@ public class Main {
 
         Husband husband = new Husband();
 
+
         Wife wife = new Wife(husband);
         wife.itemsNeedToBought("Sony", 100);
         wife.itemsNeedToBought("Bread", 110);
@@ -24,8 +25,14 @@ public class Main {
         groseryStore.listOfGroseryItems("Milk", 55);
         groseryStore.listOfGroseryItems("Potato", 10.58);
 
-        System.out.println("Total list:" + husband.avalibleListOfItems);
+        System.out.println("Total list:");
+        for (Item item1 : groseryStore.itemsList) {
+            System.out.println(item1);
+        }
+        for (Item item2:technoStore.itemsList) {
+            System.out.println(item2);
+        }
 
-        System.out.println("Bought " + "\n" + wife.listOfNeededItems.toString());
+
     }
 }

@@ -21,9 +21,9 @@ public class Wife {
         return listOfNeededItems;
     }
 
-    /*public void getListOfAllItems(){
+    public void getListOfAllItems(){
         System.out.println("Total list:"+ husband.avalibleListOfItems);
-    }*/
+    }
 
     @Override
     public String toString() {
