@@ -1,6 +1,5 @@
 package w8_Shopping;
 
-
 import java.util.ArrayList;
 
 public class Wife {
@@ -13,28 +12,23 @@ public class Wife {
         this.husband = husband;
     }
 
-    public void itemsNeedToBought (String name, double price){
+    public void listOfItemsFromWife(String name, double price) {
         listOfNeededItems.add(new Item(name, price));
     }
 
-    public ArrayList<Item> getListOfNeededItems() {
-        return listOfNeededItems;
+    public void showTotalListOfItemsFromHusband() {
+        System.out.println("Total list:");
+        for (Item totalListOfItems : husband.getListOfItemsThatArePresent())
+            System.out.println(totalListOfItems);
     }
 
-    public void getListOfAllItems(){
-        System.out.println("Bought:"+ husband.buyNeededItemsFromStore(listOfNeededItems));
+    public void showListOfBoughtItems() {
+        System.out.println("\nBought:");
+        for (Item boughtItems : husband.buyNeededItemsFromStore(listOfNeededItems))
+            System.out.println(boughtItems);
     }
 
-    public void getTotalListOfItemsFromHusband() {
-        System.out.println("Total list:" + husband.getListOfItemsThatArePresent());
-    }
-
-    public void getTotalPriceOfFoundItems(){
+    public void showTotalPriceOfBoughtItems() {
         System.out.println("Total price = " + husband.getTotalAmountOfAvailableItems());
-    }
-
-    @Override
-    public String toString() {
-        return listOfNeededItems.toString();
     }
 }

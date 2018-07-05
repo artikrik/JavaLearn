@@ -3,22 +3,21 @@ package w8_Shopping;
 import java.util.ArrayList;
 
 public class Husband {
-    double totalPriceOfAvailableItems = 0;
+    private double totalPriceOfAvailableItems = 0;
 
-    ArrayList<Item> avalibleListOfItems = new ArrayList<>();
-    ArrayList<Item> listOfItemsThatArePresent = new ArrayList<>();
+    private ArrayList<Item> availableListOfItems = new ArrayList<>();
+    private ArrayList<Item> listOfItemsThatArePresent = new ArrayList<>();
 
     public void rememberItemsFromStore(Store store) {
-        avalibleListOfItems.addAll(store.getItemsList());
+        availableListOfItems.addAll(store.getListOfItems());
     }
 
     public ArrayList<Item> getListOfItemsThatArePresent() {
-        return avalibleListOfItems;
+        return availableListOfItems;
     }
 
-
     public ArrayList<Item> buyNeededItemsFromStore(ArrayList<Item> listOfNeededItems) {
-        for (Item item : avalibleListOfItems) {
+        for (Item item : availableListOfItems) {
             for (Item listFromWife : listOfNeededItems) {
                 if (item.getName().equals(listFromWife.getName()))
                     listOfItemsThatArePresent.add(item);
@@ -26,7 +25,6 @@ public class Husband {
         }
         return listOfItemsThatArePresent;
     }
-
 
     public double getTotalAmountOfAvailableItems() {
         for (Item item : listOfItemsThatArePresent) {

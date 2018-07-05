@@ -10,37 +10,26 @@ public class Main {
         technoStore.listOfTechnoItems("Appl", 300);
         technoStore.listOfTechnoItems("Acer", 40);
 
-        GroseryStore groseryStore = new GroseryStore();
-        groseryStore.listOfGroseryItems("Bread", 110);
-        groseryStore.listOfGroseryItems("Sausage", 33);
-        groseryStore.listOfGroseryItems("Butter", 17);
-        groseryStore.listOfGroseryItems("Milk", 55);
-        groseryStore.listOfGroseryItems("Potato", 10.58);
+        GroceryStore groceryStore = new GroceryStore();
+        groceryStore.listOfGroceryItems("Bread", 110);
+        groceryStore.listOfGroceryItems("Sausage", 33);
+        groceryStore.listOfGroceryItems("Butter", 17);
+        groceryStore.listOfGroceryItems("Milk", 55);
+        groceryStore.listOfGroceryItems("Potato", 10.58);
 
         Husband husband = new Husband();
-
-        Wife wife = new Wife(husband);
-        wife.itemsNeedToBought("Sony", 100);
-        wife.itemsNeedToBought("Bread", 110);
-        wife.itemsNeedToBought("Baraban", 999);
-
-
-        husband.rememberItemsFromStore(groseryStore);
+        husband.rememberItemsFromStore(groceryStore);
         husband.rememberItemsFromStore(technoStore);
 
+        Wife wife = new Wife(husband);
+        wife.listOfItemsFromWife("Sony",11);
+        wife.listOfItemsFromWife("Bread",11);
+        wife.listOfItemsFromWife("Baraban",11);
+        wife.listOfItemsFromWife("Arbus",11);
+        wife.listOfItemsFromWife("Milk",11);
 
-
-
-
-        wife.getTotalListOfItemsFromHusband();
-        wife.getListOfAllItems();
-        wife.getTotalPriceOfFoundItems();
-
-
-
-
-
-
-
+        wife.showTotalListOfItemsFromHusband();
+        wife.showListOfBoughtItems();
+        wife.showTotalPriceOfBoughtItems();
     }
 }

@@ -2,15 +2,15 @@ package w8_Shopping;
 
 import java.util.ArrayList;
 
-public class TechnoStore implements Store {
+public class GroceryStore implements Store {
 
     private ArrayList<Item> listOfItems;
 
-    public TechnoStore() {
+    public GroceryStore() {
         listOfItems = new ArrayList<>();
     }
 
-    public void listOfTechnoItems(String name, double price) {
+    public void listOfGroceryItems(String name, double price) {
         listOfItems.add(new Item(name, price));
     }
 
