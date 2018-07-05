@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Wife {
 
-    public ArrayList<Wife> listOfNeededItems = new ArrayList<>();
+    private ArrayList<Wife> listOfNeededItems = new ArrayList<>();
 
     private String name;
 
