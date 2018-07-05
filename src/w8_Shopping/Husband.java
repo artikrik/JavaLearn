@@ -16,9 +16,9 @@ public class Husband {
         return availableListOfItems;
     }
 
-    public ArrayList<Item> buyNeededItemsFromStore(ArrayList<Item> listOfNeededItems) {
+    public ArrayList<Item> buyNeededItemsFromStore(ArrayList<Wife> listOfNeededItems) {
         for (Item item : availableListOfItems) {
-            for (Item listFromWife : listOfNeededItems) {
+            for (Wife listFromWife : listOfNeededItems) {
                 if (item.getName().equals(listFromWife.getName()))
                     listOfItemsThatArePresent.add(item);
             }

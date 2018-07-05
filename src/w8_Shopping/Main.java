@@ -22,11 +22,11 @@ public class Main {
         husband.rememberItemsFromStore(technoStore);
 
         Wife wife = new Wife(husband);
-        wife.listOfItemsFromWife("Sony",11);
-        wife.listOfItemsFromWife("Bread",11);
-        wife.listOfItemsFromWife("Baraban",11);
-        wife.listOfItemsFromWife("Arbus",11);
-        wife.listOfItemsFromWife("Milk",11);
+        wife.listOfItemsFromWife("Sony");
+        wife.listOfItemsFromWife("Bread");
+        wife.listOfItemsFromWife("Baraban");
+        wife.listOfItemsFromWife("Arbus");
+        wife.listOfItemsFromWife("Milk");
 
         wife.showTotalListOfItemsFromHusband();
         wife.showListOfBoughtItems();

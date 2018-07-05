@@ -4,16 +4,26 @@ import java.util.ArrayList;
 
 public class Wife {
 
-    public ArrayList<Item> listOfNeededItems = new ArrayList<>();
+    public ArrayList<Wife> listOfNeededItems = new ArrayList<>();
 
-    Husband husband;
+    private String name;
+
+    public Wife(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    private Husband husband;
 
     public Wife(Husband husband) {
         this.husband = husband;
     }
 
-    public void listOfItemsFromWife(String name, double price) {
-        listOfNeededItems.add(new Item(name, price));
+    public void listOfItemsFromWife(String name) {
+        listOfNeededItems.add(new Wife(name));
     }
 
     public void showTotalListOfItemsFromHusband() {
