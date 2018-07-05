@@ -2,7 +2,7 @@ package w8_Shopping;
 
 import java.util.ArrayList;
 
-public class GroseryStore implements InterfaceStore {
+public class GroseryStore implements Store {
 
     ArrayList<Item> itemsList;
 

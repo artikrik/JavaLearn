@@ -3,18 +3,6 @@ package w8_Shopping;
 public class Main {
     public static void main(String[] args) {
 
-        Husband husband = new Husband();
-
-
-        Wife wife = new Wife();
-        wife.itemsNeedToBought("Sony", 100);
-        wife.itemsNeedToBought("Bread", 110);
-        wife.itemsNeedToBought("Baraban", 999);
-
-        wife.getTotalListOfItemsFromHusband();
-        wife.getListOfAllItems();
-        wife.getTotalPriceOfFoundItems();
-
         TechnoStore technoStore = new TechnoStore();
         technoStore.listOfTechnoItems("Sony", 100);
         technoStore.listOfTechnoItems("Samsung", 80);
@@ -28,6 +16,31 @@ public class Main {
         groseryStore.listOfGroseryItems("Butter", 17);
         groseryStore.listOfGroseryItems("Milk", 55);
         groseryStore.listOfGroseryItems("Potato", 10.58);
+
+        Husband husband = new Husband();
+
+        Wife wife = new Wife(husband);
+        wife.itemsNeedToBought("Sony", 100);
+        wife.itemsNeedToBought("Bread", 110);
+        wife.itemsNeedToBought("Baraban", 999);
+
+
+        husband.rememberItemsFromStore(groseryStore);
+        husband.rememberItemsFromStore(technoStore);
+
+
+
+
+
+        wife.getTotalListOfItemsFromHusband();
+        wife.getListOfAllItems();
+        wife.getTotalPriceOfFoundItems();
+
+
+
+
+
+
 
     }
 }

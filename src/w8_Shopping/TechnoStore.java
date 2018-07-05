@@ -2,7 +2,7 @@ package w8_Shopping;
 
 import java.util.ArrayList;
 
-public class TechnoStore implements InterfaceStore {
+public class TechnoStore implements Store {
 
     ArrayList<Item> itemsList;
 

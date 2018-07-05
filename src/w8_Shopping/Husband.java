@@ -8,7 +8,7 @@ public class Husband {
     ArrayList<Item> avalibleListOfItems = new ArrayList<>();
     ArrayList<Item> listOfItemsThatArePresent = new ArrayList<>();
 
-    public void allItems(InterfaceStore store) {
+    public void rememberItemsFromStore(Store store) {
         avalibleListOfItems.addAll(store.getItemsList());
     }
 
@@ -16,7 +16,8 @@ public class Husband {
         return avalibleListOfItems;
     }
 
-    public ArrayList<Item> getlistOfAvailebleItems(ArrayList<Item> listOfNeededItems) {
+
+    public ArrayList<Item> buyNeededItemsFromStore(ArrayList<Item> listOfNeededItems) {
         for (Item item : avalibleListOfItems) {
             for (Item listFromWife : listOfNeededItems) {
                 if (item.getName().equals(listFromWife.getName()))
@@ -26,14 +27,11 @@ public class Husband {
         return listOfItemsThatArePresent;
     }
 
+
     public double getTotalAmountOfAvailableItems() {
         for (Item item : listOfItemsThatArePresent) {
             totalPriceOfAvailableItems += item.getPrice();
         }
         return totalPriceOfAvailableItems;
-    }
-
-    public String toString() {
-        return avalibleListOfItems.toString();
     }
 }

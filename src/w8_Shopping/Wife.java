@@ -7,7 +7,11 @@ public class Wife {
 
     public ArrayList<Item> listOfNeededItems = new ArrayList<>();
 
-    Husband husband = new Husband();
+    Husband husband;
+
+    public Wife(Husband husband) {
+        this.husband = husband;
+    }
 
     public void itemsNeedToBought (String name, double price){
         listOfNeededItems.add(new Item(name, price));
@@ -18,11 +22,11 @@ public class Wife {
     }
 
     public void getListOfAllItems(){
-        System.out.println("Bought:"+ husband.getListOfItemsThatArePresent());
+        System.out.println("Bought:"+ husband.buyNeededItemsFromStore(listOfNeededItems));
     }
 
     public void getTotalListOfItemsFromHusband() {
-        System.out.println("Total list:" + husband.getlistOfAvailebleItems(listOfNeededItems));
+        System.out.println("Total list:" + husband.getListOfItemsThatArePresent());
     }
 
     public void getTotalPriceOfFoundItems(){
