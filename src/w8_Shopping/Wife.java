@@ -18,11 +18,11 @@ public class Wife {
     }
 
     public void getListOfAllItems(){
-        System.out.println("Total list:"+ husband.avalibleListOfItems);
+        System.out.println("Bought:"+ husband.getListOfItemsThatArePresent());
     }
 
     public void getTotalListOfItemsFromHusband() {
-        System.out.println("Total list:" + husband.getListOfItemsThatArePresent());
+        System.out.println("Total list:" + husband.getlistOfAvailebleItems(listOfNeededItems));
     }
 
     public void getTotalPriceOfFoundItems(){

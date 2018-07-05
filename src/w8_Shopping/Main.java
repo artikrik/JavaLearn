@@ -12,6 +12,7 @@ public class Main {
         wife.itemsNeedToBought("Baraban", 999);
 
         wife.getTotalListOfItemsFromHusband();
+        wife.getListOfAllItems();
         wife.getTotalPriceOfFoundItems();
 
         TechnoStore technoStore = new TechnoStore();
