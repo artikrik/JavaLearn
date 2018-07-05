@@ -1,19 +1,22 @@
 package w8_Shopping;
 
+
 import java.util.ArrayList;
 
 public class Wife {
-    String name;
 
+    public ArrayList<Item> listOfNeededItems = new ArrayList<>();
 
-    public Wife(String name) {
-        setName(name);
+    public void itemsNeedToBought (String name, double price){
+        listOfNeededItems.add(new Item(name, price));
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public ArrayList<Item> getListOfNeededItems() {
+        return listOfNeededItems;
     }
 
-    ArrayList<Wife> itemsList = new ArrayList<>();
-
+    @Override
+    public String toString() {
+        return listOfNeededItems.toString();
+    }
 }

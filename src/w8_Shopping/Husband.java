@@ -1,11 +1,25 @@
 package w8_Shopping;
 
+import java.util.ArrayList;
+
 public class Husband {
 
-    public Store name, price;
+    ArrayList<Item> avalibleListOfItems = new ArrayList<>();
 
-    public Husband(Store name, Store price) {
-        this.name = name;
-        this.price = price;
+    public void allItems(InterfaceStore store) {
+        avalibleListOfItems.addAll(store.getItemsList());
     }
+
+    public ArrayList<Item> getExecutableListOfItems(ArrayList<Item> listOfNeededItems) {
+        ArrayList<Item> wifeList = listOfNeededItems;
+
+// add compare method avalibleListOfItems & listOfNeededItems
+
+        return wifeList;
+    }
+
+    public String toString() {
+        return avalibleListOfItems.toString();
+    }
+
 }

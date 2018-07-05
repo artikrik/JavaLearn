@@ -1,31 +1,34 @@
 package w8_Shopping;
 
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
 
-        Wife wife = new Wife("");
+        Husband husband = new Husband();
 
-       /*Store storeElectronic = new Store();
+        Wife wife = new Wife();
+        wife.itemsNeedToBought("Sony", 100);
+        wife.itemsNeedToBought("Bread", 110);
+        wife.itemsNeedToBought("Baraban", 999);
 
-        ArrayList<Item> storeElectronic = new ArrayList<>();
-        storeElectronic.add(new Store("Sony", 100));
-        storeElectronic.add(new Store("Samsung", 80));
-        storeElectronic.add(new Store("Sharp", 70));
-        storeElectronic.add(new Store("Apple", 300));
-        storeElectronic.add(new Store("Aser", 40));
+        TechnoStore technoStore = new TechnoStore();
+        technoStore.listOfTechnoItems("Sony", 100);
+        technoStore.listOfTechnoItems("Samsung", 80);
+        technoStore.listOfTechnoItems("Sharp", 70);
+        technoStore.listOfTechnoItems("Appl", 300);
+        technoStore.listOfTechnoItems("Acer", 40);
 
-        Store storeProducts = new Store();
+        GroseryStore groseryStore = new GroseryStore();
+        groseryStore.listOfGroseryItems("Bread", 110);
+        groseryStore.listOfGroseryItems("Sausage", 33);
+        groseryStore.listOfGroseryItems("Butter", 17);
+        groseryStore.listOfGroseryItems("Milk", 55);
+        groseryStore.listOfGroseryItems("Potato", 10.58);
 
-        ArrayList<Item> storeProducts = new ArrayList<>();
-        storeProducts.add(new Item("Bread", 110));
-        storeProducts.add(new Item("Sausage", 80));
-        storeProducts.add(new Item("Butter", 70));
-        storeProducts.add(new Item("Milk", 300));
-        storeProducts.add(new Item("Potato", 40));
-*/
 
-        System.out.println();
+        System.out.println("Total list:" + "\n"
+                                   + technoStore.itemsList.toString() + "\n"
+                                   + groseryStore.itemsList.toString());
+
+        System.out.println("Bought " + "\n" + wife.listOfNeededItems.toString());
     }
 }
