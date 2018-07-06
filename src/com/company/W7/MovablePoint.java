@@ -52,8 +52,10 @@ public class MovablePoint extends Point {
     public MovablePoint move(float xSpeed, float ySpeed) {
         super.setX(getX()+xSpeed);
         super.setY(getY()+ySpeed);
-        setXSpeed(xSpeed);;
+        setXSpeed(xSpeed);
         setYSpeed(ySpeed);
+        if (getX()>35|| getX()<10||getY()>35||getY()<10)
+            throw new IllegalArgumentException("not allowed range");
         return new MovablePoint();
     }
 

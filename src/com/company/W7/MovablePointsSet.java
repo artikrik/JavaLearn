@@ -28,13 +28,16 @@ public class MovablePointsSet {
         return new MovablePoint(x, y, xSpeed, ySpeed);
     }
 
-
-    public void movePoints (MovablePointsSet movablePointsSet, int amountOfMovement) {
+    public void movePoints(MovablePointsSet movablePointsSet, int amountOfMovement) {
         for (int i = 1; i <= amountOfMovement; i++) {
-            System.out.println("Значення полів всіх точок після "+ i + "-ого переміщення:" );
+            System.out.println("Значення полів всіх точок після " + i + "-ого переміщення:");
             for (MovablePoint point : movablePointsSet.listPoints) {
-                point.move((float) new Random().nextInt(7) - 3, (float) new Random().nextInt(7) - 3);
-                System.out.println(point.toString());
+                try {
+                    point.move((float) new Random().nextInt(7) - 3, (float) new Random().nextInt(7) - 3);
+                    System.out.println(point.toString());
+                } catch (IllegalArgumentException e) {
+                    System.out.println(e);
+                }
             }
         }
     }
