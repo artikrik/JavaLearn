@@ -22,7 +22,7 @@ public class Wife {
         this.husband = husband;
     }
 
-    public void listOfItemsFromWife(String name) {
+    public void needsToBuy(String name) {
         listOfNeededItems.add(new Wife(name));
     }
 
