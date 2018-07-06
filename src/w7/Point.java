@@ -1,8 +1,8 @@
 package w7;
 
 public class Point {
-    private float x = 0.0f;
-    private float y = 0.0f;
+   private float x = 0.0f;
+   private float y = 0.0f;
 
     public Point(float x, float y){
         this.x = x;

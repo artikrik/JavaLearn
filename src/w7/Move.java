@@ -15,32 +15,27 @@ public class Move {
 
         System.out.println("\n" + "Program 2:");
 
-        Random randomXcoordinate = new Random();
-        float xCoordinate = (float) randomXcoordinate.nextInt(26)+10;
+        float xCoordinate = (float) new Random().nextInt(26)+10;
 
-        Random randomYcoordinate = new Random();
-        float yCoordinate = (float) randomYcoordinate.nextInt(26)+10;
+        float yCoordinate = (float) new Random().nextInt(26)+10;
 
-        Random randomXspeed = new Random();
-        float xSpeed = (float) randomXspeed.nextInt(21) - 10;
-
-        Random randomYspeed = new Random();
-        float ySpeed = (float) randomYspeed.nextInt(21) - 10;
+        float xSpeed = (float) new Random().nextInt(11);
+        float ySpeed = (float) new Random().nextInt(11);
 
         MovablePoint point2 = new MovablePoint(xCoordinate, yCoordinate, xSpeed, ySpeed);
 
-        Random randomMoveSpeedX = new Random();
+        Random MoveSpeedX = new Random();
         float moveSpeedX;
 
-        Random randomMoveSpeedY = new Random();
+        Random MoveSpeedY = new Random();
         float moveSpeedY;
 
         int amountOfMoving = 10;
         for (int i = 0; i < amountOfMoving; i++){
-            moveSpeedX = (float) randomMoveSpeedX.nextInt(4);
-            moveSpeedY = (float) randomMoveSpeedY.nextInt(4);
+            moveSpeedX = (float) new Random().nextInt(4);
+            moveSpeedY = (float) new Random().nextInt(4);
             point2.move(moveSpeedX, moveSpeedY);
-            System.out.println(point2.toString());
+
         }
     }
 }
