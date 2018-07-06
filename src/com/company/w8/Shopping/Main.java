@@ -14,7 +14,7 @@ public class Main {
         Item potato = new Item("Potato", 35);
         Item sharp = new Item("Sharp", 70);
 
-        Comfy comfy = new Comfy(acer);
+        Technostore comfy = new Technostore(acer);
         comfy.addItem(apple);
         comfy.addItem(samsung);
         comfy.addItem(sony);
@@ -29,18 +29,17 @@ public class Main {
         //создаем мужа и жену, и связь между ними Агрегирование
         Husband smartMan = new Husband("Pedro");
         Wife wifeNice = new Wife("Francesca", smartMan);
-        smartMan.wife = wifeNice;
 
         //Добавляем товары в список жены
         wifeNice.addItemToTheList(sony);
         wifeNice.addItemToTheList(bread);
 
         //Добавляем магазины в список мужа
-        smartMan.addShopInHusbendList(comfy);
-        smartMan.addShopInHusbendList(ekoMarket);
+        smartMan.addAllItemsHusbandList(comfy);
+        smartMan.addAllItemsHusbandList(ekoMarket);
 
         //выводить на экран 3 пункта
-        wifeNice.wifePrintAllItemsInMarkerts();
+        wifeNice.wifePrintAllItemsInShops();
         wifeNice.getPriceOfPresentItems();
         wifeNice.getPriceOfShopping();
     }

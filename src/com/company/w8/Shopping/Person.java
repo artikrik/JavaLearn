@@ -20,10 +20,10 @@ public class Person {
         this.age = age;
     }
 
-    public Person(){
+    public Person() {
     }
 
-    public Person(String name){
+    public Person(String name) {
         setName(name);
     }
 

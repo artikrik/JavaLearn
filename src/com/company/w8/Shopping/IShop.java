@@ -10,6 +10,5 @@ public interface IShop {
 
     void removeItem(int indexOfItem);
 
-    ArrayList<Item> compareWhatYouCanBuyFromShopsList(ArrayList<Item> listWhatToBuy);
-
+    ArrayList<Item> getAllItems();
 }

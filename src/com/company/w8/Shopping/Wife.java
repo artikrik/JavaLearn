@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Wife extends Person {
     public Husband husband;
-    private ArrayList<Item> listWhatToBuy = new ArrayList<>();
+    private ArrayList<Item> wifeList = new ArrayList<>();
 
     public Wife(String name) {
         super(name);
@@ -16,24 +16,20 @@ public class Wife extends Person {
     }
 
     public void addItemToTheList(Item itemToBuy) {
-        listWhatToBuy.add(itemToBuy);
+        wifeList.add(itemToBuy);
     }
 
-    public ArrayList<Item> getListWhatToBuy(){
-        return listWhatToBuy;
+    public ArrayList<Item> getWifeList() {
+        return wifeList;
     }
 
-    public ArrayList<Item> giveHusbandListToBuy() {
-        return listWhatToBuy;
-    }
-
-    public void wifePrintAllItemsInMarkerts() {
-        husband.showAllShopItems();
+    public void wifePrintAllItemsInShops() {
+        husband.printAllItems();
     }
 
     public void getPriceOfPresentItems() {
-        System.out.println("\n"+"Bought:");
-        for (Item itemPrint : husband.getManBoughtGoods()) {
+        System.out.println("\n" + "Bought:");
+        for (Item itemPrint : husband.getManBoughtGoods(wifeList)) {
             System.out.println(itemPrint.toString());
         }
     }

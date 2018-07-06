@@ -2,32 +2,33 @@ package com.company.w8.Shopping;
 
 import java.util.ArrayList;
 
-public class GroceryStore implements IShop {
-    ArrayList<Item> listItemsGrocery = new ArrayList<>();
+public class Technostore implements IShop {
+    ArrayList<Item> listItemsTechnostore = new ArrayList<>();
 
-    public GroceryStore(Item item) {
+    public Technostore(Item item) {
         addItem(item);
     }
 
     @Override
     public void addItem(Item item) {
-        listItemsGrocery.add(item);
+        listItemsTechnostore.add(item);
     }
 
     @Override
     public void printItemsOfShop() {
-        for (Item itemsOfShop : listItemsGrocery) {
+        for (Item itemsOfShop : listItemsTechnostore) {
             System.out.println(itemsOfShop.toString());
         }
     }
 
     @Override
     public void removeItem(int indexOfItem) {
-        listItemsGrocery.remove(indexOfItem);
+        listItemsTechnostore.remove(indexOfItem);
     }
 
     @Override
     public ArrayList<Item> getAllItems() {
-        return listItemsGrocery;
+        return listItemsTechnostore;
     }
+
 }

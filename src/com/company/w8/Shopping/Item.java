@@ -10,8 +10,8 @@ public class Item {
     }
 
     public Item(String name, double price) {
-        this.name = name;
-        this.price = price;
+        setName(name);
+        setPrice(price);
     }
 
     public String getName() {
