@@ -12,7 +12,7 @@ public class Flight {
     private long distance;
     //private ArrayList<>aircraft;
 
-    public Flight (String numberOfFlight, String aviaCompany, double price, long distance, ArrayList<Flight>aircraft){
+    public Flight (String numberOfFlight, String aviaCompany, double price, long distance){ //ArrayList<Flight>aircraft){
         setNumberOfFlight(numberOfFlight);
         setAviaCompany(aviaCompany);
         setPrice(price);
