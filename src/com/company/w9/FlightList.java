@@ -25,38 +25,11 @@ public class FlightList {
         return new ArrayList( flightArrayList);
     }
 
-    public void sortByDistance() {
-        Collections.sort(flightArrayList, new ComparatorByDistance().thenComparing(new ComparatorByPlaneFirm()));
-    }
-
-    public void sortByPrice() {
-        Collections.sort(flightArrayList, new ComparatorByPrice());
-    }
-
-    public void sortByAirLineNameThenByPrice() {
-        Collections.sort(flightArrayList, new ComparatorByAirline().thenComparing(new ComparatorByPrice()));
-    }
-
-    public void sortByDistanceByPlaneFirmByPlaneModel() {
-        Collections.sort(flightArrayList, Comparator.comparing(Flight::getDistance).thenComparing(new ComparatorByPlaneFirm()).thenComparing(new ComparatorByPlaneModel()));
-    }
-
     public void printFlightList() {
         ListIterator<Flight> iterator = flightArrayList.listIterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next().toString());
         }
-    }
-
-    public void searchByIdFlight(String idFlight) {
-        boolean flightIsPresentInList = false;
-        for (Flight flight : flightArrayList) {
-            if (flight.getId().compareTo(idFlight) == 0) {
-                flightIsPresentInList = true;
-                System.out.println(flight.toString());
-            }
-        }
-        if (!flightIsPresentInList) System.out.println("Рейс з номером " + idFlight + " не існує в даному наборі");
     }
 
     public void searchByAirline(String airLine) {
@@ -85,7 +58,7 @@ public class FlightList {
         boolean flightIsPresentInList = false;
         Iterator<Flight> iterator = flightArrayList.iterator();
         while (iterator.hasNext()) {
-            if (iterator.next().getId() == idFlight) {
+            if (iterator.next().getId().equals(idFlight)) {
                 iterator.remove();
                 flightIsPresentInList = true;
                 System.out.print("Виліт був видалений");
@@ -94,11 +67,11 @@ public class FlightList {
         if (!flightIsPresentInList) System.out.println("Рейс з номером " + idFlight + " не існує в даному наборі");
     }
 
-    public void remove(Enum planeModel) {
+    public void remove(AircraftType planeModel) {
         boolean flightIsPresentInList = false;
         Iterator<Flight> iterator = flightArrayList.iterator();
         while (iterator.hasNext()) {
-            if (iterator.next().getModelOfPlane() == planeModel) {
+            if (iterator.next().getModel().equals(planeModel.getModel()) ) {
                 iterator.remove();
                 flightIsPresentInList = true;
                 System.out.print("Виліт був видалений");
@@ -106,5 +79,7 @@ public class FlightList {
         }
         if (!flightIsPresentInList) System.out.println("Рейс з номером " + planeModel + " не існує в даному наборі");
     }
+
+
 }
 

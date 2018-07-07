@@ -4,16 +4,17 @@ public class Flight {
     private String id;
     private String airline;
     private double price;
-    private Enum planeProducer;
-    private Enum modelOfPlane;
+    private String model;
+    private String planeFirm;
     private double distance;
 
-    public Flight(String id, String airline, double price, Enum planeProducer, Enum modelOfPlane, double distance) {
+
+    public Flight(String id, String airline, double price, AircraftType airCraft,  double distance) {
         this.id = id;
         this.airline = airline;
         this.price = price;
-        this.planeProducer = planeProducer;
-        this.modelOfPlane= modelOfPlane;
+        this.model = airCraft.getModel();
+        this.planeFirm=airCraft.getManufacturer();
         this.distance = distance;
     }
 
@@ -28,11 +29,11 @@ public class Flight {
     public String getAirline() {
         return airline;
     }
-    public Enum getModelOfPlane() {
-        return modelOfPlane;
+    public String getModel() {
+        return model;
     }
-    public Enum getPlaneProducer() {
-        return planeProducer;
+    public String getPlaneFirm() {
+        return planeFirm;
     }
 
     public double getDistance() {
@@ -45,8 +46,8 @@ public class Flight {
                 "id='" + id + '\'' +
                 ", airline='" + airline + '\'' +
                 ", price=" + price +
-                ", planeProducer=" + planeProducer +
-                ", modelOfPlane=" + modelOfPlane +
+                ", plane=" + planeFirm+
+                ", model=" + model+
                 ", distance=" + distance;
     }
 }
