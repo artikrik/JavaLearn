@@ -9,8 +9,6 @@ public enum Countries {
     private String name;
     private int population;
 
-    Map<String, Integer> country;
-
     Countries(String name, int population) {
         this.population = population;
         this.name = name;

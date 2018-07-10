@@ -5,7 +5,6 @@ import java.util.Map;
 
 public class MainMap {
 
-
     public static void main(String[] args) {
         Countries russia = Countries.Russia;
         Countries america = Countries.America;
