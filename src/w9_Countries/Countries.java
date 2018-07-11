@@ -2,7 +2,7 @@ package w9_Countries;
 
 public enum Countries {
 
-    UGANDA(100000), HERASIMA(500000), VINNITCA(400000), TYUTKI(3000);
+    UGANDA(100000), USA(500000), UKRAINE(400000), TURKEY(3000);
 
     private long numberOfPopulation;
 
@@ -13,5 +13,4 @@ public enum Countries {
     public long getNumberOfPopulation() {
         return numberOfPopulation;
     }
-
 }
