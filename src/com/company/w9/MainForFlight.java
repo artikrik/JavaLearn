@@ -2,7 +2,7 @@ package com.company.w9;
 
 import java.util.*;
 
-public class MainForFlight {
+    public class MainForFlight {
     public static void main(String[] args) {
         Flight flyKL4103 = new Flight("KL4103", "British Airways", 500, AircraftType.AirbusA310, 871.00);
         Flight flyPS187 = new Flight("PS1807", "Ukraine  Airlines", 400, AircraftType.Boeing767, 220.00);
@@ -46,6 +46,5 @@ public class MainForFlight {
         flightList.remove(AircraftType.AirbusA320);
         System.out.println();
         flightList.printFlightList();
-
     }
 }

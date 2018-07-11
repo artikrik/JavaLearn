@@ -3,7 +3,7 @@ package com.company.w9;
 import java.util.*;
 
 public class FlightList {
-   private ArrayList<Flight> flightArrayList = new ArrayList<>();
+   private List<Flight> flightArrayList = new ArrayList<>();
 
     public void addFlight(Flight exampleOfFlight) {
         flightArrayList.add(exampleOfFlight);
