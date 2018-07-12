@@ -11,10 +11,10 @@ public class Main {
 
 
         CountriesList countriesList = new CountriesList();
-        countriesList.map.put(Uganda,100000);
-        countriesList.map.put(USA,500000);
-        countriesList.map.put(Ukraine,450000);
-        countriesList.map.put(Japan,900000);
+        countriesList.put(Uganda,100000);
+        countriesList.put(USA,500000);
+        countriesList.put(Ukraine,450000);
+        countriesList.put(Japan,900000);
 
         countriesList.showListOfCountries();
         countriesList.showListOfPopulation();

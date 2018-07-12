@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class CountriesList {
 
-    Map<Countries, Integer> map = new HashMap<>();
+    private Map<Countries, Integer> map = new HashMap<>();
 
-    public void showListOfCountries() {
+        public void showListOfCountries() {
         for (Map.Entry map2 : map.entrySet()) {
             System.out.println(map2.getKey() + " = " + map2.getValue());
         }
@@ -17,5 +17,9 @@ public class CountriesList {
         for (Map.Entry map2 : map.entrySet()) {
             System.out.println(map2.getValue());
         }
+    }
+
+    public void put (Countries countries,Integer population){
+            map.put(countries, population);
     }
 }
