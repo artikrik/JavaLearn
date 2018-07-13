@@ -3,7 +3,7 @@ package w10;
 public class Main {
     public static void main(String[] args) {
         CountriesMap map = new CountriesMap();
-        map.addCountry(new Country("Germany", 1000));
+        map.addCountry(new Country("Germany", 82800000L));
         map.addCountry(new Country("China", 10000));
 
 
