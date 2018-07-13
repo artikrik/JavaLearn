@@ -18,7 +18,7 @@ public class Country {
         return name;
     }
 
-    public Long getPopulation() {
+    public long getPopulation() {
         return population;
     }
 }
