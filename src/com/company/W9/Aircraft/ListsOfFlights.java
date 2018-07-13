@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import sun.reflect.generics.tree.Tree;
+
 public class ListsOfFlights {
 
     ArrayList<Flight> listsOfFlights = new ArrayList<>();
@@ -98,12 +100,48 @@ public class ListsOfFlights {
             System.out.println("рейса з таким типом літака нема");
     }
 
-    public void compareFlightOnIdentical(ArrayList<Flight> first, ArrayList<Flight> second) {
-        if(second.containsAll(first)){
+    public void compareFlightOnContainsAllInOtherFlight(ArrayList<Flight> first, ArrayList<Flight> second) {
+        if(first.containsAll(second)){
             System.out.println("Набір входить");
         }
         else System.out.println("набір не входить");
     }
+
+    public void verifyOnEqualityFlights(ArrayList<Flight> first, ArrayList<Flight> second){
+        if ((first.size() == second.size()) && (first.containsAll(second))) {
+            System.out.println("Набіри рівні");
+        }
+        else System.out.println("Набіри не рівні");
+    }
+
+    public void addElementsSecondListFlightToFirstListFlight(ArrayList<Flight> first, ArrayList<Flight> second){
+        first.addAll(second);
+        System.out.println("Додано елементи другого набіра в кінець першого-"+ first);
+    }
+
+    public ArrayList<Flight> formateListWithSomeElementsWithTwoList (ArrayList<Flight> first, ArrayList<Flight> second){
+        ArrayList<Flight> temporary = new ArrayList<>();
+        temporary.addAll(first);
+        temporary.removeAll(second);
+        temporary.addAll(second);
+        return temporary;
+    }
+
+    public ArrayList<Flight> createListCompareByDistanceWithOtherTwoLists(ArrayList<Flight> first, ArrayList<Flight> second) {
+        ArrayList<Flight> temporary = new ArrayList<>();
+        temporary.addAll(first);
+        temporary.addAll(second);
+        Collections.sort(temporary, Comparator.comparing(Flight::getDistance));
+        return temporary;
+    }
+
+    public ArrayList<Flight> createListIdenticalElementsWithTwoLists(ArrayList<Flight> first, ArrayList<Flight> second){
+        ArrayList<Flight> temp = new ArrayList<>();
+        temp.addAll(first);
+        temp.retainAll(second);
+        return temp;
+    }
+
 }
 
 

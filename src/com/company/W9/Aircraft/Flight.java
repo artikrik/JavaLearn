@@ -9,13 +9,13 @@ public class Flight {
     private String maker;
     private String model;
 
-    public Flight(String flightNumber, String airline, int priceTicket, int distance, Maker maker, Model model){
+    public Flight(String flightNumber, String airline, int priceTicket, int distance, Maker maker, Model model) {
         setFlightNumber(flightNumber);
         setAirline(airline);
         setPriceTicket(priceTicket);
         setDistance(distance);
-        this.maker=maker.getMaker();
-        this.model=model.getModel();
+        this.maker = maker.getMaker();
+        this.model = model.getModel();
     }
 
     public void setFlightNumber(String flightNumber) {
@@ -70,6 +70,15 @@ public class Flight {
                 '}';
     }
 
-
+  @Override
+  public boolean equals(Object that){
+      if(this == that) return true;// якщо оба мають однаковий адрес в пам'яті
+      if(!(that instanceof Flight)) return false; // якщо не Flight
+      Flight thatFlight = (Flight) that; // каст до нашого класу, щоб визивати методи
+      return this.flightNumber.equals(thatFlight.flightNumber) && this.airline.equals(thatFlight.airline) && this.distance==thatFlight.distance && this.getMaker()
+                                                                                                                                                  .equals
+                                                                                                                                                          (thatFlight.getMaker()) && this.getModel().equals(thatFlight.getModel());
+  }
 
 }
+
