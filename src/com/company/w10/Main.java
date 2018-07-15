@@ -11,9 +11,15 @@ public class Main {
 
         map.print();
 
-        System.out.println(map.searchByKey("Italy"));
-        System.out.println(map.searchByKey("Germany"));
-        System.out.println(map.searchByKey("France"));
-        System.out.println(map.searchByKey("Ukraine"));
+        try {
+            System.out.println(map.searchByKey("Italy"));
+            System.out.println(map.searchByKey("Germany"));
+            System.out.println(map.searchByKey("France"));
+            System.out.println(map.searchByKey("Ukraine"));
+            System.out.println(map.searchByKey("Vin"));
+        }
+        catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
     }
 }

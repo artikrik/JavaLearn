@@ -3,11 +3,12 @@ package com.company.w6.marathon;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class Race {
     public static void main(String[] args) {
 
-        ArrayList<Marathon> raceOfMarathon = new ArrayList<>(Arrays.asList(addMembersToRace()));
+        List<Marathon> raceOfMarathon = new ArrayList<>(Arrays.asList(addMembersToRace()));
 
         Collections.sort(raceOfMarathon, new MarathonComparator());
         console(raceOfMarathon, raceOfMarathon.size()); // вывод всех участников марафона
@@ -17,7 +18,7 @@ public class Race {
         console(raceOfMarathon, 3);
     }
 
-    public static void console(ArrayList<Marathon> list, int numberOfLines) {
+    public static void console(List<Marathon> list, int numberOfLines) {
         for (int i = 0; i < numberOfLines; i++) {
             System.out.println(list.get(i).toString());
         }

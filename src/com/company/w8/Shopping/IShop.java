@@ -1,6 +1,6 @@
 package com.company.w8.Shopping;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface IShop {
 
@@ -10,5 +10,5 @@ public interface IShop {
 
     void removeItem(int indexOfItem);
 
-    ArrayList<Item> getAllItems();
+    List<Item> getAllItems();
 }

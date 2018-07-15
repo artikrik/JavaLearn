@@ -85,7 +85,7 @@ public class MainForCollectionMethods {
     }
 
     public static void union(FlightList f1, FlightList f2) {
-        HashSet<Flight> union = new HashSet<>(f1.getFlightArrayList());
+        Set<Flight> union = new HashSet<>(f1.getFlightArrayList());
         union.remove(f2.getFlightArrayList());
         union.addAll(f2.getFlightArrayList());
         //для наглядности отсортировал

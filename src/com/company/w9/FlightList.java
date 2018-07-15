@@ -21,7 +21,7 @@ public class FlightList {
         flightArrayList.remove(id);
     }
 
-    public ArrayList<Flight> getFlightArrayList() {
+    public List<Flight> getFlightArrayList() {
         return new ArrayList( flightArrayList);
     }
 

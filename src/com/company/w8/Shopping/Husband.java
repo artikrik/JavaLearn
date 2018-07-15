@@ -1,11 +1,12 @@
 package com.company.w8.Shopping;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Husband extends Person {
 
-    ArrayList<Item> listAllItems = new ArrayList<>();
-    ArrayList<Item> manBoughtIt = new ArrayList<>();
+    List<Item> listAllItems = new ArrayList<>();
+    List<Item> manBoughtIt = new ArrayList<>();
 
     public Husband(String name) {
         super(name);
@@ -22,7 +23,7 @@ public class Husband extends Person {
         }
     }
 
-    public ArrayList<Item> getManBoughtGoods(ArrayList<Item> wifeList) {
+    public List<Item> getManBoughtGoods(List<Item> wifeList) {
         manBoughtIt.addAll(compareWhatYouCanBuyFromShopsList(wifeList));
         return manBoughtIt;
     }
@@ -35,8 +36,8 @@ public class Husband extends Person {
         return price;
     }
 
-    public ArrayList<Item> compareWhatYouCanBuyFromShopsList(ArrayList<Item> wifeList) {
-        ArrayList<Item> presentInCurrentShop = new ArrayList<>();
+    public List<Item> compareWhatYouCanBuyFromShopsList(List<Item> wifeList) {
+        List<Item> presentInCurrentShop = new ArrayList<>();
         for (Item manItemToBuy : wifeList) {
             for (Item item : listAllItems) {
                 if (item.compareTo(manItemToBuy) == 0)

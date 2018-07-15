@@ -1,9 +1,10 @@
 package com.company.w8.Shopping;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Technostore implements IShop {
-    ArrayList<Item> listItemsTechnostore = new ArrayList<>();
+    List<Item> listItemsTechnostore = new ArrayList<>();
 
     public Technostore(Item item) {
         addItem(item);
@@ -27,7 +28,7 @@ public class Technostore implements IShop {
     }
 
     @Override
-    public ArrayList<Item> getAllItems() {
+    public List<Item> getAllItems() {
         return listItemsTechnostore;
     }
 

@@ -17,6 +17,7 @@ public class CountriesMap {
     }
 
     public Long searchByKey(String name) {
-        return hashMap.get(name);
+        if (hashMap.containsKey(name))return hashMap.get(name);
+        else throw new IllegalArgumentException("Country " + name + " was not found");
     }
 }

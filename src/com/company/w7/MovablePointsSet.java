@@ -1,11 +1,12 @@
 package com.company.w7;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class MovablePointsSet {
 
-    private ArrayList<MovablePoint> pointFromSet = new ArrayList<>();
+    private List<MovablePoint> pointFromSet = new ArrayList<>();
     int maxCoordinate;
     int minCoordinate;
 

@@ -4,8 +4,7 @@ public class Flight {
     private String id;
     private String airline;
     private double price;
-    private String model;
-    private String planeFirm;
+    private AircraftType aircraft;
     private double distance;
 
 
@@ -13,8 +12,7 @@ public class Flight {
         this.id = id;
         this.airline = airline;
         this.price = price;
-        this.model = airCraft.getModel();
-        this.planeFirm=airCraft.getManufacturer();
+        this.aircraft=airCraft;
         this.distance = distance;
     }
 
@@ -29,11 +27,12 @@ public class Flight {
     public String getAirline() {
         return airline;
     }
+
     public String getModel() {
-        return model;
+        return aircraft.getModel();
     }
     public String getPlaneFirm() {
-        return planeFirm;
+        return aircraft.getManufacturer();
     }
 
     public double getDistance() {
@@ -46,8 +45,8 @@ public class Flight {
                 "id='" + id + '\'' +
                 ", airline='" + airline + '\'' +
                 ", price=" + price +
-                ", plane=" + planeFirm+
-                ", model=" + model+
+                ", plane=" + aircraft.getManufacturer()+
+                ", model=" + aircraft.getModel()+
                 ", distance=" + distance;
     }
 }

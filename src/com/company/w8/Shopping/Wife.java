@@ -1,14 +1,11 @@
 package com.company.w8.Shopping;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Wife extends Person {
     public Husband husband;
-    private ArrayList<Item> wifeList = new ArrayList<>();
-
-    public Wife(String name) {
-        super(name);
-    }
+    private List<Item> wifeList = new ArrayList<>();
 
     public Wife(String name, Husband husband) {
         super(name);
@@ -19,7 +16,7 @@ public class Wife extends Person {
         wifeList.add(itemToBuy);
     }
 
-    public ArrayList<Item> getWifeList() {
+    public List<Item> getWifeList() {
         return wifeList;
     }
 
