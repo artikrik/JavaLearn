@@ -4,20 +4,18 @@ import java.util.ArrayList;
 
 public class Flight {
 
-    ArrayList<Flight> flights = new ArrayList<>();
+    ArrayList<Flight> flights1 = new ArrayList<>();
 
     private String numberOfFlight;
     private String aviaCompany;
     private double price;
     private long distance;
-    //private ArrayList<>aircraft;
 
-    public Flight (String numberOfFlight, String aviaCompany, double price, long distance){ //ArrayList<Flight>aircraft){
-        setNumberOfFlight(numberOfFlight);
-        setAviaCompany(aviaCompany);
-        setPrice(price);
-        setDistance(distance);
-        //setAircraft(aircraft);
+    public Flight (String numberOfFlight, String aviaCompany, double price, long distance){
+        this.numberOfFlight = numberOfFlight;
+        this.aviaCompany = aviaCompany;
+        this.price = price;
+        this.distance = distance;
     }
 
     public String getNumberOfFlight(){
@@ -36,32 +34,11 @@ public class Flight {
         return distance;
     }
 
-    /*public ArrayList<Flight>getAircraft(){
-        return aircraft;
-    }*/
-
-    public void setNumberOfFlight(String numberOfFlight){
-        this.numberOfFlight = numberOfFlight;
-    }
-
-    public void setAviaCompany(String aviaCompany){
-        this.aviaCompany = aviaCompany;
-    }
-
-    public void setPrice(double price){
-        this.price = price;
-    }
-
-    public void setDistance(long distance){
-        this.distance = distance;
-    }
-
-   /* public void setAircraft(ArrayList<Flight> aircraft){
-        this.aircraft = aircraft;
-    }*/
-
     @Override
     public String toString(){
-        return "Number of flight - "+numberOfFlight+ " \nAvia company - " + aviaCompany + "\nPrice - " + price + "\nDistance - " + distance;
+        return "Number of flight - "+ numberOfFlight
+                + "\nAvia company - " + aviaCompany
+                + "\nPrice - " + price
+                + "\nDistance - " + distance;
     }
 }
