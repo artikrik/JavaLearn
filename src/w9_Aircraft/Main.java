@@ -8,7 +8,7 @@ public class Main {
 
         ArrayList<Flight> flight1 = new ArrayList<>();
 
-        flight1.add(new Flight("KL4103", "BritishAirways",333, 5000));
+        flight1.add(new Flight("KL4103", "BritishAirways",333, 5000,"Airbus","A310"));
 
 
         System.out.println(flight1.toString());

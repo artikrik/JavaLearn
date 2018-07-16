@@ -10,12 +10,17 @@ public class Flight {
     private String aviaCompany;
     private double price;
     private long distance;
+    private Aircraft aircraft;
+    private Aircraft.Model model;
 
-    public Flight (String numberOfFlight, String aviaCompany, double price, long distance){
-        this.numberOfFlight = numberOfFlight;
-        this.aviaCompany = aviaCompany;
-        this.price = price;
-        this.distance = distance;
+
+    public Flight (String numberOfFlight, String aviaCompany, double price, long distance, String aircraft, String model){
+       setNumberOfFlight(numberOfFlight);
+       setAviaCompany(aviaCompany);
+       setPrice(price);
+       setDistance(distance);
+       this.aircraft = aircraft;
+       this.model = model;
     }
 
     public String getNumberOfFlight(){
@@ -34,9 +39,27 @@ public class Flight {
         return distance;
     }
 
+    public void setNumberOfFlight(String numberOfFlight) {
+        this.numberOfFlight = numberOfFlight;
+    }
+
+    public void setAviaCompany(String aviaCompany) {
+        this.aviaCompany = aviaCompany;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setDistance(long distance) {
+        this.distance = distance;
+    }
+
     @Override
     public String toString(){
-        return "Number of flight - "+ numberOfFlight
+        return "Aircraft - "+aircraft+
+                "\nModel - "+model+
+                "\nNumber of flight - "+ numberOfFlight
                 + "\nAvia company - " + aviaCompany
                 + "\nPrice - " + price
                 + "\nDistance - " + distance;
