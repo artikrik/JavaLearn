@@ -5,7 +5,7 @@ public class PointsSet {
         MovablePointsSet movablePointsSet = new MovablePointsSet(3);
         System.out.println(movablePointsSet.toString());
 
-        movablePointsSet.movePoints(movablePointsSet, 5);
+        movablePointsSet.movePoints(5);
 
 
     }
