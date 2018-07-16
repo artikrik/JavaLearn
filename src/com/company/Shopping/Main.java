@@ -30,13 +30,17 @@ public class Main {
         wife.productsInWifeList("Lenovo", 0);
         wife.productsInWifeList("Onion", 0);
 
-        wife.getAllItemsListFromHusband();
-        wife.getNeedToBuyItems();
-        wife.getTotalCost();
 
 
 
-
-
+        int wifeCase = 1;
+        switch (wifeCase) {
+            case 1:
+                wife.getAllItemsListFromHusband();
+            case 2:
+                wife.getNeedToBuyItems();
+            case 3:
+                wife.getTotalCost();
+        }
     }
 }
