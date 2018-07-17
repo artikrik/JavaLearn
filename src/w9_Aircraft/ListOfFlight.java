@@ -1,39 +1,82 @@
 package w9_Aircraft;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class ListOfFlight {
-    private ArrayList<Flight> flightsArrayList = new ArrayList<>();
+    private List<Flight> flightsArrayList = new ArrayList<>();
 
 
-    public ArrayList<Flight> getFlightsArrayList() {
+    public List<Flight> getFlightsArrayList() {
         return flightsArrayList;
     }
 
-    public void add(Flight flight) {
+    public void addFlight(Flight flight) {
         flightsArrayList.add(flight);
     }
 
-    public void sortByPrice (){
-        Collections.sort(getFlightsArrayList(), Comparator.comparing(Flight::getPrice));
+    public void sortByPrice() {
+        getFlightsArrayList().sort(Comparator.comparing(Flight::getPrice));
         System.out.println(flightsArrayList);
     }
 
-    public void sortByDistance(){
-        Collections.sort(getFlightsArrayList(), Comparator.comparing(Flight::getDistance));
+    public void sortByDistance() {
+        getFlightsArrayList().sort(Comparator.comparing(Flight::getDistance));
         System.out.println(flightsArrayList);
     }
 
-    public void sortByAviaCompanyAndPrice(){
-        Collections.sort(getFlightsArrayList(), Comparator.comparing(Flight::getAviaCompany).thenComparing(Flight::getPrice));
+    public void sortByAviaCompanyAndPrice() {
+        getFlightsArrayList().sort(Comparator.comparing(Flight::getAviaCompany).thenComparing(Flight::getPrice));
         System.out.println(flightsArrayList);
     }
 
-
-    public void sortByAircraftAndModel(){
-        Collections.sort(getFlightsArrayList(), Comparator.comparing(Aircraft::getAircraftName).thenComparing(Aircraft.Model::getModelName));
+    public void sortByAircraftAndModel() {
+        getFlightsArrayList().sort(Comparator.comparing(Flight::getAircraft).thenComparing(Flight::getModel));
         System.out.println(flightsArrayList);
+    }
+
+    public void addNewFlight(Flight newNumberOfFlight) {
+        flightsArrayList.add(newNumberOfFlight);
+    }
+
+    public void searchByNumberOfFlight(String numberOfFlight) {
+        boolean availableFlight = false;
+        for (Flight searchFlight : flightsArrayList) {
+            if (searchFlight.getNumberOfFlight().compareTo(numberOfFlight) == 0) {
+                availableFlight = true;
+                System.out.println(searchFlight.toString());
+            }
+        }
+        if (!availableFlight) {
+            System.out.println("Data not find");
+        }
+    }
+
+    public void searchByPrice(double price) {
+        boolean availablePrice = false;
+        for (Flight searchPrice : flightsArrayList) {
+            if (Double.compare(searchPrice.getPrice(), price) == 0) {
+                availablePrice = true;
+                System.out.println(searchPrice.toString());
+            }
+        }
+        if (!availablePrice) {
+            System.out.println("Data not find");
+        }
+    }
+
+    public void removeFlightByNumber(String numberOfFlight) {
+        boolean flightIsPresent = false;
+        for (Flight removeFlight : flightsArrayList) {
+            if (removeFlight.getNumberOfFlight().compareTo(numberOfFlight) == 0) {
+                flightsArrayList.remove(removeFlight);
+                flightIsPresent = true;
+                System.out.println("Flight is remover");
+            }
+        }
+        if (!flightIsPresent) {
+            System.out.println("Data not find");
+        }
     }
 }
