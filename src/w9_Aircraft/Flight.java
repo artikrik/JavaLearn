@@ -51,7 +51,6 @@ public class Flight {
         this.distance = distance;
     }
 
-
     @Override
     public String toString(){
         return "Aircraft - "+aircraft+

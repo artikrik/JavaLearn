@@ -22,10 +22,10 @@ public class Main {
         System.out.println("Sort by Distance");
         listOfFlight.sortByDistance();
         System.out.println();
-        System.out.println("Sort by AviaCompany");
-        listOfFlight.sortByAviaCompany();
+        System.out.println("Sort by AviaCompanyAndPrice");
+        listOfFlight.sortByAviaCompanyAndPrice();
         System.out.println();
-        System.out.println("Sort by NumberOfFfight");
-        listOfFlight.sortByNumberOfFlight();
+        System.out.println("Sort by AircraftAndModel");
+        listOfFlight.sortByAircraftAndModel();
     }
 }

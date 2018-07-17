@@ -14,7 +14,7 @@ enum Aircraft {
         return aircraftName;
     }
 
-    public Model model;
+    //public Model model;
 
     enum Model {
         A310("A310"), A320("A320"), A330("A330"), B777("B777"), B737("B737"), B747("B747"), B767("B767"), E175("E175"), E190("E190"), E195("E195");

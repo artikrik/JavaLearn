@@ -26,13 +26,14 @@ public class ListOfFlight {
         System.out.println(flightsArrayList);
     }
 
-    public void sortByAviaCompany(){
-        Collections.sort(getFlightsArrayList(), Comparator.comparing(Flight::getAviaCompany));
+    public void sortByAviaCompanyAndPrice(){
+        Collections.sort(getFlightsArrayList(), Comparator.comparing(Flight::getAviaCompany).thenComparing(Flight::getPrice));
         System.out.println(flightsArrayList);
     }
 
-    public void sortByNumberOfFlight(){
-        Collections.sort(getFlightsArrayList(), Comparator.comparing(Flight::getNumberOfFlight));
+
+    public void sortByAircraftAndModel(){
+        Collections.sort(getFlightsArrayList(), Comparator.comparing(Aircraft::getAircraftName).thenComparing(Aircraft.Model::getModelName));
         System.out.println(flightsArrayList);
     }
 }
