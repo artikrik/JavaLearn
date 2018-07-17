@@ -14,7 +14,7 @@ public class Flight {
     private Aircraft.Model model;
 
 
-    public Flight (String numberOfFlight, String aviaCompany, double price, long distance, String aircraft, String model){
+    public Flight (String numberOfFlight, String aviaCompany, double price, long distance, Aircraft aircraft, Aircraft.Model model){
        setNumberOfFlight(numberOfFlight);
        setAviaCompany(aviaCompany);
        setPrice(price);
