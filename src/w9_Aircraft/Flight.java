@@ -23,7 +23,7 @@ public class Flight {
         return aircraft.getAircraftName();
     }
 
-    public String getModel() {
+    public int getModel() {
         return model.getModelName();
     }
 

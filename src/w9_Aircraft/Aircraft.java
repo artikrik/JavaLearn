@@ -4,11 +4,11 @@ enum Aircraft {
 
 
 
-    Embraer("Embraer"),Airbus("Airbus"), Boing("Boing");
+    Embraer,Airbus, Boing;
 
     private String aircraftName;
 
-    Aircraft(String aircraftName) {
+    Aircraft() {
         this.aircraftName = aircraftName;
     }
 

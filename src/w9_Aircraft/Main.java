@@ -42,6 +42,5 @@ public class Main {
         listOfFlight1.addNewFlight(new Flight("KL4103", "BritishAirways", 555, 3000, Aircraft.Boing, Model.A320));
         listOfFlight1.addNewFlight(new Flight("KL4112", "BritishAirways", 152, 8000, Aircraft.Embraer, Model.E175));
 
-        System.out.println(listOfFlight1.toString());
     }
 }
