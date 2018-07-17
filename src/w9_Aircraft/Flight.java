@@ -1,10 +1,6 @@
 package w9_Aircraft;
 
-import java.util.ArrayList;
-
 public class Flight {
-
-    ArrayList<Flight> flights1 = new ArrayList<>();
 
     private String numberOfFlight;
     private String aviaCompany;
@@ -55,6 +51,7 @@ public class Flight {
         this.distance = distance;
     }
 
+
     @Override
     public String toString(){
         return "Aircraft - "+aircraft+
@@ -62,6 +59,7 @@ public class Flight {
                 "\nNumber of flight - "+ numberOfFlight
                 + "\nAvia company - " + aviaCompany
                 + "\nPrice - " + price
-                + "\nDistance - " + distance;
+                + "\nDistance - " + distance +
+                "\n";
     }
 }
