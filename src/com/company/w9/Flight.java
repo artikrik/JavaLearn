@@ -13,7 +13,7 @@ public class Flight {
         setAirline(airline);
         setPrice(tiсketPrice);
         setDistance(distance);
-        this.planeType = getPlaneType();
+        setPlaneType(planeType);
     }
 
 
@@ -79,6 +79,16 @@ public class Flight {
         result = 31 * result + tiсketPrice;
         result = 31 * result + distance;
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "FlightNumber='" + flightNumber + '\'' +
+                ", Airline='" + airline + '\'' +
+                ", PlaneType=" + planeType +
+                ", Distance=" + distance +
+                ", TiсketPrice=" + tiсketPrice;
     }
 }
 

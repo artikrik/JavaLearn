@@ -11,7 +11,7 @@ enum PlaneType {
         this.planeType = planeType;
     }
 
-    public String getModel() {
+    public String getPlaneType() {
         return planeType;
     }
 }
