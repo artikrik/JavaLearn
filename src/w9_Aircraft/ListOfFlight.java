@@ -2,6 +2,7 @@ package w9_Aircraft;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 public class ListOfFlight {
@@ -68,9 +69,10 @@ public class ListOfFlight {
 
     public void removeFlightByNumber(String numberOfFlight) {
         boolean flightIsPresent = false;
-        for (Flight removeFlight : flightsArrayList) {
-            if (removeFlight.getNumberOfFlight().compareTo(numberOfFlight) == 0) {
-                flightsArrayList.remove(removeFlight);
+        Iterator<Flight> iter = flightsArrayList.listIterator();
+        while (iter.hasNext()){
+            if (iter.next().getNumberOfFlight().equals(numberOfFlight)) {
+                iter.remove();
                 flightIsPresent = true;
                 System.out.println("Flight is remover");
             }
