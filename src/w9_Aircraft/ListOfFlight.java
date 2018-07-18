@@ -13,8 +13,15 @@ public class ListOfFlight {
         return flightsArrayList;
     }
 
-    public void addFlight(Flight flight) {
-        flightsArrayList.add(flight);
+ /*   public boolean contain (ListOfFlight flight) {
+        return flightsArrayList.contains(flight);
+    }*/
+/*    public void addNewFlight(Flight newNumberOfFlight) {
+        flightsArrayList.add(newNumberOfFlight);
+    }*/
+
+    public void addFlight(Flight flight1) {
+        flightsArrayList.add(flight1);
     }
 
     public void sortByPrice() {
@@ -22,15 +29,14 @@ public class ListOfFlight {
         System.out.println(flightsArrayList);
     }
 
-    public void sortByAirkraftName(){
+    public void sortByAirkraftName() {
         getFlightsArrayList().sort(Comparator.comparing(Flight::getAircraft));
         System.out.println(flightsArrayList);
     }
 
-    public void sortByAircraftSerialNumber(){
-        Aircraft air = Aircraft.Airbus;
-        for (Aircraft element:Aircraft.values()){
-            System.out.println(element+" : "+element.ordinal());
+    public void showAircraftSerialNumber() {
+        for (Aircraft element : Aircraft.values()) {
+            System.out.println(element + " : " + element.ordinal());
         }
     }
 
@@ -47,10 +53,6 @@ public class ListOfFlight {
     public void sortByAircraftAndModel() {
         getFlightsArrayList().sort(Comparator.comparing(Flight::getAircraft).thenComparing(Flight::getModel));
         System.out.println(flightsArrayList);
-    }
-
-    public void addNewFlight(Flight newNumberOfFlight) {
-        flightsArrayList.add(newNumberOfFlight);
     }
 
     public void searchByNumberOfFlight(String numberOfFlight) {
@@ -82,7 +84,7 @@ public class ListOfFlight {
     public void removeFlightByNumber(String numberOfFlight) {
         boolean flightIsPresent = false;
         Iterator<Flight> iter = flightsArrayList.listIterator();
-        while (iter.hasNext()){
+        while (iter.hasNext()) {
             if (iter.next().getNumberOfFlight().equals(numberOfFlight)) {
                 iter.remove();
                 flightIsPresent = true;
@@ -93,5 +95,4 @@ public class ListOfFlight {
             System.out.println("Data not find");
         }
     }
-
 }

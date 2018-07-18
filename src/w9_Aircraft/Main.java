@@ -1,51 +1,64 @@
 package w9_Aircraft;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class Main {
     public static void main(String args[]) {
 
-        ListOfFlight listOfFlight = new ListOfFlight();
-        listOfFlight.addNewFlight(new Flight("KL4103", "BritishAirways", 333, 5000, Aircraft.Airbus, Model.A310));
-        //listOfFlight.addNewFlight(new Flight("KL4103", "BritishAirways", 555, 3000, Aircraft.Airbus, Model.A320));
-        //listOfFlight.addNewFlight(new Flight("KL4103", "BritishAirways", 666, 40000, Aircraft.Airbus, Model.A330));
-        //listOfFlight.addNewFlight(new Flight("KL4103", "BritishAirways", 562, 12000, Aircraft.Boing, Model.B737));
-        listOfFlight.addNewFlight(new Flight("KL4106", "BritishAirways", 111, 32000, Aircraft.Boing, Model.B747));
-        //listOfFlight.addNewFlight(new Flight("KL4103", "BritishAirways", 1000, 98000, Aircraft.Boing, Model.B767));
-        //listOfFlight.addNewFlight(new Flight("KL4103", "BritishAirways", 5698, 57000, Aircraft.Boing, Model.B777));
-        listOfFlight.addNewFlight(new Flight("KL4112", "BritishAirways", 152, 8000, Aircraft.Embraer, Model.E175));
-        //listOfFlight.addNewFlight(new Flight("KL4103", "BritishAirways", 112, 8884, Aircraft.Embraer, Model.E190));
-        //listOfFlight.addNewFlight(new Flight("KL4103", "BritishAirways", 458, 12548, Aircraft.Embraer, Model.E195));
+        Flight fl1 = new Flight("KL4103", "BritishAirways", 333, 5000, Aircraft.Airbus, Model.A310);
+        Flight fl2 = new Flight("KL4103", "BritishAirways", 333, 3000, Aircraft.Airbus, Model.A310);
+        Flight fl3 = new Flight("KL4112", "BritishAirways", 152, 8000, Aircraft.Embraer, Model.E175);
+
+        ListOfFlight lof1 = new ListOfFlight();
+        lof1.addFlight(fl1);
+        lof1.addFlight(fl2);
+        lof1.addFlight(fl3);
 
         System.out.println("Sort by price");
-        // listOfFlight.sortByPrice();
+        //lof1.sortByPrice();
 
         System.out.println("\nSort by Distance");
-        //listOfFlight.sortByDistance();
+        //lof1.sortByDistance();
 
         System.out.println("\nSort by AviaCompanyAndPrice");
-        //listOfFlight.sortByAviaCompanyAndPrice();
+        //lof1.sortByAviaCompanyAndPrice();
 
         System.out.println("\nSort by AircraftAndModel");
-        //listOfFlight.sortByAircraftAndModel();
+        //lof1.sortByAircraftAndModel();
 
         System.out.println("\nSort by aircraft name");
-        //listOfFlight.sortByAirkraftName();
+        //lof1.sortByAirkraftName();
 
-        System.out.println("\nSortByAircraftSerialNumber");
-        listOfFlight.sortByAircraftSerialNumber();
+        System.out.println("\nShowAircraftSerialNumber");
+        //lof1.showAircraftSerialNumber();
 
         System.out.println("\nSearch by ByNumberOfFlight");
-        //listOfFlight.searchByNumberOfFlight("KL4105");
+        //lof1.searchByNumberOfFlight("KL4105");
 
         System.out.println("\nSearch by ByPrice");
-        //listOfFlight.searchByPrice(374);
+        //lof1.searchByPrice(374);
 
         System.out.println("\nRemove flight by number");
-        //listOfFlight.removeFlightByNumber("KL4103");
+        //lof1.removeFlightByNumber("KL4103");
 
-        ListOfFlight listOfFlight1 = new ListOfFlight();
-        listOfFlight1.addNewFlight(new Flight("KL4103", "BritishAirways", 333, 5000, Aircraft.Airbus, Model.A310));
-        listOfFlight1.addNewFlight(new Flight("KL4103", "BritishAirways", 555, 3000, Aircraft.Boing, Model.A320));
-        listOfFlight1.addNewFlight(new Flight("KL4112", "BritishAirways", 152, 8000, Aircraft.Embraer, Model.E175));
+        Flight fl4 = new Flight("KL4103", "BritishAirways", 333, 5000, Aircraft.Airbus, Model.A310);
+        Flight fl5 = new Flight("KL4103", "BritishAirways", 333, 3000, Aircraft.Airbus, Model.A310);
+        Flight fl6 = new Flight("KL4112", "BritishAirways", 152, 8000, Aircraft.Embraer, Model.E175);
+
+        ListOfFlight lof2 = new ListOfFlight();
+        lof2.addFlight(fl4);
+        lof2.addFlight(fl5);
+        lof2.addFlight(fl6);
+
+
+
+        if (lof1.equals(lof2)) {
+            System.out.println("the same");
+        } else
+            System.out.println("different");
 
     }
 }

@@ -10,13 +10,13 @@ public class Flight {
     private Model model;
 
 
-    public Flight (String numberOfFlight, String aviaCompany, double price, long distance, Aircraft aircraft, Model model){
-       setNumberOfFlight(numberOfFlight);
-       setAviaCompany(aviaCompany);
-       setPrice(price);
-       setDistance(distance);
-       this.aircraft = aircraft;
-       this.model = model;
+    public Flight(String numberOfFlight, String aviaCompany, double price, long distance, Aircraft aircraft, Model model) {
+        setNumberOfFlight(numberOfFlight);
+        setAviaCompany(aviaCompany);
+        setPrice(price);
+        setDistance(distance);
+        this.aircraft = aircraft;
+        this.model = model;
     }
 
     public String getAircraft() {
@@ -27,19 +27,19 @@ public class Flight {
         return model.toString();
     }
 
-    public String getNumberOfFlight(){
+    public String getNumberOfFlight() {
         return numberOfFlight;
     }
 
-    public String getAviaCompany(){
+    public String getAviaCompany() {
         return aviaCompany;
     }
 
-    public double getPrice(){
+    public double getPrice() {
         return price;
     }
 
-    public long getDistance(){
+    public long getDistance() {
         return distance;
     }
 
@@ -60,14 +60,32 @@ public class Flight {
     }
 
     @Override
-    public String toString(){
-        return "Aircraft - "+aircraft+
-                "\nModel - "+model+
-                "\nNumber of flight - "+ numberOfFlight
+    public String toString() {
+        return "Aircraft - " + aircraft +
+                "\nModel - " + model +
+                "\nNumber of flight - " + numberOfFlight
                 + "\nAvia company - " + aviaCompany
                 + "\nPrice - " + price
                 + "\nDistance - " + distance +
                 "\n";
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null) {
+            return false;
+        }
+
+        if (!(obj instanceof Flight)) {
+            return false;
+        }
+
+        Flight otherFlight = (Flight) obj;
+        return numberOfFlight.equals(((Flight)obj).numberOfFlight) && aviaCompany.equals(((Flight)obj).aviaCompany)&& price==otherFlight.getPrice()
+                &&distance==otherFlight.getDistance();
+    }
 }
