@@ -59,6 +59,7 @@ public class Flight {
         this.distance = distance;
     }
 
+
     @Override
     public String toString() {
         return "Aircraft - " + aircraft +
@@ -85,7 +86,7 @@ public class Flight {
         }
 
         Flight otherFlight = (Flight) obj;
-        return numberOfFlight.equals(((Flight)obj).numberOfFlight) && aviaCompany.equals(((Flight)obj).aviaCompany)&& price==otherFlight.getPrice()
-                &&distance==otherFlight.getDistance();
+        return numberOfFlight.equals(((Flight) obj).numberOfFlight) && aviaCompany.equals(((Flight) obj).aviaCompany) && price == otherFlight.getPrice()
+                && distance == otherFlight.getDistance();
     }
 }

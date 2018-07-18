@@ -8,17 +8,9 @@ import java.util.List;
 public class ListOfFlight {
     private List<Flight> flightsArrayList = new ArrayList<>();
 
-
     public List<Flight> getFlightsArrayList() {
         return flightsArrayList;
     }
-
- /*   public boolean contain (ListOfFlight flight) {
-        return flightsArrayList.contains(flight);
-    }*/
-/*    public void addNewFlight(Flight newNumberOfFlight) {
-        flightsArrayList.add(newNumberOfFlight);
-    }*/
 
     public void addFlight(Flight flight1) {
         flightsArrayList.add(flight1);
@@ -28,6 +20,7 @@ public class ListOfFlight {
         getFlightsArrayList().sort(Comparator.comparing(Flight::getPrice));
         System.out.println(flightsArrayList);
     }
+
 
     public void sortByAirkraftName() {
         getFlightsArrayList().sort(Comparator.comparing(Flight::getAircraft));
