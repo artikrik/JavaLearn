@@ -20,11 +20,11 @@ public class Flight {
     }
 
     public String getAircraft() {
-        return aircraft.getAircraftName();
+        return aircraft.toString();
     }
 
-    public int getModel() {
-        return model.getModelName();
+    public String getModel() {
+        return model.toString();
     }
 
     public String getNumberOfFlight(){
@@ -69,4 +69,5 @@ public class Flight {
                 + "\nDistance - " + distance +
                 "\n";
     }
+
 }

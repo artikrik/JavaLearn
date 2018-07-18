@@ -22,6 +22,18 @@ public class ListOfFlight {
         System.out.println(flightsArrayList);
     }
 
+    public void sortByAirkraftName(){
+        getFlightsArrayList().sort(Comparator.comparing(Flight::getAircraft));
+        System.out.println(flightsArrayList);
+    }
+
+    public void sortByAircraftSerialNumber(){
+        Aircraft air = Aircraft.Airbus;
+        for (Aircraft element:Aircraft.values()){
+            System.out.println(element+" : "+element.ordinal());
+        }
+    }
+
     public void sortByDistance() {
         getFlightsArrayList().sort(Comparator.comparing(Flight::getDistance));
         System.out.println(flightsArrayList);
@@ -81,4 +93,5 @@ public class ListOfFlight {
             System.out.println("Data not find");
         }
     }
+
 }

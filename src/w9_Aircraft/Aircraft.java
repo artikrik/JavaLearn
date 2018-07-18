@@ -2,17 +2,6 @@ package w9_Aircraft;
 
 enum Aircraft {
 
+    Boing, Embraer, Airbus;
 
-
-    Embraer,Airbus, Boing;
-
-    private String aircraftName;
-
-    Aircraft() {
-        this.aircraftName = aircraftName;
-    }
-
-    public String getAircraftName() {
-        return aircraftName;
-    }
 }

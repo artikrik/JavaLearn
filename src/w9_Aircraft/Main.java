@@ -4,7 +4,6 @@ public class Main {
     public static void main(String args[]) {
 
         ListOfFlight listOfFlight = new ListOfFlight();
-
         listOfFlight.addNewFlight(new Flight("KL4103", "BritishAirways", 333, 5000, Aircraft.Airbus, Model.A310));
         //listOfFlight.addNewFlight(new Flight("KL4103", "BritishAirways", 555, 3000, Aircraft.Airbus, Model.A320));
         //listOfFlight.addNewFlight(new Flight("KL4103", "BritishAirways", 666, 40000, Aircraft.Airbus, Model.A330));
@@ -17,7 +16,7 @@ public class Main {
         //listOfFlight.addNewFlight(new Flight("KL4103", "BritishAirways", 458, 12548, Aircraft.Embraer, Model.E195));
 
         System.out.println("Sort by price");
-        listOfFlight.sortByPrice();
+        // listOfFlight.sortByPrice();
 
         System.out.println("\nSort by Distance");
         //listOfFlight.sortByDistance();
@@ -27,6 +26,12 @@ public class Main {
 
         System.out.println("\nSort by AircraftAndModel");
         //listOfFlight.sortByAircraftAndModel();
+
+        System.out.println("\nSort by aircraft name");
+        //listOfFlight.sortByAirkraftName();
+
+        System.out.println("\nSortByAircraftSerialNumber");
+        listOfFlight.sortByAircraftSerialNumber();
 
         System.out.println("\nSearch by ByNumberOfFlight");
         //listOfFlight.searchByNumberOfFlight("KL4105");
