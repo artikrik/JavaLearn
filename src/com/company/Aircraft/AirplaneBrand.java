@@ -1,15 +1,15 @@
 package com.company.Aircraft;
 
-public enum  AirplaneBrand {
-    Airbus("Airbus"),Boeing("Boeing"), National("National");
+public enum AirplaneBrand {
+    Airbus("Airbus"), Boeing("Boeing"), National("National");
 
     private String airplaneBrand;
 
-    AirplaneBrand(String airplaneBrand){
+    AirplaneBrand(String airplaneBrand) {
         setAirplaneBrand(airplaneBrand);
     }
 
-    public String getAirplaneBrand(){
+    public String getAirplaneBrand() {
         return airplaneBrand;
     }
 
@@ -18,7 +18,7 @@ public enum  AirplaneBrand {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return airplaneBrand;
     }
 
