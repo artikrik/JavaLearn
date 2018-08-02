@@ -41,15 +41,14 @@ public class Main {
      //   forcomparelists.compareFlightOnContainsAllInOtherFlight(first, second);
    //     forcomparelists.verifyOnEqualityFlights(first, second);
 //        forcomparelists.addElementsSecondListFlightToFirstListFlight(first, second);
-        List<Flight> L = forcomparelists.formateListWithSomeElementsWithTwoList(first, second);
-        System.out.println(L);
-        //   System.out.println("Набір L, включає по одному разу елементи, які входять хоча б в один з наборів L1 і L2: " + L);
+        //List<Flight> L = forcomparelists.formateListWithSomeElementsWithTwoList(first, second);
+         //  System.out.println("Набір L, включає по одному разу елементи, які входять хоча б в один з наборів L1 і L2: " + L);
 
-        //   L = forcomparelists.createListCompareByDistanceWithOtherTwoLists(first, second);
-        //     System.out.println("Об'єднаний набір L з наборів L1 і L2, впорядкований за дистанцією: " + L);
+     //      List<Flight> L = forcomparelists.createListCompareByDistanceWithOtherTwoLists(first, second);
+       //      System.out.println("Об'єднаний набір L з наборів L1 і L2, впорядкований за ціною: " + L);
 
-  //      L = forcomparelists.createListIdenticalElementsWithTwoLists(first, second);
-  //      System.out.println("Об'єднаний набір L з наборів L1 і L2, в який входять однакові елементи: " + L);
+        List<Flight>L = forcomparelists.createListIdenticalElementsWithTwoLists(first, second);
+        System.out.println("Об'єднаний набір L з наборів L1 і L2, в який входять однакові елементи: " + L);
 
     }
 }

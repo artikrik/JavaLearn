@@ -1,5 +1,7 @@
 package com.company.W10.AircraftAndStream;
 
+import java.util.Objects;
+
 public class Flight {
 
     private String flightNumber;
@@ -70,15 +72,33 @@ public class Flight {
                 '}';
     }
 
-    @Override
+    /*@Override
     public boolean equals(Object that){
         if(this == that) return true;// якщо оба мають однаковий адрес в пам'яті
         if(!(that instanceof Flight)) return false; // якщо не Flight
         Flight thatFlight = (Flight) that; // каст до нашого класу, щоб визивати методи
         return this.flightNumber.equals(thatFlight.flightNumber) && this.airline.equals(thatFlight.airline) && this.distance==thatFlight.distance && this.getMaker().equals
                                                                                                                                                                  (thatFlight.getMaker()) && this.getModel().equals(thatFlight.getModel());
+    }*/
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Flight flight = (Flight) o;
+        return priceTicket == flight.priceTicket &&
+                distance == flight.distance &&
+                Objects.equals(flightNumber, flight.flightNumber) &&
+                Objects.equals(airline, flight.airline) &&
+                Objects.equals(maker, flight.maker) &&
+                Objects.equals(model, flight.model);
     }
 
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(flightNumber, airline, priceTicket, distance, maker, model);
+    }
 }
 
 

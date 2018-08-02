@@ -122,11 +122,6 @@ public class ListsOfFlights {
         else   System.out.println("набіри не рівні");
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
     public void addElementsSecondListFlightToFirstListFlight(List<Flight> first, List<Flight> second) {
         List<Flight> temporary = Stream.concat(first.stream(),second.stream()).collect(Collectors.toList());
         first=temporary;
@@ -138,21 +133,15 @@ public class ListsOfFlights {
         return temporary;
     }
 
-   /* public ArrayList<Flight> createListCompareByDistanceWithOtherTwoLists(ArrayList<Flight> first, ArrayList<Flight> second) {
-        ArrayList<Flight> temporary = new ArrayList<>();
-        temporary.addAll(first);
-        temporary.addAll(second);
-        Collections.sort(temporary, Comparator.comparing(Flight::getDistance));
+    public List<Flight> createListCompareByDistanceWithOtherTwoLists(List<Flight> first, List<Flight> second) {
+        List<Flight> temporary = Stream.concat(first.stream(),second.stream()).sorted(Comparator.comparing(Flight::getPriceTicket)).collect(Collectors.toList());
         return temporary;
     }
-*/
-  /*  public ArrayList<Flight> createListIdenticalElementsWithTwoLists(ArrayList<Flight> first, ArrayList<Flight> second) {
-        ArrayList<Flight> temp = new ArrayList<>();
-        temp.addAll(first);
-        temp.retainAll(second);
+
+    public List<Flight> createListIdenticalElementsWithTwoLists(List<Flight> first, List<Flight> second) {
+        List<Flight> temp =first.stream().filter(o->second.contains(o)).collect(Collectors.toList());
         return temp;
     }
-*/
 }
 
 
