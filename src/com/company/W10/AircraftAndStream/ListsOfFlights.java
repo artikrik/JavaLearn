@@ -1,7 +1,6 @@
 package com.company.W10.AircraftAndStream;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -65,32 +64,24 @@ public class ListsOfFlights {
     }
 
     public void removeInfoByyFlightNumber(String flightNumber) {
-        boolean infaIsFinded = false;
-        for (Flight flight : listsOfFlights) {
-            if (flight.getFlightNumber().compareTo(flightNumber) == 0) {
-                List<Flight> newList = listsOfFlights.stream().filter(o -> !o.getFlightNumber().equals(flightNumber)).collect(Collectors.toList());
-                listsOfFlights = newList;
-                System.out.println("інфа по конкретному рейсу видалена");
-                infaIsFinded = true;
-            }
-        }
-        if (!infaIsFinded)
+        int sizeList = listsOfFlights.size();
+        List<Flight> newList = listsOfFlights.stream().filter(o -> !o.getFlightNumber().equals(flightNumber)).collect(Collectors.toList());
+        listsOfFlights = newList;
+        int newSizeList = listsOfFlights.size();
+        if (sizeList == newSizeList) {
             System.out.println("рейса з таким номером нема");
+        } else System.out.println("інфа по конкретному рейсу видалена");
     }
 
     public void removeInfoByTypeOfAirplane(String airline, String model) {
-        boolean infaIsFinded = false;
-        for (Flight flight : listsOfFlights) {
-            if ((flight.getAirline().compareTo(airline) == 0) || (flight.getModel().compareTo(model) == 0)) {
-                List<Flight> newList = listsOfFlights.stream().filter(o -> !(o.getAirline().equals(airline)) & (o.getModel().equals(model))).collect
-                        (Collectors.toList());
-                listsOfFlights = newList;
-                System.out.println("інфа по конкретному типу літака видалена");
-                infaIsFinded = true;
-            }
-        }
-        if (!infaIsFinded)
+        int sizeList = listsOfFlights.size();
+        List<Flight> newList = listsOfFlights.stream().filter(o -> !(o.getAirline().equals(airline)) & (o.getModel().equals(model))).collect
+                (Collectors.toList());
+        listsOfFlights = newList;
+        int newSizeList = listsOfFlights.size();
+        if (sizeList == newSizeList) {
             System.out.println("рейса з таким типом літака нема");
+        } else System.out.println("інфа по конкретному типу літака видалена");
     }
 
     public void compareFlightOnContainsAllInOtherFlight(List<Flight> first, List<Flight> second) {
@@ -118,29 +109,25 @@ public class ListsOfFlights {
             if (isAnyOneTrue) {
                 System.out.println("набіри рівні");
             }
-        }
-        else   System.out.println("набіри не рівні");
+        } else System.out.println("набіри не рівні");
     }
 
     public void addElementsSecondListFlightToFirstListFlight(List<Flight> first, List<Flight> second) {
-        List<Flight> temporary = Stream.concat(first.stream(),second.stream()).collect(Collectors.toList());
-        first=temporary;
+        List<Flight> temporary = Stream.concat(first.stream(), second.stream()).collect(Collectors.toList());
+        first = temporary;
         System.out.println("Додано елементи другого набіра в кінець першого-" + first);
     }
 
     public List<Flight> formateListWithSomeElementsWithTwoList(List<Flight> first, List<Flight> second) {
-        List<Flight> temporary = Stream.concat(first.stream(),second.stream()).distinct().collect(Collectors.toList());
-        return temporary;
+        return Stream.concat(first.stream(), second.stream()).distinct().collect(Collectors.toList());
     }
 
     public List<Flight> createListCompareByDistanceWithOtherTwoLists(List<Flight> first, List<Flight> second) {
-        List<Flight> temporary = Stream.concat(first.stream(),second.stream()).sorted(Comparator.comparing(Flight::getPriceTicket)).collect(Collectors.toList());
-        return temporary;
+        return Stream.concat(first.stream(), second.stream()).sorted(Comparator.comparing(Flight::getPriceTicket)).collect(Collectors.toList());
     }
 
     public List<Flight> createListIdenticalElementsWithTwoLists(List<Flight> first, List<Flight> second) {
-        List<Flight> temp =first.stream().filter(o->second.contains(o)).collect(Collectors.toList());
-        return temp;
+        return first.stream().filter(o -> second.contains(o)).collect(Collectors.toList());
     }
 }
 

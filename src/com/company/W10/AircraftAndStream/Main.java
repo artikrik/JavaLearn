@@ -24,8 +24,8 @@ public class Main {
       //  L1.findInformationByFlightNumber("AL111");
   //      L1.findInformationByAirline("Croatia Airways");
    //     L1.findInformationByPrice(45);
-     //   L1.removeInfoByyFlightNumber("A1111");
-       // L1.removeInfoByTypeOfAirplane("Airbus", "A310");
+        L1.removeInfoByyFlightNumber("AL111");
+        L1.removeInfoByTypeOfAirplane("Airbus", "A310");
 
         ListsOfFlights L2 = new ListsOfFlights();
         Flight b1 = new Flight("L1", "Croatia Airways", 5, 622, Maker.Boeing, Model.B410);
@@ -47,8 +47,8 @@ public class Main {
      //      List<Flight> L = forcomparelists.createListCompareByDistanceWithOtherTwoLists(first, second);
        //      System.out.println("Об'єднаний набір L з наборів L1 і L2, впорядкований за ціною: " + L);
 
-        List<Flight>L = forcomparelists.createListIdenticalElementsWithTwoLists(first, second);
-        System.out.println("Об'єднаний набір L з наборів L1 і L2, в який входять однакові елементи: " + L);
+      //  List<Flight>L = forcomparelists.createListIdenticalElementsWithTwoLists(first, second);
+    //    System.out.println("Об'єднаний набір L з наборів L1 і L2, в який входять однакові елементи: " + L);
 
     }
 }
