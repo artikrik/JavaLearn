@@ -13,12 +13,8 @@ public class FlightList {
         flightArrayList.addAll(listFly.getFlightArrayList());
     }
 
-    public void removeFligtByName(Enum name) {
-        flightArrayList.remove(name);
-    }
-
-    public void removeFligtById(String id) {
-        flightArrayList.remove(id);
+    public void clear(){
+        flightArrayList.clear();
     }
 
     public List<Flight> getFlightArrayList() {

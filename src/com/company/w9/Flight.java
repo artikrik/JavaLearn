@@ -1,5 +1,7 @@
 package com.company.w9;
 
+import java.util.Objects;
+
 public class Flight {
     private String id;
     private String airline;
@@ -48,5 +50,30 @@ public class Flight {
                 ", plane=" + aircraft.getManufacturer()+
                 ", model=" + aircraft.getModel()+
                 ", distance=" + distance;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, price, airline, aircraft.getModel(), aircraft.getManufacturer(), distance);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null) {
+            return false;
+        }
+
+        if (!(obj instanceof Flight)) {
+            return false;
+        }
+
+        Flight otherFlight= (Flight) obj;
+        if ( id.equals(otherFlight.getId()) && airline.equals(otherFlight.getAirline()) && price==otherFlight.getPrice() && aircraft.getModel().equals(otherFlight.aircraft.getModel()
+        ) && aircraft.getManufacturer().equals(otherFlight.aircraft.getManufacturer()) && distance==otherFlight.getDistance()) return true;
+        return false;
     }
 }
